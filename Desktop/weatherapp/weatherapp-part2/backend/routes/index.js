@@ -50,6 +50,25 @@ router.get("/weather", (req, res) => {
   res.json({weather})
 });
 
+router.get('/weather/:cityName', (req, res) => {
+  const searchedWeather = weather.find(e => e.cityName === req.params.cityName);
 
+  if (searchedWeather) {
+    res.json({ result: true, weather: searchedWeather });
+  } else {
+    res.json({ result: false, error: 'City not found' });
+  }
+});
+
+router.delete('/weather/:cityName', (req, res) => {
+  const searchedWeather = weather.find(e => e.cityName === req.params.cityName);
+
+  if (searchedWeather) {
+    weather = weather.filter(e => e.cityName !== req.params.cityName);
+    res.json({ result: true, weather });
+  } else {
+    res.json({ result: false, error: 'City not found' });
+  }
+});
 
 module.exports = router;
