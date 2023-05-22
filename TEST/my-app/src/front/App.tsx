@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+interface WaitlistItem {
+  email : string;
+  cci : string;
+}
+
 const Container = styled.div `
 width: 100vw;
 height: 100vw;
@@ -59,48 +64,57 @@ border-radius: 5px;
 
 const App = () => {
 
-  const [email, setEmail] = useState('');
-  const [button, setButton] = useState(false);
-  const [waitlist, setWaitlist] = useState<string[]>([]);
+  const [email, setEmail] = useState<string>('');
+  const [button, setButton] = useState<boolean>(false);
+  const [waitlist, setWaitlist] = useState<WaitlistItem[]>([]);
+  const [cci, setCCI] = useState('');
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
   };
+
   const handleButtonClick = () => {
     if(email !== ''){
-      if(!waitlist.includes(email)){
-        setButton(true);
-        setWaitlist([...waitlist, email]);
+      if(!waitlist.some(item => item.email === email && item.cci === cci)){
+        setWaitlist([...waitlist,{email, cci}]);
         setEmail('');
+        setCCI ('');
+        setButton(false);
       }
-    }
-    
+    } 
   };
+  
+  const handleCCIChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+    setCCI (e.target.value);
+  }
 
   useEffect(() => {
-    const storeWaitlist = localStorage.getItem('waitlist');
-    if(storeWaitlist) {
+    const storeWaitlist = localStorage.getItem('waitlist') || '[]' ;
+ 
       setWaitlist(JSON.parse(storeWaitlist));
-    }
+    
   },[])
 
   useEffect(() => {
     localStorage.setItem('waitlist', JSON.stringify(waitlist));
+    
   }, [waitlist])
+
+  
 
   return (
     <Container>
       <FirstBlock>
       <Title>Ils pourront vous en parler mieux que nous.</Title>
-      <Text> Dans un monde lointain, au coeur d'une forêt enchantée, se trouvait une petite maison en bois. Les arbres majestueux se dressaient autour d'elle, créant une atmosphère paisible et mystérieuse. A l'intérieur, un vieux livre.</Text>
-      <span>Ajouter TrustPilot</span>
+      <Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.</Text>
       </FirstBlock>
       <SecondBlock>
         <LeftBlock>
           <SecondTitle>Bientôt disponible</SecondTitle>
           <SecondText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis cumque, error iusto, id qui sed eveniet, numquam quo nulla reprehenderit quasi fugiat! Labore, sit. Autem dignissimos accusamus officiis. Consectetur, expedita.</SecondText>
           <Input type="email" placeholder='Email' value={email} onChange={handleEmailChange}></Input>
-          <Button type="submit" onClick={handleButtonClick} disabled={!button}>Envoyer</Button>
+          <Input type="email" placeholder="CCI" value={cci}  onChange={handleCCIChange}/>
+          <Button type="submit" onClick={handleButtonClick} >Envoyer</Button>
         </LeftBlock>
       </SecondBlock>
     </Container>
