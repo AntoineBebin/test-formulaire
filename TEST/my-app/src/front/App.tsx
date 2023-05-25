@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
-
+import quadrille from './image/quadrille.avif';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import Header from './components/Header';
 
 const Container = styled.div `
 width: 100vw;
@@ -25,10 +27,11 @@ color: black;`
 
 const SecondBlock = styled.div`
 background-color: white;
+background-image: url(${quadrille});
+background-repeat: repeat;
 `
 
 const LeftBlock = styled.div`
-background-color: white;
 display:flex;
 flex-wrap: wrap;
 height: 50vw;
@@ -58,81 +61,98 @@ color: white;
 cursor: pointer;
 height: 55px;
 width: 120px;
-border-radius: 4px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
 margin-left: -3px;
 `
 const AvisBlock = styled.div `
-background-color: white;
-border-radius: 4px;
-padding: 10px;
-margin-bottom: 10px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-width: 22%;
-height: 50px;
-flex-wrap : wrap;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 `
+
+const AvisIcon = styled.div `
+color: #000;
+margin-right: 10px;`
 
 const AvisName = styled.span `
 font-size: 16px;
+  font-weight: bold;
+  color: #333;
 `
 
 const AvisContenu = styled.p `
-font-size: 16px;
-margin-bottom: 5px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #666;
 `
 
 const AvisRating = styled.span `
-font-weight: bold;
+  font-weight: bold;
+  color: #ff6f00;
 `
+
+const AvisDate = styled.span `
+font-size: 14px;
+color : #999;`
 
 const avis = [
   {
     name : "pierre",
-    content : "bien",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 7,
     date: "23/05/23",
   },
   {
     name : "antoine",
-    content: "bof",
+    content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 4,
     date: "12/02/23"
   },
   {
     name : "francois",
-    content : "super",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 10,
     date: "01/07/21"
   },
   {
     name : "francois",
-    content : "super",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 10,
     date: "01/07/21"
   },
   {
     name : "francois",
-    content : "super",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 10,
     date: "01/07/21"
   },
   {
     name : "francois",
-    content : "super",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 10,
     date: "01/07/21"
   },
   {
     name : "francois",
-    content : "super",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 10,
     date: "01/07/21"
   },
   {
     name : "francois",
-    content : "super",
+    content : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.",
     rating : 10,
     date: "01/07/21"
   },
@@ -176,15 +196,19 @@ const App = () => {
 
   return (
     <Container>
+      <Header></Header>
       <FirstBlock>
       <Title>Ils pourront vous en parler mieux que nous.</Title>
       <Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.</Text>
       {avis.map((avis, index) => (
         <AvisBlock key={index}>
+          <AvisIcon>
+            <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+          </AvisIcon>
           <AvisName>{avis.name}</AvisName>
           <AvisContenu>{avis.content}</AvisContenu>
           <AvisRating>{avis.rating}</AvisRating>
-          <span>Date : {avis.date}</span>
+          <AvisDate>Date : {avis.date}</AvisDate>
         </AvisBlock>
       ))}
       </FirstBlock>
