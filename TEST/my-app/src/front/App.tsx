@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import quadrille from './image/quadrille.avif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import Header from './components/Header';
+import Intro from './components/Intro';
+import Solution from './components/Solution';
 
 const Container = styled.div `
 width: 100vw;
 height: 100vw;
-background-color: white;`
+background-color: #ebebeb;`
 
 const FirstBlock = styled.div`
 height: 50vw;
-background-color: #ffeed6;
+background-color: #ebebeb;
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
@@ -26,9 +27,7 @@ const Text = styled.span`
 color: black;`
 
 const SecondBlock = styled.div`
-background-color: white;
-background-image: url(${quadrille});
-background-repeat: repeat;
+background-color: #ebebeb;
 `
 
 const LeftBlock = styled.div`
@@ -197,6 +196,8 @@ const App = () => {
   return (
     <Container>
       <Header></Header>
+      <Intro></Intro>
+      <Solution></Solution>
       <FirstBlock>
       <Title>Ils pourront vous en parler mieux que nous.</Title>
       <Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex nemo sequi veniam magnam, dolores quaerat explicabo, nobis odit ad tenetur ipsa impedit ab tempora earum perferendis corporis! Quo, quae.</Text>

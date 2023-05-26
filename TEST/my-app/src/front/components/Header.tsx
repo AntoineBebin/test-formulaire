@@ -7,7 +7,7 @@ const Head = styled.div `
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: black;
+background-color: #ebebeb;
 width: 100%;
 height: 4%;
 `
@@ -26,30 +26,30 @@ const RightContainer = styled.div`
 `
 
 const Title = styled.span`
-color: white;
+color: black;
 font-weight: bold;
 font-size: 35px;
 `
 
 const Product = styled.span`
 font-size: 20px;
-color: grey;
+color: black;
 cursor: pointer;`
 
 const Tarif = styled.span`
 font-size: 20px;
-color: grey;
+color: black;
 cursor: pointer;
 `
 
 const Who = styled.span`
 font-size: 20px;
-color: grey;
+color: black;
 cursor: pointer;`
 
 const News = styled.span `
 font-size: 20px;
-color: grey;
+color: black;
 cursor: pointer;`
 
 const Icon = styled.div`
