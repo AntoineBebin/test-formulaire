@@ -9,7 +9,7 @@ justify-content: space-between;
 align-items: center;
 background-color: #ebebeb;
 width: 100%;
-height: 4%;
+height: 2%;
 `
 const LeftContainer = styled.div`
   display: flex;
@@ -54,12 +54,12 @@ cursor: pointer;`
 
 const Icon = styled.div`
 color: black;
-background-color: yellow;
+background-color: #FFD966;
 font-size: 35px;
 cursor: pointer;`
 
 const TitleIcon = styled.div`
-  color: yellow;
+  color: #FFD966;
   font-size: 35px;
 `;
 

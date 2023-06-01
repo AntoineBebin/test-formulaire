@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import backgroundImage from '../image/famille.png'
 
 
 const Container = styled.div`
@@ -22,7 +23,6 @@ const Texte = styled.h2`
 font-size: 35px;
 margin: 0;
 color: black;
-
 `
 
 const SecondText = styled.span`
@@ -30,24 +30,27 @@ margin : 10px 0;
 color: black;
 `
 
-const Input = styled.input`
-background-color: yellow;
+const Button = styled.button`
+background-color: #FFD966;
+border-color: #FFD966 ;
 margin-top: 10px;
 font-weight: bold;
 color: black;
-height: 50px;
-width: 200px;
-border-radius: 5px;
-padding: 5px;
+height: 48px;
+width: 209px;
+border-radius: 4px;
+padding: 12px 20px;
 display: flex;
 justify-content: center;
 align-items: center;
 `
 const RightBlock = styled.div`
-border: solid blue 1px;
 width: 60%;
 justify-content: center;
 align-items: center;
+background-image: url(${backgroundImage});
+background-size: cover;
+background-position: center;
 `
 
 const Sponsor = styled.div`
@@ -55,7 +58,7 @@ width: 100%;
 border: solid black 1px;
 height: 25px;`
 
-const Intro =() => {
+const Intro = () => {
 
     const handleClick = () => {
         console.log('cliqué');
@@ -67,9 +70,9 @@ const Intro =() => {
                 <Texte>Des solutions peu innovantes, mais plus performantes</Texte>
                 <SecondText>Découvrez nos deux offres complémentaires pour optimiser la gestion de vos projets et événements. La première solution, dédiée à la gestion des consultants.
                 </SecondText>
-                <Input placeholder="ESSAYER GRATUITEMENT" onClick={handleClick}></Input>
+                <Button  onClick={handleClick}>ESSAYER GRATUITEMENT</Button>
             </LeftBlock>
-            <RightBlock>IMAGE</RightBlock>
+            <RightBlock></RightBlock>
             <Sponsor>MARQUE</Sponsor>
         </Container>
     );
