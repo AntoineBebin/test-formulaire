@@ -6,7 +6,7 @@ display:flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color : #ebebeb;`
+background-color : #F5F5F5;`
 
 const Title = styled.h1`
 color: #86b9c2 ;
@@ -78,13 +78,356 @@ box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;`
 
+const FreeBlock = styled.div`
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+width: 248px;
+height: 400px;
+`
+
+const Texte1Block = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 4px 8px;
+gap: 16px;
+width: 85px;
+height: 15px;
+background: #E6E6E6;
+border-radius: 4px;`
+
+const FreeTexte1 = styled.span`
+background : #E6E6E6;
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;`
+
+const Texte2Block = styled.div `
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+padding : 0px;
+gap : 14px;
+width: 240px;
+height: 100px;
+margin-top : 20px;
+`
+
+const FreeTexte2 = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+color : #202124;
+`
+
+const FreeTexte3 = styled.span `
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color : #202124;
+`
+
+const Texte3Block = styled.div `
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-around;
+width : 247px;
+height: 400px;
+margin-top : 30px;
+`
+
+const FreeTexte4 = styled.span `
+font-family : "Outfit";
+font-style : normal;
+font-weight: 400;
+font-size : 12px;
+color : #202124;`
+
+const Button = styled.button`
+color : #202124;
+box-sizing: border-box;
+display: flex;
+flex-direction : row;
+justify-content: center;
+align-items: flex-start;
+padding : 12px 20px;
+gap : 8px;
+position : absolute;
+width : 248px;
+height : 48px;
+left : 24px;
+top : 416px;
+border : 2px solid #202124;
+border-radius : 4px;
+font-family : 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+margin-top : 50px;
+margin-left: 20px;
+cursor: pointer;`
+
+const ProBlock = styled.div `
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+width: 248px;
+height: 410px;
+`
+
+const Pro1Block = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 4px 8px;
+gap: 16px;
+width: 30px;
+height: 15px;
+background: #CFE3E8;
+border-radius: 4px;`
+
+const Pro1Text = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+color : #0E738A;
+`
+
+const Pro2Block = styled.div `
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+padding : 0px;
+gap : 14px;
+width: 247px;
+height: 130px;
+margin-top : 10px;
+`
+
+const Pro2Text = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+color : #0E738A;`
+
+const Pro3Text = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+color: #202124;`
+
+const Pro3Block = styled.div `
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-around;
+width : 247px;
+height: 400px;
+margin-top: 35px;
+`
+
+const Pro4Text = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+color : #202124;`
+
+
+const Button2 = styled.button`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+padding: 12px 20px;
+gap: 8px;
+position: absolute;
+width: 248px;
+height: 48px;
+left: 24px;
+top: 416px;
+background: #0E738A;
+border-radius: 4px;
+font-family : 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+margin-top : 50px;
+margin-left : 20px;
+cursor: pointer;`
+
+const DevisBlock = styled.div`
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+width: 248px;
+height: 400px;
+`
+
+const DevisBlock1 = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 4px 8px;
+gap: 16px;
+width: 40px;
+height: 15px;
+background: #E6E6E6;
+border-radius: 4px;
+`
+const DevisText1 = styled.span`
+background : #E6E6E6;
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 700;
+font-size: 12px;`
+
+const DevisBlock2 = styled.div`
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+padding : 0px;
+gap : 14px;
+width: 240px;
+height: 100px;
+margin-top : 20px;
+`
+
+const DevisText2 = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+color : #202124;
+`
+
+const DevisText3 = styled.span `
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color : #202124;
+`
+
+const DevisBlock3 = styled.div `
+display : flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-around;
+width : 247px;
+height: 400px;
+margin-top: 35px;
+`
+
+const DevisText4 = styled.span`
+font-family: 'Outfit';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+color : #202124;`
+
+const Button3 = styled.button`
+color : #202124;
+box-sizing: border-box;
+display: flex;
+flex-direction : row;
+justify-content: center;
+align-items: flex-start;
+padding : 12px 20px;
+gap : 8px;
+position : absolute;
+width : 248px;
+height : 48px;
+left : 24px;
+top : 416px;
+border : 2px solid #202124;
+border-radius : 4px;
+font-family : 'Outfit';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+margin-top : 50px;
+margin-left: 20px;
+cursor: pointer;`
+
+
 const Offre = () => {
+
+    const handleClick = () => {
+        console.log("cliqué")
+    }
 
     return (
         <Container>
             <Title>Nos Offres</Title>
             <Block>
-                <OffreFirst></OffreFirst><OffreSecond></OffreSecond><OffreThird></OffreThird>
+                <OffreFirst>
+                    <FreeBlock>
+                        <Texte1Block>
+                        <FreeTexte1>DECOUVERTE</FreeTexte1>
+                        </Texte1Block>
+                        <Texte2Block>
+                            <FreeTexte2>GRATUIT</FreeTexte2>
+                            <FreeTexte3>“Première dose gratos, le bolosse est fidélisé” - Booba</FreeTexte3>
+                        </Texte2Block>
+                        <Texte3Block>
+                            <FreeTexte4>Inclus :</FreeTexte4>
+                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
+                        </Texte3Block>
+                        <Button onClick={handleClick}>ESSAYER GRATUITEMENT</Button>
+                    </FreeBlock>
+                </OffreFirst>
+                <OffreSecond>
+                    <ProBlock>
+                        <Pro1Block>
+                            <Pro1Text>PRO</Pro1Text>
+                        </Pro1Block>
+                        <Pro2Block>
+                            <Pro2Text>13.12€</Pro2Text>
+                            <Pro3Text>Pour les entreprises de petite et moyenne taille</Pro3Text>
+                        </Pro2Block>
+                        <Pro3Block>
+                            <Pro4Text>Toutes les fonctions DECOUVERTE, plus:</Pro4Text>
+                            <Pro4Text>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text>Fonctionnalité N1</Pro4Text>
+                        </Pro3Block>
+                        <Button2 onClick={handleClick}>CREER UN COMPTE</Button2>
+                    </ProBlock>
+                </OffreSecond>
+                <OffreThird>
+                    <DevisBlock>
+                        <DevisBlock1>
+                            <DevisText1>PRO +</DevisText1>
+                        </DevisBlock1>
+                        <DevisBlock2>
+                            <DevisText2>Sur devis</DevisText2>
+                            <DevisText3>Pour les grandes entreprises et celles souciantes du détail</DevisText3>
+                        </DevisBlock2>
+                        <DevisBlock3>
+                            <DevisText4>Toutes les fonctions PRO et aussi :</DevisText4>
+                            <DevisText4>Réduction liée au volume</DevisText4>
+                            <DevisText4>Accompagnement personnalisé</DevisText4>
+                            <DevisText4>Support dédié 24h/24</DevisText4>
+                            <DevisText4>Autre fonction cool</DevisText4>
+                        </DevisBlock3>
+                        <Button3 onClick={handleClick}>DEMANDER UN DEVIS</Button3>
+                    </DevisBlock>
+                </OffreThird>
             </Block>
         </Container>
     );

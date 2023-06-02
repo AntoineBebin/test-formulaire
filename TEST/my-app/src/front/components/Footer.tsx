@@ -4,11 +4,11 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div `
 display: flex;
-background-color: #FCFCFC;
 flex-direction: column;
 max-width: 100vw;
 height: 300px;
 margin-top: 100px;
+background-color: #fcfcfc;
 `
 
 const Block = styled.div `
@@ -16,7 +16,6 @@ display: flex;
 flex-direction: row;
 align-items: flex-start;
 margin-left : 25%;
-margin-top : 50px;
 padding: 0px;
 gap: 120px;
 max-width: 50vw;
@@ -56,7 +55,8 @@ const Texte1 = styled.span`
 font-size : 16px;
 font-weight : bold;
 font-family: "Silka";
-color : #202124;`
+color : #202124;
+`
 
 const Texte2 = styled.span `
 font-size : 14px;
@@ -77,7 +77,8 @@ padding : 0px;
 gap : 24px;
 width: 168px;
 height: 300px;
-margin-top : 10px;`
+margin-top : 10px;
+`
 
 const Foot = styled.div`
 display: flex;
@@ -87,11 +88,11 @@ padding: 24px 156px;
 isolation: isolate;
 max-width: 100vw;
 height: 88px;
+background-color: #fcfcfc;
 `
 
 const TextFoot = styled.div`
 display: flex;
-background-color: #FCFCFC ;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;

@@ -3,6 +3,7 @@ import Image from '../image/triangle.png';
 import Rectangle1 from '../image/Rectangle.png';
 import Rectangle2 from '../image/Rectangle-1.png';
 import Rectangle3 from '../image/Rectangle-2.png';
+import { useState } from "react";
 
 const Container = styled.div`
 display:flex;
@@ -35,7 +36,7 @@ color: black;`
 const SolutionBlock = styled.div `
 display: flex;
 flex-direction: row;
-justify-content: center;
+justify-content: space-between;
 align-items: flex-start;
 padding: 0px;
 gap: 44px;
@@ -53,7 +54,6 @@ flex-grow: 0;
 width: 400px;
 background-image: url(${Image});
 background-size: contain;
-background-position: center;
 position : relative;`
 
 const ImageTextBlock = styled.div `
@@ -65,17 +65,20 @@ font-weight: bold;`
 const ImageTopLeft = styled.img`
 position: absolute;
 top: 0;
-left: 0;`
+left: 0;
+`
 
 const ImageBottomLeft = styled.img`
 position: absolute;
 bottom:0;
-left: 0;`
+left: 0;
+`
 
 const ImageTopRight = styled.img`
 position:absolute;
 top: 0;
-right:0;`
+right:0;
+`
 
 const TextBlock = styled.div `
 display: flex;
@@ -90,24 +93,28 @@ flex-direction: row;
 margin-bottom: 30px;
 `
 
-const Button = styled.button `
-background-color: #FFD966;
-border-color: #FFD966 ;
-margin-top: 10px;
-font-weight: bold;
-color: black;
-height: 48px;
-width: 209px;
-border-radius: 4px;
-padding: 12px 20px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top : 30px;
-`
+const Button = styled.button`
+  background-color: #ffd966;
+  border-color: #ffd966;
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+  height: 48px;
+  width: 209px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+`;
+
 
 const Solution = () => {
 
+    const [button1Selected, setButton1Selected] = useState (false);
+    const [button2Selected, setButton2Selected] = useState(false);
+    const [button3Selected, setButton3Selected] = useState (false);
   
     return (
         <Container>
@@ -130,7 +137,9 @@ const Solution = () => {
                 </ImageBlock>
                 </SolutionBlock>
                 <ButtonBlock>
-                <Button>POUR LES INDEPENDANTS</Button><Button>POUR LES ENTREPRISES</Button><Button>POUR L'EVENEMENTIEL</Button>
+                <Button onClick={() => setButton1Selected(!button1Selected)} isSelected={button1Selected}>POUR LES INDEPENDANTS</Button>
+                <Button onClick={() => setButton2Selected(!button2Selected)} isSelected={button2Selected}>POUR LES ENTREPRISES</Button>
+                <Button onClick={() => setButton3Selected(!button3Selected)} isSelected={button3Selected}>POUR L'EVENEMENTIEL</Button>
                 </ButtonBlock>
             </Block>
         </Container>

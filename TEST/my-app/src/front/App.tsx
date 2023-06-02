@@ -11,8 +11,9 @@ import Footer from './components/Footer';
 
 const Container = styled.div `
 max-width: 100vw;
-height: 150vw;
-background-color: #ebebeb;`
+min-height: 100vw;
+background-color: #F5F5F5;
+`
 
 
 const App = () => {

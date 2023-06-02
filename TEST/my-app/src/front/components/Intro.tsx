@@ -6,7 +6,7 @@ const Container = styled.div`
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background-color: #ebebeb;
+background-color: #F5F5F5;
 margin-left: 30px;`
 
 const LeftBlock = styled.div `
@@ -49,8 +49,9 @@ width: 60%;
 justify-content: center;
 align-items: center;
 background-image: url(${backgroundImage});
-background-size: cover;
+background-size: contain;
 background-position: center;
+clip-path: polygon( 5% 0, 95% 0, 100% 100%, 0% 100%);
 `
 
 const Sponsor = styled.div`
@@ -73,7 +74,6 @@ const Intro = () => {
                 <Button  onClick={handleClick}>ESSAYER GRATUITEMENT</Button>
             </LeftBlock>
             <RightBlock></RightBlock>
-            <Sponsor>MARQUE</Sponsor>
         </Container>
     );
 }

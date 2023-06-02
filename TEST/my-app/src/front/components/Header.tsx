@@ -7,7 +7,7 @@ const Head = styled.div `
 display: flex;
 justify-content: space-between;
 align-items: center;
-background-color: #ebebeb;
+background-color: #F5F5F5;
 width: 100%;
 height: 2%;
 `
