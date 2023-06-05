@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import Box from '../image/box.png';
+import Case from '../image/valise.png';
+import Paper from '../image/papier.png';
 
 const Container = styled.div`
 display:flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color : #F5F5F5;`
+background-color : #F5F5F5;
+margin : 80px;
+`
 
 const Title = styled.h1`
 color: #86b9c2 ;
@@ -15,7 +19,7 @@ font-size: 50px;
 
 const Block = styled.div `
 display: flex;
-border: solid black 1px;`
+`
 
 const OffreFirst = styled.div `
 display: flex;
@@ -33,8 +37,16 @@ background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.06);
 backdrop-filter: blur(6px);
 border-radius: 8px;
-margin-top : -250px;
+margin-top : -100px;
 margin-left: 100px;
+`
+
+const Boite = styled.img `
+position: absolute;
+width: 145px;
+height: 78px;
+left: 200px;
+top: -24px;
 `
 
 const TextFirst = styled.span`
@@ -56,11 +68,19 @@ background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;
-margin-top : -250px;
+margin-top : -100px;
 margin-left: 200px;`
 
+const Valise = styled.img `
+position: absolute;
+width: 104px;
+height: 100px;
+left: 304px;
+top: -24px;
+`
+
 const OffreThird = styled.div `
-margin-top : -250px;
+margin-top : -100px;
 margin-left : 300px;
 display: flex;
 flex-direction: column;
@@ -77,6 +97,14 @@ background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;`
+
+const Papier = styled.img`
+position: absolute;
+width: 122px;
+height: 100px;
+right: 16px;
+top: -32px;
+`
 
 const FreeBlock = styled.div`
 display : flex;
@@ -372,6 +400,7 @@ const Offre = () => {
             <Title>Nos Offres</Title>
             <Block>
                 <OffreFirst>
+                <Boite src={Box}></Boite>
                     <FreeBlock>
                         <Texte1Block>
                         <FreeTexte1>DECOUVERTE</FreeTexte1>
@@ -391,6 +420,7 @@ const Offre = () => {
                     </FreeBlock>
                 </OffreFirst>
                 <OffreSecond>
+                <Valise src = {Case}></Valise>
                     <ProBlock>
                         <Pro1Block>
                             <Pro1Text>PRO</Pro1Text>
@@ -410,6 +440,7 @@ const Offre = () => {
                     </ProBlock>
                 </OffreSecond>
                 <OffreThird>
+                <Papier src={Paper}></Papier>
                     <DevisBlock>
                         <DevisBlock1>
                             <DevisText1>PRO +</DevisText1>

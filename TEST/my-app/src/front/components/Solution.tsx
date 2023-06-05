@@ -5,6 +5,7 @@ import Rectangle2 from '../image/Rectangle-1.png';
 import Rectangle3 from '../image/Rectangle-2.png';
 import { useState } from "react";
 
+
 const Container = styled.div`
 display:flex;
 flex-direction: column;
@@ -17,14 +18,18 @@ font-size: 50px;
 `
 const Block = styled.div`
 display: flex;
+margin-top : -35px;
 flex-direction: column;
 align-items: center;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius : 8px;
-height: 450px;
+height: 410px;
 position : relative;
+padding : 40px 40px 104px;
+gap : 56px;
+width: 1128px;
 `
 const Titre = styled.h2`
 color : black;
@@ -51,7 +56,8 @@ flex: none;
 order: 1;
 align-self: stretch;
 flex-grow: 0;
-width: 400px;
+width: 300px;
+height: 150px;
 background-image: url(${Image});
 background-size: contain;
 position : relative;`
@@ -60,24 +66,25 @@ const ImageTextBlock = styled.div `
 position: absolute;
 bottom: 10px;
 left: 10px;
-font-weight: bold;`
+font-weight: bold;
+`
 
 const ImageTopLeft = styled.img`
 position: absolute;
-top: 0;
-left: 0;
+top: -370px;
+left: -200px;
 `
 
 const ImageBottomLeft = styled.img`
 position: absolute;
-bottom:0;
-left: 0;
+bottom:-260px;
+left: -610px;
 `
 
 const ImageTopRight = styled.img`
 position:absolute;
-top: 0;
-right:0;
+top: -400px;
+right: -180px;
 `
 
 const TextBlock = styled.div `
@@ -98,15 +105,12 @@ const Button = styled.button`
   border-color: #ffd966;
   margin-top: 10px;
   font-weight: bold;
-  color: black;
   height: 48px;
   width: 209px;
   border-radius: 4px;
-  padding: 12px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-
 `;
 
 

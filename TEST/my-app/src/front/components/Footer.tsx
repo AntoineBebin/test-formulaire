@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle} from '@fortawesome/free-solid-svg-icons';
+import FB from '../image/fb.svg';
 
 const Container = styled.div `
 display: flex;
@@ -106,6 +107,10 @@ const Texte3 = styled.span `
 font-size : 14px;
 font-family: "Silka";
 color : #202124;`
+
+const Image = styled.img`
+width: 24px;
+height: 24px;`
 
 const Footer = () => {
 

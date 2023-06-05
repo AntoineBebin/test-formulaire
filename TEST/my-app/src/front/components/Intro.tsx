@@ -35,11 +35,9 @@ background-color: #FFD966;
 border-color: #FFD966 ;
 margin-top: 10px;
 font-weight: bold;
-color: black;
 height: 48px;
 width: 209px;
 border-radius: 4px;
-padding: 12px 20px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -49,9 +47,13 @@ width: 60%;
 justify-content: center;
 align-items: center;
 background-image: url(${backgroundImage});
-background-size: contain;
 background-position: center;
-clip-path: polygon( 5% 0, 95% 0, 100% 100%, 0% 100%);
+width: 744px;
+height: 484px;
+left: 540px;
+top: 307px;
+margin-top : 160px;
+margin-left: 100px;
 `
 
 const Sponsor = styled.div`
