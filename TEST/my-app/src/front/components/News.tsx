@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Container = styled.div`
 display: flex;
@@ -61,8 +62,11 @@ align-self : flex-start;
 
 const News = () => {
 
-    const handleClick = () => {
-        console.log('cliqué')
+    const [email, setEmail] = useState ('');
+
+    const handleClick = (e : React.ChangeEvent<HTMLInputElement>) => {
+        console.log('cliqué');
+        setEmail(e.target.value);
     }
 
 
@@ -73,7 +77,7 @@ const News = () => {
                 <Titre>Bientôt disponible</Titre>
                 <Texte>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, fuga ullam? Nulla id dolor aut nihil ducimus ut harum minus optio molestiae sunt perferendis reprehenderit dolorem ex, porro laudantium voluptas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, fuga ullam? Nulla id dolor aut nihil ducimus ut harum minus optio molestiae sunt perferendis reprehenderit dolorem ex, porro laudantium voluptas?</Texte>
                 <BlockInput>
-                <Input placeholder="Email"></Input>
+                <Input placeholder="Email" value={email} onChange={handleClick}></Input>
                 <Button onClick={handleClick}>M'inscrire</Button>
                 </BlockInput>
             </Block>

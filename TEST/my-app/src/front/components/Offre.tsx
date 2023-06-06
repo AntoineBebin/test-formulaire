@@ -283,6 +283,8 @@ width: 248px;
 height: 48px;
 left: 24px;
 top: 416px;
+border : none;
+outline : none;
 background: #0E738A;
 border-radius: 4px;
 font-family : 'Outfit';

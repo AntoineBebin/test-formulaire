@@ -97,12 +97,20 @@ justify-content: center;
 const ButtonBlock = styled.div`
 display:flex;
 flex-direction: row;
+align-items: center;
+padding: 8px;
+gap : 16px;
+width: 676px;
+height: 72px;
 margin-bottom: 30px;
+background-color: white;
 `
 
 const Button = styled.button`
   background-color: #ffd966;
-  border-color: #ffd966;
+  border-color: white;
+  border : none;
+  outline : none;
   margin-top: 10px;
   font-weight: bold;
   height: 48px;
@@ -116,10 +124,24 @@ const Button = styled.button`
 
 const Solution = () => {
 
-    const [button1Selected, setButton1Selected] = useState (false);
-    const [button2Selected, setButton2Selected] = useState(false);
-    const [button3Selected, setButton3Selected] = useState (false);
-  
+    const [buttonSelected, setButtonSelected] = useState<number | null>(null);
+
+    const handleButtonClick = (buttonId : number) => {
+        if (buttonSelected === buttonId) {
+            setButtonSelected(null);
+        } else {
+            setButtonSelected(buttonId);
+        }
+    };
+
+    const buttonStyle = (buttonId : number) => {
+        if( buttonSelected === buttonId){
+            return {backgroundColor : "#ffd966"};
+        } else {
+            return { backgroundColor : "white"};
+        }
+    }
+
     return (
         <Container>
             <Title>Nos solutions</Title>
@@ -141,9 +163,9 @@ const Solution = () => {
                 </ImageBlock>
                 </SolutionBlock>
                 <ButtonBlock>
-                <Button onClick={() => setButton1Selected(!button1Selected)} isSelected={button1Selected}>POUR LES INDEPENDANTS</Button>
-                <Button onClick={() => setButton2Selected(!button2Selected)} isSelected={button2Selected}>POUR LES ENTREPRISES</Button>
-                <Button onClick={() => setButton3Selected(!button3Selected)} isSelected={button3Selected}>POUR L'EVENEMENTIEL</Button>
+                <Button style={buttonStyle(1)} onClick ={() => handleButtonClick(1)}>POUR LES INDEPENDANTS</Button>
+                <Button style={buttonStyle(2)} onClick ={() => handleButtonClick(2)}>POUR LES ENTREPRISES</Button>
+                <Button style={buttonStyle(3)} onClick ={() => handleButtonClick(3)}>POUR L'EVENEMENTIEL</Button>
                 </ButtonBlock>
             </Block>
         </Container>

@@ -41,6 +41,8 @@ border-radius: 4px;
 display: flex;
 justify-content: center;
 align-items: center;
+border : none;
+outline : none;
 `
 const RightBlock = styled.div`
 width: 60%;
