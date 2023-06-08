@@ -36,7 +36,8 @@ color : black;
 font-size: 25px;`
 
 const Texte = styled.span`
-color: black;`
+color: black;
+font-family: 'Urbanist';`
 
 const SolutionBlock = styled.div `
 display: flex;
@@ -67,6 +68,7 @@ position: absolute;
 bottom: 10px;
 left: 10px;
 font-weight: bold;
+font-family: 'Urbanist';
 `
 
 const ImageTopLeft = styled.img`
@@ -87,22 +89,15 @@ top: -400px;
 right: -180px;
 `
 
-const TextBlock = styled.div `
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-`
-
 const ButtonBlock = styled.div`
 display:flex;
 flex-direction: row;
 align-items: center;
+justify-content: center;
 padding: 8px;
 gap : 16px;
 width: 676px;
 height: 72px;
-margin-bottom: 30px;
 background-color: white;
 `
 
@@ -111,7 +106,8 @@ const Button = styled.button`
   border-color: white;
   border : none;
   outline : none;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-weight: bold;
   height: 48px;
   width: 209px;
@@ -119,12 +115,15 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  font-family: 'Urbanist';
 `;
 
 
 const Solution = () => {
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
+
 
     const handleButtonClick = (buttonId : number) => {
         if (buttonSelected === buttonId) {
@@ -140,7 +139,9 @@ const Solution = () => {
         } else {
             return { backgroundColor : "white"};
         }
-    }
+    };
+
+   
 
     return (
         <Container>

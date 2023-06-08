@@ -6,7 +6,6 @@ const Container = styled.div`
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background-color: #F5F5F5;
 margin-left: 30px;`
 
 const LeftBlock = styled.div `
@@ -43,6 +42,7 @@ justify-content: center;
 align-items: center;
 border : none;
 outline : none;
+cursor: pointer;
 `
 const RightBlock = styled.div`
 width: 60%;

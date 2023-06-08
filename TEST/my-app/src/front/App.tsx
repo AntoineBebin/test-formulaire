@@ -8,12 +8,15 @@ import Solution from './components/Solution';
 import Offre from './components/Offre';
 import News from './components/News';
 import Footer from './components/Footer';
+import Background from './image/Background_Pattern.svg';
 
 const Container = styled.div `
 max-width: 100vw;
 min-height: 100vh;
-background-color: #F5F5F5;
+background-image : url(${Background});
+background-repeat: repeat;
 `
+
 
 
 const App = () => {

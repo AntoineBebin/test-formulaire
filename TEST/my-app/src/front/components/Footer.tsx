@@ -9,7 +9,7 @@ flex-direction: column;
 max-width: 100vw;
 height: 300px;
 margin-top: 100px;
-background-color: #fcfcfc;
+background-color: white;
 `
 
 const Block = styled.div `
@@ -35,7 +35,8 @@ padding : 0px 156px;
 const Titre = styled.h2`
 color: black;
 font-weight: bold;
-font-size: 35px;`
+font-size: 35px;
+font-family: 'Urbanist';`
 
 const TitleIcon = styled.div`
   color: #FFD966;
@@ -89,7 +90,7 @@ padding: 24px 156px;
 isolation: isolate;
 max-width: 100vw;
 height: 88px;
-background-color: #fcfcfc;
+background-color: white;
 `
 
 const TextFoot = styled.div`

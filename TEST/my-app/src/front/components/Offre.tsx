@@ -8,7 +8,6 @@ display:flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color : #F5F5F5;
 margin : 80px;
 `
 
@@ -47,9 +46,6 @@ width: 145px;
 height: 78px;
 left: 200px;
 top: -24px;
-`
-
-const TextFirst = styled.span`
 `
 
 const OffreSecond = styled.div`
@@ -183,7 +179,7 @@ box-sizing: border-box;
 display: flex;
 flex-direction : row;
 justify-content: center;
-align-items: flex-start;
+align-items: center;
 padding : 12px 20px;
 gap : 8px;
 position : absolute;
@@ -275,7 +271,7 @@ const Button2 = styled.button`
 display: flex;
 flex-direction: row;
 justify-content: center;
-align-items: flex-start;
+align-items: center;
 padding: 12px 20px;
 gap: 8px;
 position: absolute;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useState } from "react";
+import Computer from '../image/computer.png';
 
 const Container = styled.div`
 display: flex;
 flex-direction : column;
 align-items: center;
-background-color: #F5F5F5;
 margin-top : 600px;
 `
 
@@ -14,30 +14,37 @@ color: #86b9c2 ;
 font-size: 50px;`
 
 const Block = styled.div `
-background-color : rgba(245, 245, 245, 0.5);
-width: 1162px;
+width: 744px;
 height: 360px;
 left: 156px;
 top: 2391px;
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
 display: flex;
+background: rgba(245, 245, 245, 0.5);
+box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
+backdrop-filter: blur(8px);
+border-radius: 8px;
+margin-right : 250px;
 `
 
 const Titre = styled.h2`
 color: black;
 font-size : 25px;
-font-weight: bold;`
+font-weight: bold;
+margin-left : 20px;`
 
 const Texte = styled.span`
 font-size: 15px;
-color: black;`
+color: black;
+margin-left : 20px;`
 
 const BlockInput = styled.div`
 display: flex;
 align-items: center;
 flex-direction: row;
-margin-top: 20px;`
+margin-top: 20px;
+margin-left : 20px;`
 
 const Input = styled.input `
 background-color: #FCFCFC;
@@ -58,6 +65,15 @@ width: 117px;
 height: 48px;
 border-radius: 0px 4px 4px 0px;
 align-self : flex-start;
+`
+
+const SecondBlock = styled.div`
+position: absolute;
+width: 461px;
+height: 348px;
+left: 1200px;
+top: 2330px;
+background-image: url(${Computer});
 `
 
 const News = () => {
@@ -81,6 +97,7 @@ const News = () => {
                 <Button onClick={handleClick}>M'inscrire</Button>
                 </BlockInput>
             </Block>
+            <SecondBlock></SecondBlock>
         </Container>
     );
 }
