@@ -48,20 +48,17 @@ const RightBlock = styled.div`
 width: 60%;
 justify-content: center;
 align-items: center;
+position: relative;
 background-image: url(${backgroundImage});
 background-position: center;
 width: 744px;
 height: 484px;
-left: 540px;
-top: 307px;
+left: -60px;
+top: 20px;
 margin-top : 160px;
 margin-left: 100px;
 `
 
-const Sponsor = styled.div`
-width: 100%;
-border: solid black 1px;
-height: 25px;`
 
 const Intro = () => {
 

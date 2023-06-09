@@ -6,12 +6,17 @@ const Container = styled.div`
 display: flex;
 flex-direction : column;
 align-items: center;
-margin-top : 600px;
+margin-top : 300px;
 `
 
 const Title = styled.h1`
 color: #86b9c2 ;
-font-size: 50px;`
+font-style: normal;
+font-weight: 400;
+font-size: 120px;
+line-height: 100%;
+font-family: 'Ibarra Real Nova';
+margin-bottom : -30px;`
 
 const Block = styled.div `
 width: 744px;
@@ -68,11 +73,11 @@ align-self : flex-start;
 `
 
 const SecondBlock = styled.div`
-position: absolute;
+position: relative;
 width: 461px;
 height: 348px;
-left: 1200px;
-top: 2330px;
+left: 490px;
+top: -390px;
 background-image: url(${Computer});
 `
 

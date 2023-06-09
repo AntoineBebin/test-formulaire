@@ -4,6 +4,8 @@ import Rectangle1 from '../image/Rectangle.png';
 import Rectangle2 from '../image/Rectangle-1.png';
 import Rectangle3 from '../image/Rectangle-2.png';
 import { useState } from "react";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Container = styled.div`
@@ -14,7 +16,12 @@ justify-content: center;`
 
 const Title = styled.h1`
 color: #86b9c2 ;
-font-size: 50px;
+font-style: normal;
+font-weight: 400;
+font-size: 120px;
+line-height: 100%;
+font-family: 'Ibarra Real Nova';
+margin-bottom : -1px;
 `
 const Block = styled.div`
 display: flex;
@@ -61,14 +68,18 @@ width: 300px;
 height: 150px;
 background-image: url(${Image});
 background-size: contain;
-position : relative;`
+position : relative;
+`
 
 const ImageTextBlock = styled.div `
 position: absolute;
 bottom: 10px;
 left: 10px;
+width: 300px;
 font-weight: bold;
 font-family: 'Urbanist';
+display: flex;
+justify-content: space-between;
 `
 
 const ImageTopLeft = styled.img`
@@ -119,10 +130,16 @@ const Button = styled.button`
   font-family: 'Urbanist';
 `;
 
+const IconBlock = styled.div`
+display : flex;
+flex-direction : row;
+justify-content : right;`
+
 
 const Solution = () => {
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
+    
 
 
     const handleButtonClick = (buttonId : number) => {
@@ -152,15 +169,23 @@ const Solution = () => {
                 <SolutionBlock>
                 <ImageBlock>
                     <ImageTopLeft src={Rectangle3}></ImageTopLeft>
-                    <ImageTextBlock>Personnalisable</ImageTextBlock>
+                    <IconBlock>
+                    <ImageTextBlock>Personnalisable
+                    <FontAwesomeIcon icon={faArrowRight} style={{color : "#000000"}}></FontAwesomeIcon>
+                    </ImageTextBlock>
+                    </IconBlock>
                 </ImageBlock>
                 <ImageBlock>
                     <ImageBottomLeft src={Rectangle1}></ImageBottomLeft>
-                    <ImageTextBlock>Simple</ImageTextBlock>
+                    <ImageTextBlock>Simple
+                    <FontAwesomeIcon icon={faArrowRight} style={{color : "#000000"}}></FontAwesomeIcon>
+                    </ImageTextBlock>
                 </ImageBlock>
                 <ImageBlock>
                        <ImageTopRight src={Rectangle2}></ImageTopRight>
-                    <ImageTextBlock>Limpide</ImageTextBlock>
+                    <ImageTextBlock>Limpide
+                        <FontAwesomeIcon icon={faArrowRight} style={{color : "#000000"}}></FontAwesomeIcon>
+                    </ImageTextBlock>
                 </ImageBlock>
                 </SolutionBlock>
                 <ButtonBlock>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Box from '../image/box.png';
 import Case from '../image/valise.png';
 import Paper from '../image/papier.png';
+import {useState} from 'react';
 
 const Container = styled.div`
 display:flex;
@@ -13,7 +14,12 @@ margin : 80px;
 
 const Title = styled.h1`
 color: #86b9c2 ;
-font-size: 50px;
+font-style: normal;
+font-weight: 400;
+font-size: 120px;
+line-height: 100%;
+font-family: 'Ibarra Real Nova';
+margin-bottom : -30px;
 `
 
 const Block = styled.div `
@@ -27,11 +33,11 @@ align-items: flex-start;
 padding: 24px;
 gap: 32px;
 isolation: isolate;
-position: absolute;
+position: relative;
 width: 296px;
 height: 488px;
-left: 252px;
-top: 1719px;
+left: 120px;
+top: 105px;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.06);
 backdrop-filter: blur(6px);
@@ -55,17 +61,18 @@ align-items: center;
 padding: 24px;
 gap: 32px;
 isolation: isolate;
-position: absolute;
+position: relative;
 width: 296px;
 height: 488px;
-left: 572px;
-top: 1719px;
+left: 22px;
+top: 105px;;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;
 margin-top : -100px;
-margin-left: 200px;`
+margin-left: 200px;
+border : solid #0E738A 2px;`
 
 const Valise = styled.img `
 position: absolute;
@@ -84,11 +91,11 @@ align-items: flex-start;
 padding: 24px;
 gap: 32px;
 isolation: isolate;
-position: absolute;
+position: relative;
 width: 296px;
 height: 488px;
-left: 892px;
-top: 1719px;
+left: -172px;
+top: 105px;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
@@ -389,9 +396,13 @@ cursor: pointer;`
 
 const Offre = () => {
 
+   
+
     const handleClick = () => {
         console.log("cliqué")
-    }
+    };
+
+
 
     return (
         <Container>

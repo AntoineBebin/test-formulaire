@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle} from '@fortawesome/free-solid-svg-icons';
 import FB from '../image/fb.svg';
+import Insta from '../image/insta.svg';
+import Linkedin from '../image/linkedin.svg';
 
 const Container = styled.div `
 display: flex;
 flex-direction: column;
 max-width: 100vw;
 height: 300px;
-margin-top: 100px;
+margin-top: 30px;
 background-color: white;
 `
 
@@ -96,11 +98,11 @@ background-color: white;
 const TextFoot = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
 padding: 0px;
-gap: 400px;
-max-width: 100vw;
+gap: 190px;
+width: 100%;
 height: 50px;
 `
 
@@ -111,7 +113,21 @@ color : #202124;`
 
 const Image = styled.img`
 width: 24px;
-height: 24px;`
+height: 24px;
+`
+
+const BlockImage = styled.div `
+display: flex;
+flex-direction: column;
+align-items: center;
+padding : 8px;
+gap : 8px;
+border : solid #202124 2px;
+border-radius : 8px;
+box-sizing : border-box;
+width: 40px;
+height: 40px;
+`
 
 const Footer = () => {
 
@@ -150,6 +166,15 @@ const Footer = () => {
                     <Texte3>Politique de confidentialité</Texte3>
                     <Texte3>Conditions d'utilisations</Texte3>
                     <Texte3>Mentions légales</Texte3>
+                    <BlockImage>
+                    <Image src = {FB}></Image>
+                    </BlockImage>
+                    <BlockImage>
+                    <Image src = {Insta}></Image>
+                    </BlockImage>
+                    <BlockImage>
+                    <Image src = {Linkedin}></Image>
+                    </BlockImage>
                 </TextFoot>
             </Foot>
         </Container>
