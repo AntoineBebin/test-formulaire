@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Login from './front/loginPage/Login';
 import App from './front/App';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +11,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path='/' element={<App/>} />
+        <Route path='/login' element={<Login/>} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 

@@ -97,6 +97,7 @@ const Header = () => {
 
     const handleClickLogin = () => {
       navigate('/login');
+      console.log("changé")
     };
    
     return (
@@ -113,7 +114,7 @@ const Header = () => {
             <Who onClick={handleClick}>Qui sommes-nous</Who>
             <News onClick={handleClick}>Actualités</News>
             <IconBlock>
-              <Link to="loginPage/Login.tsx"></Link>
+              <Link to="login"></Link>
             <Icon>
             <FontAwesomeIcon icon={faUser} onClick={handleClickLogin}></FontAwesomeIcon>
             </Icon>
