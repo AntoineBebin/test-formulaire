@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUser, faCircle} from '@fortawesome/free-solid-svg-icons';
-
+import { useNavigate,Link } from "react-router-dom";
 
 const Head = styled.div `
 display: flex;
@@ -80,7 +80,7 @@ const Icon = styled.div`
 color: black;
 font-size: 35px;
 cursor: pointer;
-margin-right : 3px;`
+margin-right : 5px;`
 
 const TitleIcon = styled.div`
   color: #FFD966;
@@ -89,9 +89,15 @@ const TitleIcon = styled.div`
 
 const Header = () => {
 
+  const navigate = useNavigate();
+
     const handleClick = () => {
         console.log('cliqué');
-    }
+    };
+
+    const handleClickLogin = () => {
+      navigate('/login');
+    };
    
     return (
         <Head>
@@ -107,8 +113,9 @@ const Header = () => {
             <Who onClick={handleClick}>Qui sommes-nous</Who>
             <News onClick={handleClick}>Actualités</News>
             <IconBlock>
+              <Link to="loginPage/Login.tsx"></Link>
             <Icon>
-            <FontAwesomeIcon icon={faUser} onClick={handleClick}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faUser} onClick={handleClickLogin}></FontAwesomeIcon>
             </Icon>
             </IconBlock>
             </RightContainer>

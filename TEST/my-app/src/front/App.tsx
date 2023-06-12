@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faUser} from '@fortawesome/free-solid-svg-icons';
-import Header from './components/Header';
-import Intro from './components/Intro';
-import Solution from './components/Solution';
-import Offre from './components/Offre';
-import News from './components/News';
-import Footer from './components/Footer';
+import Header from './mainPage/Header';
+import Intro from './mainPage/Intro';
+import Solution from './mainPage/Solution';
+import Offre from './mainPage/Offre';
+import News from './mainPage/News';
+import Footer from './mainPage/Footer';
+import Login from './loginPage/Login';
 import Background from './image/Background_Pattern.svg';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 const Container = styled.div `
 max-width: 100vw;
@@ -25,14 +24,20 @@ const App = () => {
   
 
   return (
+    <Router>
     <Container>
       <Header></Header>
+      <Routes>
+        <Route path="/loginPage/Login.tsx" element={<Login/>}></Route>
+      </Routes>
       <Intro></Intro>
       <Solution></Solution>
       <Offre></Offre>
       <News></News>
       <Footer></Footer>
     </Container>
+    </Router>
+
   );
 };
 
