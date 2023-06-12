@@ -15,7 +15,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 120px;
 line-height: 100%;
-font-family: 'Ibarra Real Nova';
+font-family: 'Urbanist';
 margin-bottom : -30px;`
 
 const Block = styled.div `

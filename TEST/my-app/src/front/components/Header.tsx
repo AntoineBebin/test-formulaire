@@ -36,7 +36,7 @@ font-size: 20px;
 color: black;
 font-weight: 500;
 font-style: normal;
-font-family: 'Silka';
+font-family: 'Urbanist';
 cursor: pointer;`
 
 const Tarif = styled.span`
@@ -44,7 +44,7 @@ font-size: 20px;
 color: black;
 font-weight: 500;
 font-style: normal;
-font-family: 'Silka';
+font-family: 'Urbanist';
 cursor: pointer;
 `
 
@@ -53,7 +53,7 @@ font-size: 20px;
 color: black;
 font-weight: 500;
 font-style: normal;
-font-family: 'Silka';
+font-family: 'Urbanist';
 cursor: pointer;`
 
 const News = styled.span `
@@ -61,7 +61,7 @@ font-size: 20px;
 color: black;
 font-weight: 500;
 font-style: normal;
-font-family: 'Silka';
+font-family: 'Urbanist';
 cursor: pointer;`
 
 const IconBlock = styled.div `

@@ -18,7 +18,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 120px;
 line-height: 100%;
-font-family: 'Ibarra Real Nova';
+font-family: 'Urbanist';
 margin-bottom : -30px;
 `
 
@@ -130,7 +130,7 @@ border-radius: 4px;`
 
 const FreeTexte1 = styled.span`
 background : #E6E6E6;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;`
@@ -147,7 +147,7 @@ margin-top : 20px;
 `
 
 const FreeTexte2 = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 40px;
@@ -155,7 +155,7 @@ color : #202124;
 `
 
 const FreeTexte3 = styled.span `
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -174,7 +174,7 @@ margin-top : 30px;
 `
 
 const FreeTexte4 = styled.span `
-font-family : "Outfit";
+font-family : "Urbanist";
 font-style : normal;
 font-weight: 400;
 font-size : 12px;
@@ -196,7 +196,7 @@ left : 24px;
 top : 416px;
 border : 2px solid #202124;
 border-radius : 4px;
-font-family : 'Outfit';
+font-family : 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 14px;
@@ -224,7 +224,7 @@ background: #CFE3E8;
 border-radius: 4px;`
 
 const Pro1Text = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
@@ -243,14 +243,14 @@ margin-top : 10px;
 `
 
 const Pro2Text = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 40px;
 color : #0E738A;`
 
 const Pro3Text = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -267,7 +267,7 @@ margin-top: 35px;
 `
 
 const Pro4Text = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
@@ -290,7 +290,7 @@ border : none;
 outline : none;
 background: #0E738A;
 border-radius: 4px;
-font-family : 'Outfit';
+font-family : 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 14px;
@@ -319,7 +319,7 @@ border-radius: 4px;
 `
 const DevisText1 = styled.span`
 background : #E6E6E6;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;`
@@ -336,7 +336,7 @@ margin-top : 20px;
 `
 
 const DevisText2 = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 40px;
@@ -344,7 +344,7 @@ color : #202124;
 `
 
 const DevisText3 = styled.span `
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -363,7 +363,7 @@ margin-top: 35px;
 `
 
 const DevisText4 = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
@@ -385,7 +385,7 @@ left : 24px;
 top : 416px;
 border : 2px solid #202124;
 border-radius : 4px;
-font-family : 'Outfit';
+font-family : 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 14px;

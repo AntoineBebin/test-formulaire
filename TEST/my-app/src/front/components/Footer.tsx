@@ -58,14 +58,14 @@ height: 300px;`
 const Texte1 = styled.span`
 font-size : 16px;
 font-weight : bold;
-font-family: "Silka";
+font-family: "Urbanist";
 color : #202124;
 `
 
 const Texte2 = styled.span `
 font-size : 14px;
 color : #6c6d70;
-font-family: "Silka";
+font-family: "Urbanist";
 `
 
 const ProductBox = styled.div`
@@ -108,7 +108,7 @@ height: 50px;
 
 const Texte3 = styled.span `
 font-size : 14px;
-font-family: "Silka";
+font-family: "Urbanist";
 color : #202124;`
 
 const Image = styled.img`

@@ -5,7 +5,6 @@ import backgroundImage from '../image/famille.png'
 const Container = styled.div`
 display: flex;
 flex-direction: row;
-flex-wrap: wrap;
 margin-left: 30px;`
 
 const LeftBlock = styled.div `
@@ -19,10 +18,15 @@ margin-left: 100px;
 `
 
 const Texte = styled.h2`
-font-size: 35px;
+font-size: 48px;
 margin: 0;
 color: black;
 `
+const BoldText = styled.span `
+font-weight : bold;`
+
+const YellowText = styled.span `
+color : #FFD966;`
 
 const SecondText = styled.span`
 margin : 10px 0;
@@ -69,7 +73,7 @@ const Intro = () => {
     return (
         <Container>
             <LeftBlock>
-                <Texte>Des solutions peu innovantes, mais plus performantes</Texte>
+                <Texte>Des solutions peu <BoldText>innovantes</BoldText>, mais plus <YellowText>performantes</YellowText></Texte>
                 <SecondText>Découvrez nos deux offres complémentaires pour optimiser la gestion de vos projets et événements. La première solution, dédiée à la gestion des consultants.
                 </SecondText>
                 <Button  onClick={handleClick}>ESSAYER GRATUITEMENT</Button>

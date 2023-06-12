@@ -16,12 +16,8 @@ justify-content: center;`
 
 const Title = styled.h1`
 color: #86b9c2 ;
-font-style: normal;
-font-weight: 400;
 font-size: 120px;
-line-height: 100%;
-font-family: 'Ibarra Real Nova';
-margin-bottom : -1px;
+margin-bottom : -5px;
 `
 const Block = styled.div`
 display: flex;
@@ -140,7 +136,7 @@ const Solution = () => {
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
     
-
+    
 
     const handleButtonClick = (buttonId : number) => {
         if (buttonSelected === buttonId) {
