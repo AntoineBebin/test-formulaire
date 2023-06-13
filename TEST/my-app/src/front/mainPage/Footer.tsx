@@ -10,7 +10,7 @@ display: flex;
 flex-direction: column;
 max-width: 100vw;
 height: 300px;
-margin-top: 30px;
+margin-top: 50px;
 background-color: white;
 `
 
@@ -88,8 +88,6 @@ const Foot = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 24px 156px;
-isolation: isolate;
 max-width: 100vw;
 height: 88px;
 background-color: white;
