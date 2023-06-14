@@ -18,7 +18,7 @@ const Block = styled.div `
 display: flex;
 flex-direction: row;
 align-items: flex-start;
-margin-left : 25%;
+margin-left : 15%;
 padding: 0px;
 gap: 120px;
 max-width: 50vw;
@@ -91,6 +91,7 @@ align-items: center;
 max-width: 100vw;
 height: 88px;
 background-color: white;
+border-top : solid #202124 1px;
 `
 
 const TextFoot = styled.div`

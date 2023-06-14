@@ -7,6 +7,7 @@ import Key2 from '../image/key2.png';
 import { useState } from "react";
 import Header from '../mainPage/Header';
 import Footer from '../mainPage/Footer';
+import LoginHeader from './LoginHeader';
 
 
 
@@ -121,6 +122,7 @@ gap : 8px;
 width: 429px;
 height: 25px;
 background: #FCFCFC;
+color : #B7B7B7;
 box-shadow: 0px 8px 96px rgba(32, 33, 36, 0.04);
 border-radius: 4px;
 border : none;
@@ -191,11 +193,24 @@ top: -425px;
 left : 435px;
 `
 
+const ErrorMessage = styled.span`
+color : red;
+display : flex;
+align-items : center;
+justify-content : center;
+margin-top : 30px;
+width : 100%;
+height : 24px;
+font-family : 'Urbanist';
+font-weight : 400;
+font-size : 20px;`
+
 const Login =() => {
 
     const [email, setEmail] = useState ('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState('');
 
     const handleEmail = (e : React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -206,9 +221,14 @@ const Login =() => {
     };
 
     const handleClick =()=>{
+        if (email !== 'email@amapii.com' || password !== 'password'){
+            setError('Email ou mot de passe incorrect !')
+        } else {
         console.log('cliqué');
+        setError('');
         setEmail('');
         setPassword ('');
+        }
     };
 
     const handleTogglePasswordVisibility = () => {
@@ -217,7 +237,7 @@ const Login =() => {
 
     return (
     <Container>
-        <Header></Header>
+        <LoginHeader></LoginHeader>
         <Title>Connexion</Title>
         <Block>
             <TexteBlock>
@@ -237,6 +257,7 @@ const Login =() => {
                     <FontAwesomeIcon icon={faEye} style={{color: "#000000"}} onClick={handleTogglePasswordVisibility}></FontAwesomeIcon>
                 </IconContainer>
                 <Button onClick={handleClick}>SE CONNECTER</Button>
+                {error && <ErrorMessage>{error}</ErrorMessage>}
             </InputBlock>
             <SecondBlockTexte>
                     <SecondTexte>Créer un compte - Mot de passe oublié ?</SecondTexte>
