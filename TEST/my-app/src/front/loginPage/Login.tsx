@@ -5,9 +5,9 @@ import Background from '../image/Background_Pattern.svg';
 import Key1 from '../image/key1.png';
 import Key2 from '../image/key2.png';
 import { useState } from "react";
-import Header from '../mainPage/Header';
 import Footer from '../mainPage/Footer';
 import LoginHeader from './LoginHeader';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -193,6 +193,9 @@ top: -425px;
 left : 435px;
 `
 
+const Password = styled.span`
+cursor: pointer;`
+
 const ErrorMessage = styled.span`
 color : red;
 display : flex;
@@ -206,6 +209,8 @@ font-weight : 400;
 font-size : 20px;`
 
 const Login =() => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState ('');
     const [password, setPassword] = useState('');
@@ -235,6 +240,14 @@ const Login =() => {
         setShowPassword(!showPassword);
       };
 
+      const handleClickPassword = (e: React.MouseEvent<HTMLSpanElement>) => {
+        const targetText = (e.currentTarget as HTMLSpanElement).textContent;
+        if(targetText === "Mot de passe oublié ?"){
+        navigate('/login/password');
+        console.log("changé")
+        }
+      };
+
     return (
     <Container>
         <LoginHeader></LoginHeader>
@@ -260,7 +273,8 @@ const Login =() => {
                 {error && <ErrorMessage>{error}</ErrorMessage>}
             </InputBlock>
             <SecondBlockTexte>
-                    <SecondTexte>Créer un compte - Mot de passe oublié ?</SecondTexte>
+                    <SecondTexte>Créer un compte -{" "} 
+                    <Password onClick={handleClickPassword}>Mot de passe oublié ?</Password></SecondTexte>
             </SecondBlockTexte>          
         </Block>
         <ImageBlock>

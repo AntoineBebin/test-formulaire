@@ -4,6 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './front/loginPage/Login';
+import Password from './front/loginPage/Password';
 import App from './front/App';
 
 const root = ReactDOM.createRoot(
@@ -15,6 +16,7 @@ root.render(
       <Routes>
         <Route path='/' element={<App/>} />
         <Route path='/login' element={<Login/>} />
+        <Route path='/login/password' element={<Password/>} />
       </Routes>
     </Router>
   </React.StrictMode>
