@@ -10,7 +10,7 @@ display: flex;
 flex-direction: column;
 max-width: 100vw;
 height: 300px;
-margin-top: 50px;
+margin-top: 140px;
 background-color: white;
 `
 

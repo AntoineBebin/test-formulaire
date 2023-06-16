@@ -124,7 +124,18 @@ const Button = styled.button`
   align-items: center;
   cursor: pointer;
   font-family: 'Urbanist';
-`;
+`
+
+const AnimatedButton = styled(Button)`
+transition : all 0.3s ease-in-out;
+:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+:active{
+    transform: translateY(0);
+    box-shadow : none;
+}`
 
 const IconBlock = styled.div`
 display : flex;
@@ -136,6 +147,11 @@ const Solution = () => {
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
     
+    const buttons = [
+        {id: 1, label: "POUR LES INDEPENDANTS"},
+        {id: 2, label: "POUR LES ENTREPRISES"},
+        {id: 3, label: "POUR L'EVENEMENTIEL"},
+    ]
     
 
     const handleButtonClick = (buttonId : number) => {
@@ -185,9 +201,12 @@ const Solution = () => {
                 </ImageBlock>
                 </SolutionBlock>
                 <ButtonBlock>
-                <Button style={buttonStyle(1)} onClick ={() => handleButtonClick(1)}>POUR LES INDEPENDANTS</Button>
-                <Button style={buttonStyle(2)} onClick ={() => handleButtonClick(2)}>POUR LES ENTREPRISES</Button>
-                <Button style={buttonStyle(3)} onClick ={() => handleButtonClick(3)}>POUR L'EVENEMENTIEL</Button>
+                    {buttons.map((button)=>(
+                        <AnimatedButton key={button.id}
+                                style={buttonStyle(button.id)}
+                                onClick={() => handleButtonClick(button.id)}
+                                >{button.label}</AnimatedButton>
+                    ))}
                 </ButtonBlock>
             </Block>
         </Container>

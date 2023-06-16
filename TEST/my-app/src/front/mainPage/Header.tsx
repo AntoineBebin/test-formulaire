@@ -21,7 +21,7 @@ const RightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 55%;
+  width: 45%;
 `
 
 const Title = styled.span`

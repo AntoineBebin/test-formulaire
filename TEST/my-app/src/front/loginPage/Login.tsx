@@ -171,6 +171,7 @@ font-weight: 600;
 font-size: 14px;
 line-height: 16px;
 color: #6C6D70;
+cursor: pointer;
 `
 const ImageBlock = styled.div`
 position : relative;
@@ -248,6 +249,13 @@ const Login =() => {
         }
       };
 
+      const handleClickAccount = (e: React.MouseEvent<HTMLSpanElement>) => {
+        const targetText = (e.currentTarget as HTMLSpanElement).textContent;
+        if(targetText === "Créer un compte -"){
+            navigate('/login/account');
+        }
+      }
+
     return (
     <Container>
         <LoginHeader></LoginHeader>
@@ -273,7 +281,7 @@ const Login =() => {
                 {error && <ErrorMessage>{error}</ErrorMessage>}
             </InputBlock>
             <SecondBlockTexte>
-                    <SecondTexte>Créer un compte -{" "} 
+                    <SecondTexte onClick={handleClickAccount}>Créer un compte -{" "} 
                     <Password onClick={handleClickPassword}>Mot de passe oublié ?</Password></SecondTexte>
             </SecondBlockTexte>          
         </Block>
