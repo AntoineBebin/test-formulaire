@@ -6,6 +6,8 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './front/loginPage/Login';
 import Password from './front/loginPage/Password';
 import App from './front/App';
+import PagePrincipale from './front/quiSommesNous/PagePrincipale';
+import EasyCra from './front/produits/EasyCra';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +19,8 @@ root.render(
         <Route path='/' element={<App/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/login/password' element={<Password/>} />
+        <Route path='/qui-sommes-nous' element={<PagePrincipale/>} />
+        <Route path='/produits' element={<EasyCra/>} />
       </Routes>
     </Router>
   </React.StrictMode>

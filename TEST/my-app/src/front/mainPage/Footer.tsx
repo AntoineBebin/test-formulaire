@@ -4,6 +4,7 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 import FB from '../image/fb.svg';
 import Insta from '../image/insta.svg';
 import Linkedin from '../image/linkedin.svg';
+import { useNavigate,Link } from "react-router-dom";
 
 const Container = styled.div `
 display: flex;
@@ -60,6 +61,7 @@ font-size : 16px;
 font-weight : bold;
 font-family: "Urbanist";
 color : #202124;
+cursor: pointer;
 `
 
 const Texte2 = styled.span `
@@ -130,6 +132,12 @@ height: 40px;
 
 const Footer = () => {
 
+    const navigate = useNavigate();
+
+    const handleClickQuiSommesNous = () => {
+        navigate('/qui-sommes-nous');
+    }
+
     return (
 
         <Container>
@@ -148,7 +156,7 @@ const Footer = () => {
                 <Texte2>EventPlanner</Texte2>
                 </ProductBox>
                 <Texte1>Tarifs</Texte1>
-                <Texte1>Qui sommes-nous ?</Texte1>
+                <Texte1 onClick={handleClickQuiSommesNous}>Qui sommes-nous ?</Texte1>
             </SecondBlock>
             <ThirdBlock>
                 <ProductBox>

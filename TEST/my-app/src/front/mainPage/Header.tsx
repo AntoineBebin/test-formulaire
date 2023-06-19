@@ -104,6 +104,10 @@ const Header = () => {
       navigate('/');
       console.log('cliqué');
     }
+
+    const handleClickProduct = () => {
+      navigate('/produits');
+    }
    
     return (
         <Head>
@@ -114,7 +118,7 @@ const Header = () => {
            <Title onClick={handleClickTitre}>Déjà-Vu</Title>
            </LeftContainer>
            <RightContainer>
-            <Product onClick={handleClick}>Produits</Product>
+            <Product onClick={handleClickProduct}>Produits</Product>
             <Tarif onClick={handleClick}>Tarifs</Tarif>
             <Who onClick={handleClick}>Qui sommes-nous</Who>
             <News onClick={handleClick}>Actualités</News>

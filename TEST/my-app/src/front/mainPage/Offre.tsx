@@ -296,7 +296,8 @@ font-weight: 600;
 font-size: 14px;
 margin-top : 50px;
 margin-left : 20px;
-cursor: pointer;`
+cursor: pointer;
+color : #F5F5F5`
 
 const DevisBlock = styled.div`
 display : flex;

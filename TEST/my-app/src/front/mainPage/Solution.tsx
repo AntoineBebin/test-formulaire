@@ -16,8 +16,12 @@ justify-content: center;`
 
 const Title = styled.h1`
 color: #86b9c2 ;
+font-family: 'Ibarra Real Nova';
+font-style: normal;
+font-weight: 400;
 font-size: 120px;
-margin-bottom : -5px;
+line-height: 100%;
+margin-bottom : 1px;
 `
 const Block = styled.div`
 display: flex;
@@ -34,6 +38,15 @@ padding : 40px 40px 104px;
 gap : 56px;
 width: 1128px;
 `
+const BlockTexte = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content : center;
+width: 596px;
+height: 104px;
+`
+
 const Titre = styled.h2`
 color : black;
 font-size: 25px;`
@@ -130,7 +143,7 @@ const AnimatedButton = styled(Button)`
 transition : all 0.3s ease-in-out;
 :hover{
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 :active{
     transform: translateY(0);
@@ -174,10 +187,12 @@ const Solution = () => {
 
     return (
         <Container>
-            <Title>Nos solutions</Title>
+            <Title>La solution</Title>
             <Block>
+                <BlockTexte>
                 <Titre>Gérez tous vos consultants en un clic</Titre>
                 <Texte>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi ipsam magni, optio magnam est debitis eaque error veritatis tempore minima voluptatum cum soluta recusandae nisi hic, ut dolor laboriosam adipisci.</Texte>
+                </BlockTexte>
                 <SolutionBlock>
                 <ImageBlock>
                     <ImageTopLeft src={Rectangle3}></ImageTopLeft>

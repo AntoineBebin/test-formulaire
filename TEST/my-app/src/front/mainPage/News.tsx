@@ -56,6 +56,7 @@ background-color: #FCFCFC;
 border : 1px solid transparent;
 width: 451px;
 height: 44px;
+padding : 0px 16px;
 border-radius: 4px 0px 0px 4px;
 margin-bottom: 10px;
 `
