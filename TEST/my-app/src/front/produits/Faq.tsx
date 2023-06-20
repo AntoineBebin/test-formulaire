@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Homme from '../image/homme.png';
+import {useState} from 'react';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -98,9 +99,14 @@ padding: 0px;
 gap: 16px;
 width: 601px;
 height: 50px;
+border-bottom: 1px solid grey;
 `
 
 const TextBlockFaq = styled.span`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 width: 563px;
 height: 30px;
 font-family: 'Outfit';
@@ -108,7 +114,8 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 30px;
-color: #000000;`
+color: #000000;
+`
 
 const Image= styled.img`
 position: absolute;
@@ -117,7 +124,32 @@ height: 466px;
 left: 467px;
 bottom: 0px;`
 
+const Menu = styled.div<{ open: boolean }>(({ open }) => ({
+    display: open ? 'block' : 'none',
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    minWidth: '200px',
+    backgroundColor: '#fff',
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+    padding: '10px',
+    zIndex: 1,
+  }));
+
+const MenuItem = styled.div`
+padding : 10px;
+cursor: pointer;
+&:hover {
+    background-color: #F5F5F5;
+}`
+
 const Faq = () => {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    }
 
     return(
         <Container>
@@ -132,29 +164,49 @@ const Faq = () => {
             <SecondBlock>
                 <BlockTextFaq>
                     <TextBlockFaq>Quelle est votre plus grande passion dans la vie ?
-                    <FontAwesomeIcon icon={faPlus} style={{color : "#000000"}}></FontAwesomeIcon>
+                    <FontAwesomeIcon 
+                    icon={faPlus} 
+                    style={{color : "#000000", cursor: 'pointer'}}
+                    onClick={toggleMenu}></FontAwesomeIcon>
                     </TextBlockFaq>
                 </BlockTextFaq>
                 <BlockTextFaq>
                     <TextBlockFaq>Si vous pouviez voyager dans le 
-                    <FontAwesomeIcon icon={faPlus} style={{color : "#000000"}}></FontAwesomeIcon>
+                    <FontAwesomeIcon 
+                    icon={faPlus} 
+                    style={{color : "#000000", cursor: 'pointer'}} 
+                    onClick={toggleMenu}></FontAwesomeIcon>
                     </TextBlockFaq>
                 </BlockTextFaq>
                 <BlockTextFaq>
                     <TextBlockFaq>Quel est le livre qui vous a le plus marqué?
-                    <FontAwesomeIcon icon={faPlus} style={{color : "#000000"}}></FontAwesomeIcon>
+                    <FontAwesomeIcon 
+                    icon={faPlus} 
+                    style={{color : "#000000", cursor: 'pointer'}} 
+                    onClick={toggleMenu}></FontAwesomeIcon>
                     </TextBlockFaq>
                 </BlockTextFaq>
                 <BlockTextFaq>
                     <TextBlockFaq>Si vous pouviez avoir un super pouvoir
-                    <FontAwesomeIcon icon={faPlus} style={{color : "#000000"}}></FontAwesomeIcon>
+                    <FontAwesomeIcon 
+                    icon={faPlus} 
+                    style={{color : "#000000", cursor: 'pointer'}} 
+                    onClick={toggleMenu}></FontAwesomeIcon>
                     </TextBlockFaq>
                 </BlockTextFaq>
                 <BlockTextFaq>
                     <TextBlockFaq>Quelle est votre destination de rêve ?
-                    <FontAwesomeIcon icon={faPlus} style={{color : "#000000"}}></FontAwesomeIcon>
+                    <FontAwesomeIcon 
+                    icon={faPlus} 
+                    style={{color : "#000000", cursor: 'pointer'}} 
+                    onClick={toggleMenu}></FontAwesomeIcon>
                     </TextBlockFaq>
                 </BlockTextFaq>
+                <Menu open={menuOpen}>
+                <MenuItem>Option 1</MenuItem>
+                <MenuItem>Option 2</MenuItem>
+                <MenuItem>Option 3</MenuItem>
+                </Menu>
             </SecondBlock>
             </Block>
         </Container>
