@@ -96,7 +96,7 @@ const TitleIcon = styled.div`
 `;
 
 const LoginHeader = () => {
-
+  // Navigation
   const navigate = useNavigate();
 
     const handleClick = () => {
@@ -105,12 +105,10 @@ const LoginHeader = () => {
 
     const handleClickLogin = () => {
       navigate('/login');
-      console.log("changé")
     };
 
     const handleClickTitre = () => {
       navigate('/');
-      console.log('cliqué');
     }
    
     return (

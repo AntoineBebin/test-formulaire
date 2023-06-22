@@ -83,11 +83,10 @@ background-image: url(${Computer});
 `
 
 const News = () => {
-
+    // Etat et fonction bouton (vide l'input)
     const [email, setEmail] = useState ('');
 
     const handleClick = (e : React.ChangeEvent<HTMLInputElement>) => {
-        console.log('cliqué');
         setEmail(e.target.value);
     }
 

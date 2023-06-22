@@ -157,7 +157,7 @@ justify-content : right;`
 
 
 const Solution = () => {
-
+    // Etat et fonctions pour les boutons avec animation
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
     
     const buttons = [

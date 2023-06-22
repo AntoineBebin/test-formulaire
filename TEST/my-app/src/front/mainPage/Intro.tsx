@@ -65,7 +65,7 @@ margin-left: 100px;
 
 
 const Intro = () => {
-
+    //Fonctions bouton
     const handleClick = () => {
         console.log('cliqué');
     }

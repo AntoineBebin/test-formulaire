@@ -4,7 +4,7 @@ import {faCircle} from '@fortawesome/free-solid-svg-icons';
 import FB from '../image/fb.svg';
 import Insta from '../image/insta.svg';
 import Linkedin from '../image/linkedin.svg';
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 const Container = styled.div `
 display: flex;
@@ -131,7 +131,7 @@ height: 40px;
 `
 
 const Footer = () => {
-
+  // Navigation
     const navigate = useNavigate();
 
     const handleClickQuiSommesNous = () => {
@@ -175,11 +175,7 @@ const Footer = () => {
                     <Texte3>Mentions légales</Texte3>
                     <BlockImage>
                     <Image src = {FB}></Image>
-                    </BlockImage>
-                    <BlockImage>
-                    <Image src = {Insta}></Image>
-                    </BlockImage>
-                    <BlockImage>
+                    <Image src = {Insta}></Image>                   
                     <Image src = {Linkedin}></Image>
                     </BlockImage>
                 </TextFoot>

@@ -144,7 +144,7 @@ cursor: pointer;
 }`
 
 const Faq = () => {
-
+    // Etat et fonction pour ouvrir un menu lors du clic sur l'icone +
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {

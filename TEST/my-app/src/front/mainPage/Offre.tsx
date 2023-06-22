@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Box from '../image/box.png';
 import Case from '../image/valise.png';
 import Paper from '../image/papier.png';
-import {useState} from 'react';
+
 
 const Container = styled.div`
 display:flex;
@@ -24,6 +24,7 @@ margin-bottom : -30px;
 
 const Block = styled.div `
 display: flex;
+margin-top : -10px;
 `
 
 const OffreFirst = styled.div `
@@ -182,6 +183,7 @@ color : #202124;`
 
 const Button = styled.button`
 color : #202124;
+background-color: white;
 box-sizing: border-box;
 display: flex;
 flex-direction : row;
@@ -372,11 +374,12 @@ color : #202124;`
 
 const Button3 = styled.button`
 color : #202124;
+background-color: white;
 box-sizing: border-box;
 display: flex;
 flex-direction : row;
 justify-content: center;
-align-items: flex-start;
+align-items: center;
 padding : 12px 20px;
 gap : 8px;
 position : absolute;

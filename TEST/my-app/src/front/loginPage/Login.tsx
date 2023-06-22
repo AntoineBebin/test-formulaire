@@ -210,7 +210,7 @@ font-weight : 400;
 font-size : 20px;`
 
 const Login =() => {
-
+    // Etats et focntions pour reset l'input au clique, affichage d'une erreur lorsque s'est mal écrit et la navigation
     const navigate = useNavigate();
 
     const [email, setEmail] = useState ('');
@@ -230,7 +230,6 @@ const Login =() => {
         if (email !== 'email@amapii.com' || password !== 'password'){
             setError('Email ou mot de passe incorrect !')
         } else {
-        console.log('cliqué');
         setError('');
         setEmail('');
         setPassword ('');
@@ -245,7 +244,6 @@ const Login =() => {
         const targetText = (e.currentTarget as HTMLSpanElement).textContent;
         if(targetText === "Mot de passe oublié ?"){
         navigate('/login/password');
-        console.log("changé")
         }
       };
 

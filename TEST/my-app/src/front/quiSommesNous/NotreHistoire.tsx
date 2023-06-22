@@ -136,7 +136,7 @@ z-index: -1;
 `
 
 const NotreHistoire = () => {
-
+    // Etat et fonction pour les boutons avec animations
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
 
     const buttons = [

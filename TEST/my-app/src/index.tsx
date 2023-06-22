@@ -8,6 +8,7 @@ import Password from './front/loginPage/Password';
 import App from './front/App';
 import PagePrincipale from './front/quiSommesNous/PagePrincipale';
 import EasyCra from './front/produits/EasyCra';
+import Tarif from './front/tarifPage/Tarif';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,6 +22,7 @@ root.render(
         <Route path='/login/password' element={<Password/>} />
         <Route path='/qui-sommes-nous' element={<PagePrincipale/>} />
         <Route path='/produits' element={<EasyCra/>} />
+        <Route path='/tarifs' element={<Tarif/>} />
       </Routes>
     </Router>
   </React.StrictMode>

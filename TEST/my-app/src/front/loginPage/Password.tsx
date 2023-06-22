@@ -142,7 +142,7 @@ cursor: pointer;
 
 
 const Password = () => {
-
+    // Etat pour reset l'input
     const [email, setEmail] = useState('');
 
     const handleEmail = (e : React.ChangeEvent<HTMLInputElement>) => {
@@ -150,7 +150,6 @@ const Password = () => {
     };
 
     const handleClick =() => {
-        console.log('cliqué');
         setEmail('');
     };
 

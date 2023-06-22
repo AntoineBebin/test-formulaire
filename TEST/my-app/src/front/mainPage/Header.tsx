@@ -88,7 +88,7 @@ const TitleIcon = styled.div`
 `;
 
 const Header = () => {
-
+  // Navigation
   const navigate = useNavigate();
 
     const handleClick = () => {
@@ -97,12 +97,10 @@ const Header = () => {
 
     const handleClickLogin = () => {
       navigate('/login');
-      console.log("changé")
     };
 
     const handleClickTitre = () => {
       navigate('/');
-      console.log('cliqué');
     }
 
     const handleClickProduct = () => {
@@ -111,6 +109,10 @@ const Header = () => {
 
     const handleClickQuiSommesNous = () => {
         navigate('/qui-sommes-nous');
+    }
+
+    const handleClickTarifs = () => {
+      navigate('/tarifs');
     }
    
     return (
@@ -123,7 +125,7 @@ const Header = () => {
            </LeftContainer>
            <RightContainer>
             <Product onClick={handleClickProduct}>Produits</Product>
-            <Tarif onClick={handleClick}>Tarifs</Tarif>
+            <Tarif onClick={handleClickTarifs}>Tarifs</Tarif>
             <Who onClick={handleClickQuiSommesNous}>Qui sommes-nous</Who>
             <News onClick={handleClick}>Actualités</News>
             <IconBlock>
