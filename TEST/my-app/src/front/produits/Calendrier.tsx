@@ -66,9 +66,10 @@ const Image = styled.img`
 background-image: url(${Calendar});
 position: absolute;
 width: 1390px;
-height: 952px;
+height: 852px;
 left: calc(50% - 1390px/2);
-top: 275px;`
+top: 275px;
+margin-top : 50px;`
 
 const Calendrier = () => {
 

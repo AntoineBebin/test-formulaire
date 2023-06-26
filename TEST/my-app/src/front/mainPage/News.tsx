@@ -59,6 +59,7 @@ height: 44px;
 padding : 0px 16px;
 border-radius: 4px 0px 0px 4px;
 margin-bottom: 10px;
+color: #202124;
 `
 
 const Button = styled.button`

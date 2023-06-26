@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Box from '../image/box.png';
 import Case from '../image/valise.png';
 import Paper from '../image/papier.png';
-
+import Check from '../image/check-line.png';
 
 const Container = styled.div`
 display:flex;
@@ -299,7 +299,7 @@ font-size: 14px;
 margin-top : 50px;
 margin-left : 20px;
 cursor: pointer;
-color : #F5F5F5`
+color : #F5F5F5;`
 
 const DevisBlock = styled.div`
 display : flex;
@@ -317,11 +317,11 @@ padding: 4px 8px;
 gap: 16px;
 width: 40px;
 height: 15px;
-background: #E6E6E6;
+background: #E5DEF3;
 border-radius: 4px;
 `
 const DevisText1 = styled.span`
-background : #E6E6E6;
+color : #7F5CC4;
 font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
@@ -397,6 +397,10 @@ margin-top : 50px;
 margin-left: 20px;
 cursor: pointer;`
 
+const Icon = styled.img`
+width: 0.75rem;
+height: 0.75rem;
+`
 
 const Offre = () => {
 
@@ -424,10 +428,10 @@ const Offre = () => {
                         </Texte2Block>
                         <Texte3Block>
                             <FreeTexte4>Inclus :</FreeTexte4>
-                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
-                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
-                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
-                            <FreeTexte4>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4><Icon src={Check}></Icon>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4><Icon src={Check}></Icon>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4><Icon src={Check}></Icon>Fonctionnalité N1</FreeTexte4>
+                            <FreeTexte4><Icon src={Check}></Icon>Fonctionnalité N1</FreeTexte4>
                         </Texte3Block>
                         <Button onClick={handleClick}>ESSAYER GRATUITEMENT</Button>
                     </FreeBlock>
@@ -444,10 +448,10 @@ const Offre = () => {
                         </Pro2Block>
                         <Pro3Block>
                             <Pro4Text>Toutes les fonctions DECOUVERTE, plus:</Pro4Text>
-                            <Pro4Text>Fonctionnalité N1</Pro4Text>
-                            <Pro4Text>Fonctionnalité N1</Pro4Text>
-                            <Pro4Text>Fonctionnalité N1</Pro4Text>
-                            <Pro4Text>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text><Icon src={Check}></Icon>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text><Icon src={Check}></Icon>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text><Icon src={Check}></Icon>Fonctionnalité N1</Pro4Text>
+                            <Pro4Text><Icon src={Check}></Icon>Fonctionnalité N1</Pro4Text>
                         </Pro3Block>
                         <Button2 onClick={handleClick}>CREER UN COMPTE</Button2>
                     </ProBlock>
@@ -463,11 +467,11 @@ const Offre = () => {
                             <DevisText3>Pour les grandes entreprises et celles souciantes du détail</DevisText3>
                         </DevisBlock2>
                         <DevisBlock3>
-                            <DevisText4>Toutes les fonctions PRO et aussi :</DevisText4>
-                            <DevisText4>Réduction liée au volume</DevisText4>
-                            <DevisText4>Accompagnement personnalisé</DevisText4>
-                            <DevisText4>Support dédié 24h/24</DevisText4>
-                            <DevisText4>Autre fonction cool</DevisText4>
+                            <DevisText4><Icon src={Check}></Icon>Toutes les fonctions PRO et aussi :</DevisText4>
+                            <DevisText4><Icon src={Check}></Icon>Réduction liée au volume</DevisText4>
+                            <DevisText4><Icon src={Check}></Icon>Accompagnement personnalisé</DevisText4>
+                            <DevisText4><Icon src={Check}></Icon>Support dédié 24h/24</DevisText4>
+                            <DevisText4><Icon src={Check}></Icon>Autre fonction cool</DevisText4>
                         </DevisBlock3>
                         <Button3 onClick={handleClick}>DEMANDER UN DEVIS</Button3>
                     </DevisBlock>

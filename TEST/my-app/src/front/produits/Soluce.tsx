@@ -7,9 +7,7 @@ width: 1123px;
 height: 714px;
 left: calc(50% - 1123px/2 + 0.5px);
 top: 1415px;
-border : solid black 1px;
 `
-
 const Title = styled.h1`
 position: absolute;
 width: 588px;
@@ -21,8 +19,8 @@ font-style: normal;
 font-weight: 400;
 font-size: 120px;
 line-height: 100%;
-color: #5EA2B1;`
-
+color: #5EA2B1;
+`
 const Block = styled.div`
 display: flex;
 flex-direction: column;
@@ -38,8 +36,8 @@ background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;
-margin-top : 18px;`
-
+margin-top : 18px;
+`
 const BlockText = styled.div`
 display: flex;
 flex-direction: column;
@@ -48,8 +46,7 @@ padding: 0px;
 gap: 16px;
 width: 596px;
 height: 104px;
-border : solid green 1px;`
-
+`
 const Texte1 = styled.span`
 width: 596px;
 height: 40px;
@@ -58,8 +55,8 @@ font-style: normal;
 font-weight: 600;
 font-size: 32px;
 line-height: 40px;
-color: #202124;`
-
+color: #202124;
+`
 const Texte2 = styled.span`
 width: 556px;
 height: 48px;
@@ -69,18 +66,50 @@ font-weight: 400;
 font-size: 16px;
 line-height: 150%;
 text-align: center;
-color: #202124;`
-
+color: #202124;
+`
 const LeftBlock = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+justify-content: flex-start;
 align-items: flex-end;
 padding: 0px;
 gap: 24px;
 width: 398.34px;
 height: 425px;
-border : solid yellow 1px;`
+margin-left: -700px;
+border : solid yellow 1px;
+`
+const LeftTexte = styled.div`
+display: flex;
+flex-direction: column;
+flex-shrink: 0;
+align-self: stretch;
+color: var(--global-secondary-black, #202124);
+font-size: 1.5rem;
+font-family: 'Outfit';
+font-weight: 600;
+line-height: 2.5rem;
+padding : 15px;
+`
+const PetitTexte = styled.div`
+display: flex;
+flex-direction: column;
+align-self: stretch;
+color: var(--global-secondary-black, #202124);
+font-size: 1rem;
+font-family: 'Outfit';
+line-height: 150%;
+margin-top : -40px;`
+
+const VideoBlock = styled.div`
+display: flex;
+flex-direction: column;
+width: 37.3535rem;
+height: 36.5625rem;
+border : solid blue 1px;
+`
+
 
 const Soluce = () => {
 
@@ -93,7 +122,13 @@ const Soluce = () => {
                 <Texte2>Ne perdez plus de temps à blablabla blabla blabl abla utilisez suepr outils pour cra, fichiers, etc etc et etc et etet et efetet et zt zr</Texte2>         
             </BlockText>
             <LeftBlock>
+                <LeftTexte>Création d'événements</LeftTexte>
+                <LeftTexte>Création de sondages</LeftTexte>
+                <PetitTexte>Parce-que même sans innovation, il existe toujours une marge de progression, DéjàVu s’efforce d’améliorer ses solutions au quotidien</PetitTexte>
+                <LeftTexte>Mix entre événement et sondage</LeftTexte>
+                <LeftTexte>Ajout d’organisateur</LeftTexte>
             </LeftBlock>
+            <VideoBlock></VideoBlock>
             </Block>
         </Container>
     );

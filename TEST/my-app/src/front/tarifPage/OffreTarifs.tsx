@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-
 const Container = styled.div`
-display : flex;`
+display: grid;
+grid-template-rows: auto 1fr;
+gap: 20px;
+margin-top : 500px;`
 
 const BlockTitle = styled.div`
 position: absolute;
@@ -303,60 +305,65 @@ border : none;
 outline : none;
 cursor: pointer;`
 
-const BigBlock = styled.div`
+const ComparisonTableWrapper = styled.div`
+grid-area: comparison-table;
+`;
+
+const ComparaisonTable = styled.div`
+display : grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: auto;
+gap: 1.5px;
+width : 70.5rem;
+height : 88.25rem;
+margin-top: 500px;
+margin-right: 30px;
+`
+
+const TableCellBackground = styled.div`
+display : grid;
+width : 25.5rem;
+height : 88.25rem;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+border-radius: 8px;
+background: var(--global-secondary-transparent-50, rgba(245, 245, 245, 0.50));
+box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
+backdrop-filter: blur(8px);
+`
+const Div2 = styled.div `
+grid-area :1 / 2 / 6 / 3;
 display : flex;
-flex-direction : column;`
-
-const BlockFonctionnalite = styled.div`
-position : relative;
-display: flex;
 flex-direction: column;
-width: 70rem;
-height : 88rem;
-top : 1060px;
-left : 390px;
-border : solid blue 1px;
+align-items: center;
+height: 100%; 
 `
-const Fonctionnalite = styled.div`
-display: flex;
+const Div3 = styled.div`
+grid-area: 1 / 3 / 6 / 4;
+display : flex;
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
+height: 100%; 
+`
+const TableCell = styled.div`
+display : grid;
+grid-template-columns : repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap : 0px;
+grid-row-gap : 0px;
+justify-content: space-around;
+`
+const Div1 = styled.div`
+grid-area: 1 / 1 / 6 / 2;
 width: 20rem;
-height: 87.9rem;
-border : solid black 1px;
-`
-
-const FreeFonctionnalite = styled.div`
-display: flex;
-width: 25.5rem;
-height: 84.1rem;
-padding: 2.25rem 1.5rem 1.5rem 1.5rem;
+height: 10rem;
+display : flex;
 flex-direction: column;
 align-items: flex-start;
-gap: 2rem;
-flex: 1 0 0;
-border-radius: 8px;
-background: rgba(245, 245, 245, 0.50);
-box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
-backdrop-filter: blur(8px);
-border : solid yellow 1px;
-`
-const PayantFonctionnalite = styled.div`
-display: flex;
-width: 25.5rem;
-height: 84.1rem;
-padding: 2.25rem 1.5rem 1.5rem 1.5rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 2rem;
-flex: 1 0 0;
-border-radius: 8px;
-background: rgba(245, 245, 245, 0.50);
-box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
-backdrop-filter: blur(8px);
-border : solid green 1px;
-`
-
+height: 100%;
+`;
 const Titre = styled.span`
 color: #0E738A;
 font-size: 1rem;
@@ -371,14 +378,20 @@ font-size: 1rem;
 font-family: 'Outfit';
 line-height: 1.25rem;
 margin-top: 20px;
+display: flex;
+flex-direction: column;
 `
 
+interface TableData {
+    titre: string;
+    contenu: string[];
+  }
+
 const OffreTarifs = () => {
-    // Etats et fonctions pour les boutons
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
     const [yellowButtonSelected, setYellowButtonSelected] = useState<number | null>(null);
-    
+
     const buttons = [
         {id: 1, label: "POUR LES INDEPENDANTS"},
         {id: 2, label: "POUR LES ENTREPRISES"},
@@ -390,7 +403,6 @@ const OffreTarifs = () => {
         {id : 2, label: "Année"},
     ]
     
-
     const handleButtonClick = (buttonId : number) => {
         if (buttonSelected === buttonId) {
             setButtonSelected(null);
@@ -423,77 +435,222 @@ const OffreTarifs = () => {
         }
     };
 
+    
     //Fonctions pour tableau de fonctionnalités permet d'afficher dynamiquement 
+    const [tableData, setTableData] = useState<TableData[][]>([
+        // Pour les indépendants
+        [
+            {
+                titre: "Missions",
+                contenu : [
+                    "Gestion et suivi des missions",
+                    "Gestion des contrats associés"
+                ]
+            },
+            {
+                titre : "CRA",
+                contenu : [
+                    "Gestion du CRA",
+                    "Envoi via DocuSign",
+                    "Relance automatique",
+                    "Personnalisation du document CRA",
+                    "Conservation du CRA",
+                ]
+            },
+            {
+                titre : "Frais professionnel",
+                contenu : [
+                    "Gestion des frais pro",
+                    "Envoie via DocuSign",
+                    "Personnalisation du document de consolidation",
+                    "AutoScan de masse"
+                ]
+            },
+            {
+                titre : "Clients & signataires",
+                contenu : [
+                    "Gestion des clients et signataires",
+                    "Gestion des contrats"
+                ]
+            },
+            {
+                titre : "Document",
+                contenu : [
+                    "Gestion du dossierpartagé",
+                    "Gestion du dossier personnel"
+                ]
+            },
+            {
+                titre : "Event / sondage",
+                contenu : [
+                    "Organisation d'Event et Sondage",
+                    "Organisation d'Event et Sondage avancée"
+                ]
+            },
+            {
+                titre : "Préférences",
+                contenu:[
+                    "Personnalisation d'interface",
+                    "Espace de stockage plus important",
+                    "Base de données personnelle",
+                    "Intégration de leurs propres outils",
+                    "Nom de domaine personnalisé",
+                    "Serveur dédié",
+                    "Support dédié et personnalisé"
+                ]
+            },
+        ],
+        // Pour les entreprises 
+        [
+            {
+                titre: "Missions",
+                contenu : [
+                    "Gestion et suivi des missions",
+                    "Gestion des contrats associés"
+                ]
+            },
+            {
+                titre : "CRA",
+                contenu : [
+                    "Gestion du CRA",
+                    "Envoi via DocuSign",
+                    "Relance automatique",
+                    "Personnalisation du document CRA",
+                    "Conservation du CRA",
+                ]
+            },
+            {
+                titre : "Frais professionnel",
+                contenu : [
+                    "Gestion des frais pro",
+                    "Envoie via DocuSign",
+                    "Personnalisation du document de consolidation",
+                    "AutoScan de masse"
+                ]
+            },
+            {
+                titre : "Clients & signataires",
+                contenu : [
+                    "Gestion des clients et signataires",
+                    "Gestion des contrats"
+                ]
+            },
+            {
+                titre : "Document",
+                contenu : [
+                    "Gestion du dossierpartagé",
+                    "Gestion du dossier personnel"
+                ]
+            },
+            {
+                titre : "Event / sondage",
+                contenu : [
+                    "Organisation d'Event et Sondage",
+                    "Organisation d'Event et Sondage avancée"
+                ]
+            },
+            {
+                titre : "Préférences",
+                contenu:[
+                    "Personnalisation d'interface",
+                    "Espace de stockage plus important",
+                    "Base de données personnelle",
+                    "Intégration de leurs propres outils",
+                    "Nom de domaine personnalisé",
+                    "Serveur dédié",
+                    "Support dédié et personnalisé"
+                ]
+            },
+        ],
+        //Pour l'evenementiel
+        [
+            {
+                titre: "Missions",
+                contenu : [
+                    "Gestion et suivi des missions",
+                    "Gestion des contrats associés"
+                ]
+            },
+            {
+                titre : "CRA",
+                contenu : [
+                    "Gestion du CRA",
+                    "Envoi via DocuSign",
+                    "Relance automatique",
+                    "Personnalisation du document CRA",
+                    "Conservation du CRA",
+                ]
+            },
+            {
+                titre : "Frais professionnel",
+                contenu : [
+                    "Gestion des frais pro",
+                    "Envoie via DocuSign",
+                    "Personnalisation du document de consolidation",
+                    "AutoScan de masse"
+                ]
+            },
+            {
+                titre : "Clients & signataires",
+                contenu : [
+                    "Gestion des clients et signataires",
+                    "Gestion des contrats"
+                ]
+            },
+            {
+                titre : "Document",
+                contenu : [
+                    "Gestion du dossierpartagé",
+                    "Gestion du dossier personnel"
+                ]
+            },
+            {
+                titre : "Event / sondage",
+                contenu : [
+                    "Organisation d'Event et Sondage",
+                    "Organisation d'Event et Sondage avancée"
+                ]
+            },
+            {
+                titre : "Préférences",
+                contenu:[
+                    "Personnalisation d'interface",
+                    "Espace de stockage plus important",
+                    "Base de données personnelle",
+                    "Intégration de leurs propres outils",
+                    "Nom de domaine personnalisé",
+                    "Serveur dédié",
+                    "Support dédié et personnalisé"
+                ]
+            },
+        ],
+    ]);
 
-    const fonctionnalites =[
-        {
-            titre: "Missions",
-            fonctionnalites : [
-                "Gestion et suivi des missions",
-                "Gestion des contrats associés"
-            ]
-        },
-        {
-            titre : "CRA",
-            fonctionnalites : [
-                "Gestion du CRA",
-                "Envoi via DocuSign",
-                "Relance automatique",
-                "Personnalisation du document CRA",
-                "Conservation du CRA",
-            ]
-        },
-        {
-            titre : "Frais professionnel",
-            fonctionnalites : [
-                "Gestion des frais pro",
-                "Envoie via DocuSign",
-                "Personnalisation du document de consolidation",
-                "AutoScan de masse"
-            ]
-        },
-        {
-            titre : "Clent & signataires",
-            fonctionnalites : [
-                "Gestion des clients et signataires",
-                "Gestion des contrats"
-            ]
-        },
-        {
-            titre : "Docuement",
-            fonctionnalites : [
-                "Gestion du dossierpartagé",
-                "Gestion du dossier personnel"
-            ]
-        },
-        {
-            titre : "Event / sondage",
-            fonctionnalites : [
-                "Organisation d'Event et Sondage",
-                "Organisation d'Event et Sondage avancée"
-            ]
-        },
-        {
-            titre : "Préférences",
-            fonctionnalites:[
-                "Personnalisation d'interface",
-                "Espace de stockage plus important",
-                "Base de données personnelle",
-                "Intégration de leurs propres outils",
-                "Nom de domaine personnalisé",
-                "Serveur dédié",
-                "Support dédié et personnalisé"
-            ]
-        },
-    ]
+    const renderFonctionnalites = () => {
+        if (yellowButtonSelected === null) return null;
+        const selectedData = tableData[yellowButtonSelected];
+        if (!selectedData) return null;
 
+        return selectedData.map(({ titre, contenu } : TableData, index : number) => (
+          <Div1 key={titre}>
+            <Titre>{titre}</Titre>
+            <Description>
+              {contenu.map((fonctionnalite, index) => (
+                  <Description key={index}>{fonctionnalite}</Description>
+              ))}
+            </Description>
+          </Div1>
+        ));
+      };
+
+    
     return(
-<Container>
-    <BlockTitle>
-        <Title>Nos offres</Title>
-    </BlockTitle>
-    <FirstBlock>
-        <ButtonBlock>
+        <Container>
+                <BlockTitle>
+                    <Title>Nos offres</Title>
+                </BlockTitle>
+                <FirstBlock>
+                <ButtonBlock>
             <SelectedButtonBlock>
                 <TexteButtonBlock>
                     <TexteButton>Économisez <BlueTexte>5%</BlueTexte> avec le plan annuel</TexteButton>
@@ -537,28 +694,21 @@ const OffreTarifs = () => {
                     <ProButton>Créer un compte</ProButton>
             </ProBlock>
         </ButtonBlock>
-    </FirstBlock>
-    <BigBlock>
-    <BlockFonctionnalite>
-        {fonctionnalites.map(({titre, fonctionnalites}) =>(
-            <Fonctionnalite key={titre}>
-                <Titre>{titre}</Titre>
-                {fonctionnalites.map(fonctionnalites => (
-                    <Description key={fonctionnalites}>
-                        {fonctionnalites}
-                        </Description>
-                ))}
-            </Fonctionnalite>
-        ))}        
-        <FreeFonctionnalite>
-
-        </FreeFonctionnalite>
-        <PayantFonctionnalite>
-
-        </PayantFonctionnalite>
-    </BlockFonctionnalite>
-    </BigBlock>
-</Container>
+                </FirstBlock>             
+                <ComparisonTableWrapper>
+                <ComparaisonTable>
+                <TableCell>
+                    <Div1>{renderFonctionnalites()}</Div1>
+                </TableCell>                   
+                   <TableCellBackground>
+                    <Div2>guhijo</Div2>
+                    </TableCellBackground> 
+                   <TableCellBackground>
+                    <Div3>dtfghjk</Div3>
+                    </TableCellBackground> 
+                </ComparaisonTable>
+                </ComparisonTableWrapper>
+        </Container>
     );
 }
 

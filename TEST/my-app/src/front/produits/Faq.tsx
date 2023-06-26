@@ -121,7 +121,7 @@ const Image= styled.img`
 position: absolute;
 width: 332px;
 height: 466px;
-left: 467px;
+left: 570px;
 bottom: 0px;`
 
 const Menu = styled.div<{ open: boolean }>(({ open }) => ({
@@ -204,8 +204,6 @@ const Faq = () => {
                 </BlockTextFaq>
                 <Menu open={menuOpen}>
                 <MenuItem>Option 1</MenuItem>
-                <MenuItem>Option 2</MenuItem>
-                <MenuItem>Option 3</MenuItem>
                 </Menu>
             </SecondBlock>
             </Block>

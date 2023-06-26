@@ -109,6 +109,18 @@ const LoginHeader = () => {
 
     const handleClickTitre = () => {
       navigate('/');
+    };
+
+    const handleClickProduit = () =>{
+      navigate('/produits')
+    };
+
+    const handleClickTarif = () => {
+      navigate('/tarifs')
+    };
+
+    const handleClickQuiSommesNous = () =>{
+      navigate('/qui-sommes-nous')
     }
    
     return (
@@ -120,9 +132,9 @@ const LoginHeader = () => {
            <Title onClick={handleClickTitre}>Déjà-Vu</Title>
            </LeftContainer>
            <RightContainer>
-            <Product onClick={handleClick}>Produits</Product>
-            <Tarif onClick={handleClick}>Tarifs</Tarif>
-            <Who onClick={handleClick}>Qui sommes-nous</Who>
+            <Product onClick={handleClickProduit}>Produits</Product>
+            <Tarif onClick={handleClickTarif}>Tarifs</Tarif>
+            <Who onClick={handleClickQuiSommesNous}>Qui sommes-nous</Who>
             <News onClick={handleClick}>Actualités</News>
             <IconBlock>
               <Link to="login"></Link>
