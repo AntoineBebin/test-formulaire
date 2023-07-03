@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import Video from '../image/video.png';
 
 const Container = styled.div`
 position: absolute;
@@ -50,7 +50,7 @@ height: 104px;
 const Texte1 = styled.span`
 width: 596px;
 height: 40px;
-font-family: 'Silka';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -60,7 +60,7 @@ color: #202124;
 const Texte2 = styled.span`
 width: 556px;
 height: 48px;
-font-family: 'Silka';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -78,7 +78,6 @@ gap: 24px;
 width: 398.34px;
 height: 425px;
 margin-left: -700px;
-border : solid yellow 1px;
 `
 const LeftTexte = styled.div`
 display: flex;
@@ -87,7 +86,7 @@ flex-shrink: 0;
 align-self: stretch;
 color: var(--global-secondary-black, #202124);
 font-size: 1.5rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-weight: 600;
 line-height: 2.5rem;
 padding : 15px;
@@ -98,16 +97,20 @@ flex-direction: column;
 align-self: stretch;
 color: var(--global-secondary-black, #202124);
 font-size: 1rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 line-height: 150%;
-margin-top : -40px;`
+margin-top : -40px;
+margin-left : 17px;`
 
 const VideoBlock = styled.div`
 display: flex;
 flex-direction: column;
+position: absolute;
+top: 190px;
+left: 550px;
 width: 37.3535rem;
-height: 36.5625rem;
-border : solid blue 1px;
+height: 26.5625rem;
+background-image: url(${Video});
 `
 
 

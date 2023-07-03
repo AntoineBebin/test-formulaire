@@ -28,7 +28,7 @@ height: 168px;
 const Texte1 = styled.span`
 width: 575px;
 height: 120px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 48px;
@@ -39,7 +39,7 @@ color: #202124;`
 const Texte2 = styled.span`
 width: 575px;
 height: 40px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 500;
 font-size: 16px;

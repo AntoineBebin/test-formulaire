@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Container = styled.div`
+position : relative;
 display: grid;
 grid-template-rows: auto 1fr;
 gap: 20px;
@@ -15,7 +16,7 @@ justify-content: center;
 width: 100%;
 height: 264px;
 left: 0px;
-top: 637px;
+top: 30px;
 background: #F5F5F5;
 box-shadow: 0px 8px 96px rgba(32, 33, 36, 0.04);`
 
@@ -30,12 +31,15 @@ font-size: 120px;
 line-height: 100%;
 color: #5EA2B1;`
 
+const FirstBlockWrapper = styled.div<{ stickToTop: boolean}> `
+position : sticky;
+top : 800px;
+left : 465px;
+z-index : 1;`
+
 const FirstBlock = styled.div`
-position: absolute;
 width: 1192px;
 height: 280px;
-left: calc(50% - 1192px/2);
-top: 815px;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
@@ -84,7 +88,9 @@ color: #202124;
 `
 
 const BlueTexte = styled.span`
-color : #0e738a;`
+color : #0e738a;
+font-family : 'Urbanist';
+`
 
 const BlueButtonBlock = styled.div`
 display: flex;
@@ -129,7 +135,9 @@ border : none;
 outline: none;
 filter: drop-shadow(0px 8px 96px rgba(32, 33, 36, 0.04));
 border-radius: 4px;
-cursor: pointer;`
+cursor: pointer;
+font-family : 'Urbanist';
+`
 
 const AnimatedButton = styled(YellowButton)`
 transition : all 0.3s ease-in-out;
@@ -149,8 +157,8 @@ justify-content: space-between;
 align-items: flex-start;
 padding: 24px;
 gap: 32px;
-width: 408px;
-height: 245px;
+width: 25.5rem;
+height: 18.5rem;
 background: #FCFCFC;
 box-shadow: 0px 8px 96px rgba(32, 33, 36, 0.04);
 border-radius: 8px;
@@ -178,7 +186,7 @@ border-radius: 4px;`
 const TexteFree = styled.span`
 width: 81px;
 height: 16px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 700;
 font-size: 12px;
@@ -189,7 +197,7 @@ color: #6C6D70;`
 const TexteGratuit = styled.span`
 color: #202124;
 font-size: 2.5rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-weight: 700;
 line-height: 100%;
 margin-top : 10px;`
@@ -197,13 +205,13 @@ margin-top : 10px;`
 const TexteVie = styled.span`
 color: #202124;
 font-size: 0.75rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 line-height: 100%;`
 
 const TexteDecouverte = styled.span`
 color: #202124;
 font-size: 1rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 line-height: 150%;
 margin-top : 20px;`
 
@@ -222,7 +230,7 @@ cursor: pointer;
 const TexteFreeButton = styled.span`
 color:  #202124;
 font-size: 0.875rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-weight: 600;
 line-height: 1.5rem;
 text-transform: uppercase;`
@@ -234,8 +242,8 @@ justify-content: space-between;
 align-items: flex-start;
 padding: 24px;
 gap: 32px;
-width: 408px;
-height: 245px;
+width: 25.5rem;
+height: 18.5rem;
 background: #FCFCFC;
 box-shadow: 0px 8px 96px rgba(32, 33, 36, 0.04);
 border-radius: 8px;
@@ -260,7 +268,7 @@ background: #CFE3E8;
 border-radius: 4px;
 color: #0e738a;
 font-size: 0.75rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-weight: 700;
 line-height: 1rem;
 text-transform: uppercase;`
@@ -268,7 +276,7 @@ text-transform: uppercase;`
 const TextePrix = styled.span`
 color: #0E738A;
 font-size: 2.5rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-weight: 700;
 line-height: 100%;
 margin-top : 10px;`
@@ -276,13 +284,13 @@ margin-top : 10px;`
 const TexteUser = styled.span`
 color:#202124;
 font-size: 0.75rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 line-height: 100%;`
 
 const ProTexte = styled.span`
 color: #202124;
 font-size: 1rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 line-height: 150%;
 margin-top : 20px;
 `
@@ -297,7 +305,7 @@ border-radius: 4px;
 background: #0E738A;
 color: #F5F5F5;
 font-size: 0.875rem;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-weight: 600;
 line-height: 1.5rem;
 text-transform: uppercase;
@@ -305,10 +313,85 @@ border : none;
 outline : none;
 cursor: pointer;`
 
+const DevisBlock = styled.div`
+display: flex;
+padding: 24px;
+gap: 32px;
+width: 16.5rem;
+height: 18.5rem;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+flex: 1 0 0;
+border-radius: 0.5rem;
+background: #FCFCFC;
+box-shadow: 0px 8px 96px 0px rgba(32, 33, 36, 0.04);
+`
+const DevisBlockWrapper = styled.div<{ visite: boolean }>`
+position : absolute;
+right : -340px;
+top: 0;
+display: ({ visible }: { visible: boolean }) => (visible ? "block" : "none");
+`
+const DevisTexteBlock = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 2rem;
+align-self: stretch;
+`
+const PurpleBlock = styled.div`
+display: flex;
+padding: 0.25rem 0.5rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 1rem;
+border-radius: 0.25rem;
+background: var(--event-main-lighter-shade-2, #E5DEF3);
+color: var(--event-main-dark-pastel-purple, #7F5CC4);
+font-size: 0.75rem;
+font-family: 'Urbanist';
+font-style: normal;
+font-weight: 700;
+line-height: 1rem;
+text-transform: uppercase;
+`
+const TexteDevis = styled.div`
+display: flex;
+flex-direction: column;
+align-self: stretch;
+color: var(--global-secondary-black, #202124);
+font-size: 2.5rem;
+font-family: 'Urbanist';
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
+`
+const TexteTarif = styled.div`
+display: flex;
+flex-direction: column;
+align-self: stretch;
+color: var(--global-secondary-black, #202124);
+font-size: 0.75rem;
+font-family: 'Urbanist';
+font-style: normal;
+font-weight: 400;
+line-height: 100%;
+`
+const Texte1 = styled.div`
+display: flex;
+flex-direction: column;
+align-self: stretch;
+color: var(--global-secondary-black, #202124);
+font-size: 1rem;
+font-family: 'Urbanist';
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+`
 const ComparisonTableWrapper = styled.div`
 grid-area: comparison-table;
 `;
-
 const ComparaisonTable = styled.div`
 display : grid;
 grid-template-columns: 1fr 1fr 1fr;
@@ -318,8 +401,10 @@ width : 70.5rem;
 height : 88.25rem;
 margin-top: 500px;
 margin-right: 30px;
+position : relative;
+top : -280px;
+left : -710px;
 `
-
 const TableCellBackground = styled.div`
 display : grid;
 width : 25.5rem;
@@ -332,6 +417,22 @@ border-radius: 8px;
 background: var(--global-secondary-transparent-50, rgba(245, 245, 245, 0.50));
 box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
+`
+const LittleTableCell = styled.div`
+display : grid;
+position: relative;
+top : -1420px;
+left : 1150px;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+border-radius: 8px;
+background: var(--global-secondary-transparent-50, rgba(245, 245, 245, 0.50));
+box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
+backdrop-filter: blur(8px);
+width: 16.5rem;
+height: 98.5rem;
 `
 const Div2 = styled.div `
 grid-area :1 / 2 / 6 / 3;
@@ -381,7 +482,6 @@ margin-top: 20px;
 display: flex;
 flex-direction: column;
 `
-
 interface TableData {
     titre: string;
     contenu: string[];
@@ -391,6 +491,9 @@ const OffreTarifs = () => {
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
     const [yellowButtonSelected, setYellowButtonSelected] = useState<number | null>(null);
+    const [stickToTop, setStickToTop] = useState(true);
+    const [showDevisBlock, setShowDevisBlock] = useState(false);
+    const [selectedButton, setSelectedButton] = useState("");
 
     const buttons = [
         {id: 1, label: "POUR LES INDEPENDANTS"},
@@ -404,6 +507,11 @@ const OffreTarifs = () => {
     ]
     
     const handleButtonClick = (buttonId : number) => {
+        if(buttonSelected === 2){
+            setShowDevisBlock(!showDevisBlock);
+        }else {
+            setShowDevisBlock(false);
+        }
         if (buttonSelected === buttonId) {
             setButtonSelected(null);
         } else {
@@ -626,30 +734,53 @@ const OffreTarifs = () => {
         ],
     ]);
 
+
     const renderFonctionnalites = () => {
         if (yellowButtonSelected === null) return null;
         const selectedData = tableData[yellowButtonSelected];
         if (!selectedData) return null;
 
         return selectedData.map(({ titre, contenu } : TableData, index : number) => (
-          <Div1 key={titre}>
+          <Div1 key={index}>
             <Titre>{titre}</Titre>
             <Description>
-              {contenu.map((fonctionnalite, index) => (
-                  <Description key={index}>{fonctionnalite}</Description>
+              {contenu.map((fonctionnalite, fonctionnaliteIndex) => (
+                  <Description key={fonctionnaliteIndex}>{fonctionnalite}</Description>
               ))}
             </Description>
           </Div1>
         ));
       };
 
+      useEffect(() => {
+        const handleScroll = () => {
+            const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+            const treshold = scrollHeight - clientHeight - 1;
+            if (scrollTop >= treshold){
+                setStickToTop(false);
+            }else {
+                setStickToTop(true);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+
+      useEffect(() => {
+        window.addEventListener('load', function() {
+            setSelectedButton("POUR LES INDEPENDANTS");          
+        });      
+      }, [])
     
     return(
         <Container>
                 <BlockTitle>
                     <Title>Nos offres</Title>
                 </BlockTitle>
-                <FirstBlock>
+                <FirstBlockWrapper stickToTop={stickToTop} style={{top: stickToTop ? "0" : "auto"}}>
+                <FirstBlock >
                 <ButtonBlock>
             <SelectedButtonBlock>
                 <TexteButtonBlock>
@@ -669,6 +800,7 @@ const OffreTarifs = () => {
                         <AnimatedButton key={button.id}
                                 style={buttonStyle(button.id)}
                                 onClick={() => handleYellowButton(button.id)}
+                                className={selectedButton === "POUR LES INDEPENDANTS" ? "selected": ""}
                                 >{button.label}</AnimatedButton>
                     ))}
                 </YellowButtonBlock>
@@ -693,8 +825,20 @@ const OffreTarifs = () => {
                     </ProTexteBlock>
                     <ProButton>Créer un compte</ProButton>
             </ProBlock>
+            <DevisBlockWrapper visible={showDevisBlock}>
+                <DevisBlock>
+                    <DevisTexteBlock>
+                        <PurpleBlock>PRO+</PurpleBlock>
+                        <TexteDevis>Sur devis</TexteDevis>
+                        <TexteTarif>Tarif sur-mesure selon votre besoin</TexteTarif>
+                        <Texte1>Pour les grandes entreprises et celles souciantes du détail</Texte1>
+                        <FreeButton><TexteFreeButton>Demander un devis</TexteFreeButton></FreeButton>
+                    </DevisTexteBlock>
+                </DevisBlock>
+            </DevisBlockWrapper>
         </ButtonBlock>
-                </FirstBlock>             
+                </FirstBlock> 
+            </FirstBlockWrapper>            
                 <ComparisonTableWrapper>
                 <ComparaisonTable>
                 <TableCell>
@@ -706,6 +850,9 @@ const OffreTarifs = () => {
                    <TableCellBackground>
                     <Div3>dtfghjk</Div3>
                     </TableCellBackground> 
+                    <LittleTableCell>
+                        <Div3>ghjlmkl</Div3>
+                    </LittleTableCell>
                 </ComparaisonTable>
                 </ComparisonTableWrapper>
         </Container>

@@ -29,7 +29,7 @@ height: 168px;
 const Texte1 = styled.span`
 width: 575px;
 height: 120px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 48px;
@@ -40,12 +40,13 @@ color: #202124;
 
 const YellowTexte = styled.span`
 color : #FFD966;
+font-family : 'Urbanist';
 `
 
 const Texte2 = styled.span`
 width: 575px;
 height: 40px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 500;
 font-size: 16px;
@@ -57,7 +58,7 @@ const Button = styled.button`
 display: flex;
 flex-direction: row;
 align-items: flex-start;
-
+font-family : 'Urbanist';
 padding: 12px 20px;
 gap: 8px;
 width: 206px;

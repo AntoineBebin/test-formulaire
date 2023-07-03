@@ -15,7 +15,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 120px;
 line-height: 100%;
-font-family: 'Urbanist';
+font-family: 'Ibarra Real Nova';
 margin-bottom : -30px;`
 
 const Block = styled.div `
@@ -37,12 +37,16 @@ const Titre = styled.h2`
 color: black;
 font-size : 25px;
 font-weight: bold;
-margin-left : 20px;`
+margin-left : 20px;
+font-family : 'Urbanist';
+`
 
 const Texte = styled.span`
 font-size: 15px;
 color: black;
-margin-left : 20px;`
+margin-left : 20px;
+font-family : 'Urbanist';
+`
 
 const BlockInput = styled.div`
 display: flex;
@@ -60,11 +64,11 @@ padding : 0px 16px;
 border-radius: 4px 0px 0px 4px;
 margin-bottom: 10px;
 color: #202124;
+font-family : 'Urbanist';
 `
 
 const Button = styled.button`
 background-color: #FFD966;
-border : solid 1px transparent;
 cursor: pointer;
 padding : 12px 20px;
 gap: 8px;
@@ -72,6 +76,11 @@ width: 117px;
 height: 48px;
 border-radius: 0px 4px 4px 0px;
 align-self : flex-start;
+font-family : 'Urbanist';
+font-weight: 600;
+font-size : 0.875rem;
+border : none;
+outline : none;
 `
 
 const SecondBlock = styled.div`

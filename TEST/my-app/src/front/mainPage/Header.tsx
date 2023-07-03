@@ -29,6 +29,7 @@ color: black;
 font-weight: bold;
 font-size: 35px;
 cursor : pointer;
+font-family : 'Urbanist';
 `
 
 const Product = styled.span`

@@ -21,16 +21,22 @@ const Texte = styled.h2`
 font-size: 48px;
 margin: 0;
 color: black;
+font-family : 'Urbanist';
 `
 const BoldText = styled.span `
-font-weight : bold;`
+font-weight : bold;
+font-family : 'Urbanist';
+`
 
 const YellowText = styled.span `
-color : #FFD966;`
+color : #FFD966;
+font-family : 'Urbanist';
+`
 
 const SecondText = styled.span`
 margin : 10px 0;
 color: black;
+font-family : 'Urbanist';
 `
 
 const Button = styled.button`
@@ -47,6 +53,7 @@ align-items: center;
 border : none;
 outline : none;
 cursor: pointer;
+font-family : 'Urbanist';
 `
 const RightBlock = styled.div`
 width: 60%;

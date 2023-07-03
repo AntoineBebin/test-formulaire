@@ -137,6 +137,9 @@ const Footer = () => {
     const handleClickQuiSommesNous = () => {
         navigate('/qui-sommes-nous');
     }
+    const handleClickTarif = () => {
+        navigate('/tarifs')
+    }
 
     return (
 
@@ -155,7 +158,7 @@ const Footer = () => {
                 <Texte2>EasyCra</Texte2>
                 <Texte2>EventPlanner</Texte2>
                 </ProductBox>
-                <Texte1>Tarifs</Texte1>
+                <Texte1 onClick={handleClickTarif}>Tarifs</Texte1>
                 <Texte1 onClick={handleClickQuiSommesNous}>Qui sommes-nous ?</Texte1>
             </SecondBlock>
             <ThirdBlock>

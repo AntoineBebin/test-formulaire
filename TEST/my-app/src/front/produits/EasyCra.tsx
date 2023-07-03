@@ -8,6 +8,7 @@ import Offre from "../mainPage/Offre";
 import News from "../mainPage/News";
 import Faq from "./Faq";
 import Footer from "../mainPage/Footer";
+import LoginHeader from "../loginPage/LoginHeader";
 
 const Head = styled(Header) `
 display: flex;
@@ -35,7 +36,7 @@ flex-direction: column;
 const OffreWrapper = styled.div`
 position : absolute;
 top: 2180px;
-left : 20px;
+left : 150px;
 `
 
 const ButtonBlock = styled.div`
@@ -119,7 +120,7 @@ const EasyCra = () => {
 
     return (
         <Container>
-            <Head></Head>
+            <LoginHeader></LoginHeader>
             <Calendrier></Calendrier>
             <Soluce></Soluce>
             <OffreWrapper>

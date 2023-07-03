@@ -49,7 +49,9 @@ height: 104px;
 
 const Titre = styled.h2`
 color : black;
-font-size: 25px;`
+font-size: 25px;
+font-family : 'Urbanist';
+`
 
 const Texte = styled.span`
 color: black;

@@ -9,28 +9,25 @@ import Footer from '../mainPage/Footer';
 import LoginHeader from './LoginHeader';
 import { useNavigate } from "react-router-dom";
 
-
-
 const Container = styled.div `
 max-width: 100vw;
 min-height: 100vh;
 background-image : url(${Background});
 background-repeat: repeat;
 `
-
 const Title = styled.h1`
 position: absolute;
 width: 543px;
 height: 81px;
 left: calc(50% - 543px/2);
-top: -65px;
-font-family: 'Urbanist';
+top: 35px;
+font-family: 'Ibarra Real Nova';
 font-style: normal;
 font-weight: 400;
 font-size: 120px;
 line-height: 100%;
 color :#5EA2B1;
-margin-top: 150px;
+margin-top: 180px;
 `
 const Block = styled.div`
 display: flex;
@@ -42,8 +39,8 @@ isolation: isolate;
 position: relative;
 width: 552px;
 height: 496px;
-left: 685px;
-top: 100px;
+left: 785px;
+top: 300px;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
@@ -150,6 +147,8 @@ border-radius: 4px;
 border : none;
 outline : none;
 cursor: pointer;
+font-family: 'Urbanist';
+font-weight: bold;
 `
 
 const SecondBlockTexte = styled.div`
@@ -177,8 +176,8 @@ const ImageBlock = styled.div`
 position : relative;
 width: 256px;
 height : 204px;
-left : 599.49px;
-top: 430.99px;
+left : 699.49px;
+top: 630.99px;
 transform: matrix()(-0.99, -0.16, -0.16, 0.99, 0, 0);
 `
 const FirstImage = styled.img`
@@ -208,6 +207,9 @@ height : 24px;
 font-family : 'Urbanist';
 font-weight : 400;
 font-size : 20px;`
+
+const FooterWrapper = styled.div`
+margin-top : 400px;`
 
 const Login =() => {
     // Etats et focntions pour reset l'input au clique, affichage d'une erreur lorsque s'est mal écrit et la navigation
@@ -249,10 +251,10 @@ const Login =() => {
 
       const handleClickAccount = (e: React.MouseEvent<HTMLSpanElement>) => {
         const targetText = (e.currentTarget as HTMLSpanElement).textContent;
-        if(targetText === "Créer un compte -"){
-            navigate('/login/account');
+        if(targetText === "Créer un compte - "){
+            navigate('/login/créer-un-compte');
         }
-      }
+      };
 
     return (
     <Container>
@@ -279,15 +281,17 @@ const Login =() => {
                 {error && <ErrorMessage>{error}</ErrorMessage>}
             </InputBlock>
             <SecondBlockTexte>
-                    <SecondTexte onClick={handleClickAccount}>Créer un compte -{" "} 
-                    <Password onClick={handleClickPassword}>Mot de passe oublié ?</Password></SecondTexte>
+                    <SecondTexte onClick={handleClickAccount}>Créer un compte - </SecondTexte>
+                    <SecondTexte><Password onClick={handleClickPassword}>Mot de passe oublié ?</Password></SecondTexte>
             </SecondBlockTexte>          
         </Block>
         <ImageBlock>
                 <FirstImage src={Key1}></FirstImage>
                 <SecondImage src={Key2}></SecondImage>
             </ImageBlock>
-        <Footer></Footer>
+        <FooterWrapper>
+            <Footer></Footer>
+        </FooterWrapper>
     </Container>
     );
 }

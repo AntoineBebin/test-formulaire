@@ -58,7 +58,7 @@ border-radius: 8px;`
 const Texte1 = styled.span`
 width: 648px;
 height: 40px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -69,7 +69,7 @@ color: #202124;
 const Texte2 = styled.span`
 width: 568px;
 height: 192px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -92,7 +92,7 @@ const SlideContainer = styled.div `
     height: 300px;
     position: relative;
     top: 320px;
-    left: 850px;
+    left: 1350px;
   }
   .swiper-slide:nth-child(1n) {
     background-color: rgb(206, 17, 17);
@@ -123,12 +123,10 @@ const SlideContainer = styled.div `
   }
   .swiper-slide:nth-child(10n) {
     background-color: rgb(54, 94, 77);
-  }`
-  
-
+  }
+`
 
 const Team = () => {
-
 
     return(
         <Container>

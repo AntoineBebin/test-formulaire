@@ -18,7 +18,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 120px;
 line-height: 100%;
-font-family: 'Urbanist';
+font-family: 'Ibarra Real Nova';
 margin-bottom : -30px;
 `
 
@@ -127,7 +127,8 @@ gap: 16px;
 width: 85px;
 height: 15px;
 background: #E6E6E6;
-border-radius: 4px;`
+border-radius: 4px;
+`
 
 const FreeTexte1 = styled.span`
 background : #E6E6E6;

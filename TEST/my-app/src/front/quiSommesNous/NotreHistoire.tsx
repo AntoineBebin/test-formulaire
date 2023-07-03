@@ -63,7 +63,7 @@ width: 856px;
 const Texte1 = styled.h3`
 width: 422px;
 height: 40px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -74,7 +74,7 @@ color: #202124;
 const Texte2 = styled.span `
 width: 856px;
 height: 216px;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -101,7 +101,7 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 font-weight: 600;
-font-family: 'Outfit';
+font-family: 'Urbanist';
 padding: 12px 20px;
 gap: 8px;
 width: 168px;
@@ -118,7 +118,7 @@ const AnimatedButton = styled(Button)`
 transition : all 0.3s ease-in-out;
 :hover{
     transform: translateY(-3px);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 :active{
     transform: translateY(0);

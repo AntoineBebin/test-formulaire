@@ -9,6 +9,11 @@ import App from './front/App';
 import PagePrincipale from './front/quiSommesNous/PagePrincipale';
 import EasyCra from './front/produits/EasyCra';
 import Tarif from './front/tarifPage/Tarif';
+import NewAccount1 from './front/loginPage/newAccount/NewAccount1';
+import NewAccount2 from './front/loginPage/newAccount/NewAccount2';
+import NewAccount3 from './front/loginPage/newAccount/NewAccount3';
+import NewAccount4 from './front/loginPage/newAccount/NewAccount4';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -20,6 +25,10 @@ root.render(
         <Route path='/' element={<App/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/login/password' element={<Password/>} />
+        <Route path='/login/créer-un-compte' element={<NewAccount1/>} />
+        <Route path='/login/créer-un-compte2' element={<NewAccount2/>} />
+        <Route path='/login/créer-un-compte3' element={<NewAccount3/>} />
+        <Route path ='/login/créer-un-compte4' element={<NewAccount4/>} />
         <Route path='/qui-sommes-nous' element={<PagePrincipale/>} />
         <Route path='/produits' element={<EasyCra/>} />
         <Route path='/tarifs' element={<Tarif/>} />

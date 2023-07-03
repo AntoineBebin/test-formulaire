@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUser, faCircle} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate,Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-
-const Head = styled.div `
+const Head = styled.div<{className?: string}> `
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -18,6 +18,45 @@ box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;
 `
+const NavWrapper = styled.div`
+display : flex;
+background: rgba(245, 245, 245, 0.5);
+align-items : center;
+justify-content : space-between;
+padding : 16px 24px;
+width: 100%;
+height: 80px;
+margin : 0;
+position : fixed;
+left : 0;
+right : 0;
+z-index : 99;
+transition : all 0.3s ease-in-out;
+&.solid {
+  background: rgba(245, 245, 245, 0.5);
+  box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+  width: calc(100% - 32px);
+  margin : 0 16px;
+  padding: 16px;
+  top : 16px;
+  border-radius: 8px;
+}`
+
+const AccessibilityWrapper = styled.div`
+position : fixed;
+display : flex;
+justify-content : space-between;
+background-color : rgba(245, 245, 245, 0.5);
+width : 100%;
+height : 32px;
+transition : all 0.3s ease-in-out;
+top: -32px;
+z-index : 99;
+&.visible{
+  top: 0px;
+}`
+
 const LeftContainer = styled.div`
   display: flex;
   align-items: center;
@@ -96,6 +135,11 @@ const TitleIcon = styled.div`
 `;
 
 const LoginHeader = () => {
+
+  const [isFixed, setIsFixed] = useState(false);
+  const [isSolid, setIsSolid] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [tempSolid, setTempSolid] = useState(false);
   // Navigation
   const navigate = useNavigate();
 
@@ -123,8 +167,25 @@ const LoginHeader = () => {
       navigate('/qui-sommes-nous')
     }
    
+    useEffect(() => {
+      const scrollHandler = () => {
+        const scroll = 
+        document.documentElement.scrollTop
+        if(scroll > 48) {
+          setIsSolid(true)
+        } else {
+          setIsSolid(false)
+        }
+      }
+      window.addEventListener('scroll', scrollHandler)
+      return () =>
+      window.removeEventListener('scroll', scrollHandler)
+    })
+
     return (
-        <Head>
+      <AccessibilityWrapper className={isOpen || isSolid || tempSolid ? 'no-mobile-display' : 'visible no-mobile-display'}>
+      <NavWrapper className={isOpen || isSolid || tempSolid ? 'solid' : undefined}>
+        <Head className={isFixed ? "fixed-header" : ""}>
             <LeftContainer>
             <TitleIcon>
              <FontAwesomeIcon icon={faCircle} />
@@ -144,6 +205,8 @@ const LoginHeader = () => {
             </IconBlock>
             </RightContainer>
         </Head>
+        </NavWrapper>
+        </AccessibilityWrapper>
     );
 }
 

@@ -5,6 +5,7 @@ import NotreHistoire from './NotreHistoire';
 import Team from "./Team";
 import Footer from "../mainPage/Footer";
 import Background from '../image/Background_Pattern.svg';
+import LoginHeader from "../loginPage/LoginHeader";
 
 const Container = styled.div `
 max-width: 100vw;
@@ -21,7 +22,7 @@ const PagePrincipale = () => {
 
     return(
         <Container>
-            <Header></Header>
+            <LoginHeader></LoginHeader>
             <History></History>
             <NotreHistoire></NotreHistoire>
             <Team></Team>

@@ -8,7 +8,7 @@ import Footer from "../mainPage/Footer";
 
 const Container = styled.div `
 max-width: 100vw;
-min-height: 390vh;
+min-height: 300vh;
 background-image : url(${Background});
 background-repeat: repeat;
 display: flex;
@@ -21,7 +21,7 @@ left : 200px;
 height : 0px;`
 
 const FooterContainer = styled.div`
-margin-top : auto;`
+margin-top : 400px;`
 
 
 const Tarif = () => {

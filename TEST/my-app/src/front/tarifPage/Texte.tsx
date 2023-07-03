@@ -25,7 +25,7 @@ height: 328px;
 `
 
 const Texte1 = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 600;
 font-size: 48px;
@@ -34,10 +34,12 @@ text-align: center;
 color: #202124;`
 
 const YellowTexte = styled.span`
-color: #FFD966;`
+color: #FFD966;
+font-family : 'Urbanist';
+`
 
 const Texte2 = styled.span`
-font-family: 'Outfit';
+font-family: 'Urbanist';
 font-style: normal;
 font-weight: 500;
 font-size: 16px;
@@ -49,6 +51,7 @@ const Button = styled.button`
 display : flex;
 flex-direction : row;
 align-items : center;
+font-weight: bold;
 padding : 12px 20px;
 gap : 8px;
 width : 206px;
@@ -59,6 +62,7 @@ border : none;
 outline : none;
 cursor : pointer;
 margin-top : 35px;
+font-family : 'Urbanist';
 `
 
 const Texte = () => {

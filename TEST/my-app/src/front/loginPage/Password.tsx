@@ -16,8 +16,8 @@ position: absolute;
 width: 543px;
 height: 81px;
 left: calc(50% - 543px/2);
-top: -65px;
-font-family: 'Urbanist';
+top: 150px;
+font-family: 'Ibarra Real Nova';
 font-style: normal;
 font-weight: 400;
 font-size: 120px;
@@ -35,8 +35,8 @@ isolation: isolate;
 position: relative;
 width: 552px;
 height: 380px;
-left: 670px;
-top: 44px;
+left: 770px;
+top: 360px;
 background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
@@ -138,7 +138,11 @@ border-radius: 4px;
 border : none;
 outline : none;
 cursor: pointer;
+font-family : 'Urbanist';
+font-weight: bold;
 `
+const FooterWrapper = styled.div`
+margin-top : 600px;`
 
 
 const Password = () => {
@@ -170,7 +174,9 @@ const Password = () => {
                 <Button onClick={handleClick}>REINITIALISER MON MOT DE PASSE</Button>
             </InputBlock>
             </Block>
-            <Footer></Footer>
+            <FooterWrapper>
+        <Footer></Footer>
+        </FooterWrapper>
     </Container>
     );
 }

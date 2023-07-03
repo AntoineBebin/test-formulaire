@@ -15,6 +15,7 @@ background: rgba(245, 245, 245, 0.5);
 box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 border-radius: 8px;
+font-family: 'Urbanist';
 `
 
 const Account = () => {
