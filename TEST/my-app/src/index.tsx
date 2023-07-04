@@ -13,7 +13,9 @@ import NewAccount1 from './front/loginPage/newAccount/NewAccount1';
 import NewAccount2 from './front/loginPage/newAccount/NewAccount2';
 import NewAccount3 from './front/loginPage/newAccount/NewAccount3';
 import NewAccount4 from './front/loginPage/newAccount/NewAccount4';
-
+import NewAccount5 from './front/loginPage/newAccount/NewAccount5';
+import NewAccount6 from './front/loginPage/newAccount/NewAccount6';
+import NewAccount7 from './front/loginPage/newAccount/NewAccount7';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -29,6 +31,9 @@ root.render(
         <Route path='/login/créer-un-compte2' element={<NewAccount2/>} />
         <Route path='/login/créer-un-compte3' element={<NewAccount3/>} />
         <Route path ='/login/créer-un-compte4' element={<NewAccount4/>} />
+        <Route path='/login/créer-un-compte5' element={<NewAccount5/>} />
+        <Route path='/login/créer-un-compte6' element={<NewAccount6/>} />
+        <Route path='/login/créer-un-compte7' element={<NewAccount7/>} />
         <Route path='/qui-sommes-nous' element={<PagePrincipale/>} />
         <Route path='/produits' element={<EasyCra/>} />
         <Route path='/tarifs' element={<Tarif/>} />
