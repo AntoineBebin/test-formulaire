@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Background from '../../image/Background_Pattern.svg';
 import HeaderNewAccount from "../HeaderNewAccount";
-import Footer from "../../mainPage/Footer";
+import FooterNewAccount from "../../mainPage/Footer";
+import BouttonSupp from '../../image/BtnSupp.png';
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -147,7 +149,7 @@ font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 line-height: 1.5rem;
-width: 20.5625rem;
+width: 17.5625rem;
 height: 3rem;
 border: none;
 outline : none;
@@ -166,7 +168,7 @@ flex-direction: column;
 align-items: flex-start;
 gap: 0.25rem;
 background: var(--global-secondary-white-highlight, #FCFCFC);
-width: 13.0625rem;
+width: 10.0625rem;
 height: 3rem;
 color: var(--global-secondary-black, #202124);
 font-size: 1rem;
@@ -190,7 +192,7 @@ display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
-width: 8.6875rem;
+width: 5.6875rem;
 height: 3rem;
 border: none;
 outline : none;
@@ -208,7 +210,7 @@ display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
-width: 6.6875rem;
+width: 3.6875rem;
 height: 3rem;
 border: none;
 outline : none;
@@ -254,6 +256,21 @@ height: 3rem;
 text-transform: uppercase;
 cursor: pointer;
 `
+const SuppButtonContainer = styled.div`
+width: 3rem;
+height: 3rem;
+`
+const SuppButton = styled.button`
+display: flex;
+padding: 0.75rem;
+align-items: flex-start;
+background: var(--global-secondary-white-highlight, #FCFCFC);
+width: 1.5rem;
+height: 1.5rem;
+cursor: pointer;
+background-image: url(${BouttonSupp});
+border: none;
+`
 
 const NewAccount5 = () => {
 
@@ -261,6 +278,25 @@ const NewAccount5 = () => {
 
     const handleNext = () => {
         navigate('/login/créer-un-compte6');
+    };
+
+    //Etats
+    const [name, setName] = useState("");
+    const [numero, setNumero] = useState("");
+    const [date, setDate] = useState("");
+    const [cvv, setCvv] = useState("");
+
+    const handleClickName = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setName(e.target.value);
+    };
+    const handleClickNumero = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setNumero(e.target.value);
+    };
+    const handleClickDate = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setDate(e.target.value);
+    };
+    const handleClickCvv = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setCvv(e.target.value);
     };
 
     return(
@@ -281,19 +317,39 @@ const NewAccount5 = () => {
                     <SecondBlock>
                         <NameBlock>
                             <Texte>Titulaire de la carte</Texte>
-                            <InputName placeholder = "Nom du titulaire"></InputName>
+                            <InputName placeholder = "Nom du titulaire"
+                                        value={name}
+                                        onChange={handleClickName}></InputName>
+                            <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickName}></SuppButton></SuppButtonContainer>
                         </NameBlock>
                         <CardBlock>
                             <Texte>Numéro de carte</Texte>
-                            <CardInput placeholder="Numéro de carte"></CardInput>
+                            <CardInput placeholder="Numéro de carte"
+                                        value={numero}
+                                        onChange={handleClickNumero}></CardInput>
+                                        <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickNumero}></SuppButton></SuppButtonContainer>
                         </CardBlock>
                         <DateBlock>
                             <Texte>Date d'expiration</Texte>
-                            <DateInput placeholder = "mm/yy"></DateInput>
+                            <DateInput placeholder = "mm/yy"
+                                        value={date}
+                                        onChange={handleClickDate}></DateInput>
+                                        <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickDate}></SuppButton></SuppButtonContainer>
                         </DateBlock>
                         <Cvv>
                             <Texte>CVV</Texte>
-                            <CvvInput placeholder = "420"></CvvInput>
+                            <CvvInput placeholder = "420"
+                                        value={cvv}
+                                        onChange={handleClickCvv}></CvvInput>
+                                        <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickCvv}></SuppButton></SuppButtonContainer>
                         </Cvv>
                     </SecondBlock>
                 </InputBlock>
@@ -302,7 +358,7 @@ const NewAccount5 = () => {
                     <NextButton onClick={handleNext}>Suivant</NextButton>
                 </ButtonBlock>
             </Block>
-            <Footer></Footer>
+            <FooterNewAccount></FooterNewAccount>
         </Container>
     );
 };

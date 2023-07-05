@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Footer from "../../mainPage/Footer";
+import FooterNewAccount from "../../mainPage/Footer";
 import HeaderNewAccount from "../HeaderNewAccount";
 import Background from '../../image/Background_Pattern.svg';
 import { useNavigate } from "react-router-dom";
@@ -139,7 +139,7 @@ const NewAccount1 = () => {
                 <Button onClick={handleButtonClick}>Je veux les event</Button>
                 </ButtonBlock>
             <FooterWrapper>
-                <Footer></Footer>
+                <FooterNewAccount></FooterNewAccount>
             </FooterWrapper>
         </Container>
     );

@@ -10,21 +10,6 @@ import Faq from "./Faq";
 import Footer from "../mainPage/Footer";
 import LoginHeader from "../loginPage/LoginHeader";
 
-const Head = styled(Header) `
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding : 16px 24px;
-gap : 197px;
-width: 95%;
-margin-left : 22px;
-height: 2%;
-background: rgba(245, 245, 245, 0.5);
-box-shadow: 0px 8px 64px rgba(0, 0, 0, 0.04);
-backdrop-filter: blur(8px);
-border-radius: 8px;
-`
-
 const Container = styled.div `
 max-width: 100vw;
 min-height: 520vh;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Background from '../../image/Background_Pattern.svg';
 import HeaderNewAccount from "../HeaderNewAccount";
-import Footer from "../../mainPage/Footer";
+import FooterNewAccount from "../../mainPage/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -93,7 +93,10 @@ font-weight: 600;
 line-height: 1rem;
 text-transform: uppercase;
 `
-const InputName = styled.input`
+interface InputProps {
+    isFocused : boolean;
+}
+const InputName = styled.input<InputProps>`
 display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
@@ -102,7 +105,7 @@ background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 13rem;
 height: 6rem;
 outline : none;
-border : none;
+border: none;
 `
 const SecondInput = styled.div`
 display: flex;
@@ -259,6 +262,11 @@ const NewAccount2 = () => {
     const [number, setNumber] = useState("");
     const [error, setError] = useState("");
     const [isFocused, setIsFocused] = useState(false);
+
+    const getInputBorderStyle = (isFocused: boolean) : string => {
+        return isFocused ? '1px solid #FFD966' : 'none';
+    };
+
     // Navigation
     const navigate = useNavigate();
 
@@ -300,7 +308,8 @@ const NewAccount2 = () => {
                         <InputName placeholder='Nom' 
                         onClick={handleFirstName} 
                         onFocus={() => setIsFocused(true)}
-                        onBlur={() => setIsFocused(false)}></InputName>
+                        onBlur={() => setIsFocused(false)}
+                        isFocused={isFocused}></InputName>
                     </FirstInput>
                     <SecondInput>
                         <Texte>Prénom</Texte>
@@ -336,7 +345,7 @@ const NewAccount2 = () => {
                         {error && <ErrorMessage>{error}</ErrorMessage>}
                 </ButtonBlock>
             </Block>
-            <Footer></Footer>
+            <FooterNewAccount></FooterNewAccount>
         </Container>
     );
 }

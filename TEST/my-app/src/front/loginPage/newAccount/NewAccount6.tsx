@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Background from '../../image/Background_Pattern.svg';
 import HeaderNewAccount from "../HeaderNewAccount";
-import Footer from "../../mainPage/Footer";
+import FooterNewAccount from "../../mainPage/Footer";
+import BouttonSupp from '../../image/BtnSupp.png';
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 const Container = styled.div `
@@ -102,7 +104,7 @@ display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
-width: 40.3125rem;
+width: 37.3125rem;
 height: 4.25rem;
 overflow: hidden;
 color: var(--global-secondary-black, #202124);
@@ -128,7 +130,7 @@ display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
-width: 11.6875rem;
+width: 8.6875rem;
 height: 3rem;
 border: none;
 outline: none;
@@ -155,7 +157,7 @@ display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
-width: 12rem;
+width: 8rem;
 height: 3rem;
 border: none;
 outline: none;
@@ -174,7 +176,7 @@ display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
-width: 12rem;
+width: 8rem;
 height: 3rem;
 border: none;
 outline: none;
@@ -254,6 +256,23 @@ height: 3rem;
 text-transform: uppercase;
 cursor: pointer;
 `
+const SuppButtonContainer = styled.div`
+width: 3rem;
+height: 3rem;
+display: flex;
+align-items: flex-start;
+`
+const SuppButton = styled.button`
+display: flex;
+padding: 0.75rem;
+align-items: flex-start;
+background: var(--global-secondary-white-highlight, #FCFCFC);
+width: 1.5rem;
+height: 1.5rem;
+cursor: pointer;
+background-image: url(${BouttonSupp});
+border: none;
+`
 
 const NewAccount6 = () => {
 
@@ -262,6 +281,26 @@ const NewAccount6 = () => {
     const handleNext = () => {
         navigate('/login/créer-un-compte7');
     };
+
+    //Etats
+    const [name, setName] = useState("");
+    const [adresse, setAdresse] =useState("");
+    const [tva, setTva] = useState("");
+    const [city, setCity] = useState("");
+
+    const handleClickName = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setName(e.target.value);
+    };
+    const handleClickAdresse = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setAdresse(e.target.value);
+    };
+    const handleClickCity = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setCity(e.target.value);
+    };
+    const handleClickTva = (e : React.ChangeEvent<HTMLInputElement>) =>{
+        setTva(e.target.value);
+    };
+
 
     return(
         <Container>
@@ -274,21 +313,41 @@ const NewAccount6 = () => {
                     <FirstBlock>
                         <InputBlockName>
                             <Texte>Nom de l'entreprise</Texte>
-                            <InputName placeholder = "Nom de l'entreprise"></InputName>
+                            <InputName placeholder = "Nom de l'entreprise"
+                                        value={name}
+                                        onChange={handleClickName}></InputName>
+                            <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickName}></SuppButton></SuppButtonContainer>
                         </InputBlockName>
                         <TvaBlock>
                             <Texte>Numéro de tva</Texte>
-                            <TvaInput placeholder = "FR 12345678910"></TvaInput>
+                            <TvaInput placeholder = "FR 12345678910"
+                                        value={tva}
+                                        onChange={handleClickTva}></TvaInput>
+                                        <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickTva}></SuppButton></SuppButtonContainer>
                         </TvaBlock>
                     </FirstBlock>
                     <SecondBlock>
                         <AdresseBlock>
                             <Texte>Adresse du siège social</Texte>
-                            <AdresseInput placeholder = "18 rue egeegee"></AdresseInput>
+                            <AdresseInput placeholder = "18 rue egeegee"
+                                            value={adresse}
+                                            onChange={handleClickAdresse}></AdresseInput>
+                                            <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickAdresse}></SuppButton></SuppButtonContainer>
                         </AdresseBlock>
                         <CityBlock>
                             <Texte>Ville</Texte>
-                            <CityInput placeholder="Paris"></CityInput>
+                            <CityInput placeholder="Paris"
+                                        value={city}
+                                        onChange={handleClickCity}></CityInput>
+                                        <SuppButtonContainer><SuppButton
+                                        src={BouttonSupp}
+                                        onClick={handleClickCity}></SuppButton></SuppButtonContainer>
                         </CityBlock>
                         <CountryBlock>
                             <Texte>Pays</Texte>
@@ -305,7 +364,7 @@ const NewAccount6 = () => {
                     <NextButton onClick={handleNext}>Suivant</NextButton>
                 </ButtonBlock>
             </Block>
-            <Footer></Footer>
+            <FooterNewAccount></FooterNewAccount>
         </Container>
     );
 };

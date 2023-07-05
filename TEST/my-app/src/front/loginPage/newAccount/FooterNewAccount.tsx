@@ -1,10 +1,10 @@
-import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle} from '@fortawesome/free-solid-svg-icons';
 import FB from '../image/fb.svg';
 import Insta from '../image/insta.svg';
 import Linkedin from '../image/linkedin.svg';
 import { useNavigate} from "react-router-dom";
+import styled from "styled-components";
 
 const Container = styled.div `
 display: flex;
@@ -22,8 +22,9 @@ align-items: flex-start;
 margin-left : 15%;
 padding: 0px;
 gap: 120px;
-max-width: 50vw;
-height: 300px;
+width: 70.5rem;
+height: 9.75rem;
+border: solid black 1px;
 `
 
 const FirstBlock = styled.div `
@@ -116,7 +117,6 @@ const Image = styled.img`
 width: 24px;
 height: 24px;
 `
-
 const BlockImage = styled.div `
 display: flex;
 flex-direction: row;
@@ -129,8 +129,69 @@ box-sizing : border-box;
 width: 40px;
 height: 40px;
 `
+const NewsletterBlock = styled.div`
+display: flex;
+min-width: 22.5rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 1.5rem;
+flex: 1 0 0;
+width: 33.6875rem;
+height: 7.25rem;
+`
+const NewsletterTexteBlock = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 0.5rem;
+align-self: stretch;
+width: 33.6875rem;
+height: 7.25rem;
+`
+const BoldTexte = styled.span`
+color: var(--global-secondary-black, #202124);
+font-size: 1rem;
+font-family: 'Urbanist';
+font-style: normal;
+font-weight: 700;
+line-height: 1.25rem;
+`
+const NewsletterTexte = styled.span`
+display: flex;
+flex-direction: column;
+align-self: stretch;
+color: var(--global-secondary-grey-darker, #6C6D70);
+font-size: 0.875rem;
+font-family: 'Urbanist';
+font-style: normal;
+font-weight: 400;
+line-height: 1rem;
+`
+const NewsletterInput = styled.input`
+display: flex;
+padding: 0rem 1rem;
+align-items: center;
+flex: 1 0 0;
+align-self: stretch;
+border-radius: 0.25rem 0rem 0rem 0.25rem;
+background: var(--global-secondary-white-highlight, #FCFCFC);
+border: none;
+width: 26.125rem;
+height: 3rem;
+`
+const NewsletterButton = styled.button`
+display: flex;
+padding: 0.75rem 1.25rem;
+align-items: flex-start;
+gap: 0.5rem;
+border-radius: 0rem 0.25rem 0.25rem 0rem;
+background: var(--editeur-main-dandelion, #FFD966);
+width: 7.5625rem;
+height: 3rem;
+text-transform: uppercase;
+`
 
-const Footer = () => {
+const FooterNewAccount = () => {
   // Navigation
     const navigate = useNavigate();
 
@@ -168,6 +229,14 @@ const Footer = () => {
                     <Texte2>Intégration</Texte2>
                     <Texte2>Intégration</Texte2>
                 </ProductBox>
+                <NewsletterBlock>
+                    <NewsletterTexteBlock>
+                        <BoldTexte>Newsletter</BoldTexte>
+                        <NewsletterTexte>Inscrivez-vous à notre newsletter pour ne rater aucune infos sur les solutions DéjàVu !</NewsletterTexte>
+                        <NewsletterInput placeholder = "Email"></NewsletterInput>
+                        <NewsletterButton>M'inscrire</NewsletterButton>
+                    </NewsletterTexteBlock>
+                </NewsletterBlock>
             </ThirdBlock>
             </Block>
             <Foot>
@@ -187,4 +256,5 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+
+export default FooterNewAccount;

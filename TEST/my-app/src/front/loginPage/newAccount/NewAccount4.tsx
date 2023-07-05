@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Background from '../../image/Background_Pattern.svg';
 import HeaderNewAccount from "../HeaderNewAccount";
-import Footer from "../../mainPage/Footer";
+import FooterNewAccount from "../../mainPage/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -481,7 +481,7 @@ const NewAccount4 = () => {
                     </ButtonNavBlock>
                 </ContenuBlock>
             </Block>
-            <Footer></Footer>
+            <FooterNewAccount></FooterNewAccount>
         </Container>
     );
 }
