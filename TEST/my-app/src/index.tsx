@@ -16,6 +16,7 @@ import NewAccount4 from './front/loginPage/newAccount/NewAccount4';
 import NewAccount5 from './front/loginPage/newAccount/NewAccount5';
 import NewAccount6 from './front/loginPage/newAccount/NewAccount6';
 import NewAccount7 from './front/loginPage/newAccount/NewAccount7';
+import Dashboard from './front/dashboard/Dashboard';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -37,6 +38,7 @@ root.render(
         <Route path='/qui-sommes-nous' element={<PagePrincipale/>} />
         <Route path='/produits' element={<EasyCra/>} />
         <Route path='/tarifs' element={<Tarif/>} />
+        <Route path='/dashboard' element={<Dashboard/>} />
       </Routes>
     </Router>
   </React.StrictMode>

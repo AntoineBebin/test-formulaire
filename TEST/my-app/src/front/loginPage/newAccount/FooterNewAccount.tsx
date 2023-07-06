@@ -1,30 +1,29 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle} from '@fortawesome/free-solid-svg-icons';
-import FB from '../image/fb.svg';
-import Insta from '../image/insta.svg';
-import Linkedin from '../image/linkedin.svg';
+import FB from '../../image/fb.svg';
+import Insta from '../../image/insta.svg';
+import Linkedin from '../../image/linkedin.svg';
 import { useNavigate} from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div `
 display: flex;
 flex-direction: column;
-max-width: 100vw;
+width: 100vw;
 height: 300px;
 margin-top: 140px;
 background-color: white;
 `
 
 const Block = styled.div `
-display: flex;
-flex-direction: row;
+display: grid;
+grid-template-columns: 5% 1fr 1fr 1fr;
 align-items: flex-start;
 margin-left : 15%;
 padding: 0px;
 gap: 120px;
-width: 70.5rem;
+width: 90rem;
 height: 9.75rem;
-border: solid black 1px;
 `
 
 const FirstBlock = styled.div `
@@ -189,6 +188,8 @@ background: var(--editeur-main-dandelion, #FFD966);
 width: 7.5625rem;
 height: 3rem;
 text-transform: uppercase;
+cursor: pointer;
+border: none;
 `
 
 const FooterNewAccount = () => {
@@ -229,7 +230,8 @@ const FooterNewAccount = () => {
                     <Texte2>Intégration</Texte2>
                     <Texte2>Intégration</Texte2>
                 </ProductBox>
-                <NewsletterBlock>
+            </ThirdBlock>
+            <NewsletterBlock>
                     <NewsletterTexteBlock>
                         <BoldTexte>Newsletter</BoldTexte>
                         <NewsletterTexte>Inscrivez-vous à notre newsletter pour ne rater aucune infos sur les solutions DéjàVu !</NewsletterTexte>
@@ -237,7 +239,6 @@ const FooterNewAccount = () => {
                         <NewsletterButton>M'inscrire</NewsletterButton>
                     </NewsletterTexteBlock>
                 </NewsletterBlock>
-            </ThirdBlock>
             </Block>
             <Foot>
                 <TextFoot>
