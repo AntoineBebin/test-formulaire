@@ -14,6 +14,11 @@ import Bug from '../../front/image/bug.png';
 import Parametre from '../../front/image/parametre.png';
 import Case from '../../front/image/case.png';
 import SupportTexte from '../../front/image/supportTexte.png';
+import Eye from '../../front/image/eye.png';
+import Download from '../../front/image/download.png';
+import BlackBug from '../../front/image/black-bug.png';
+import Link from '../../front/image/link.png'
+
 
 const Container = styled.div `
 max-width: 100vw;
@@ -409,6 +414,74 @@ height: 1.25rem;
 justify-content: center;
 align-items: center;
 `
+const BlueImageContainer = styled.div`
+display: flex;
+align-items: flex-start;
+gap: 0.25rem;
+`
+const MenuBlock = styled.div`
+display: flex;
+width: 16.5rem;
+height: 23.5rem;
+padding: 1.5rem 1rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 1rem;
+position: absolute;
+top: 170px;
+left: 350px;
+border-radius: 0.25rem;
+background: var(--global-secondary-white-highlight, #FCFCFC);
+box-shadow: 0px 8px 96px 0px rgba(32, 33, 36, 0.04);
+`
+const Menu = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 2rem;
+width: 13.5625rem;
+height: 19rem;
+`
+const MenuDiv =styled.div`
+width: 16.375rem;
+height: 2.5rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+`
+const MenuDiv2 = styled.div`
+display: flex;
+align-items: center;
+width: 16.375rem;
+height: 2.5rem;
+background: var(--editeur-main-lighter-shade-2, #FFF7E0);
+`
+const MenuText = styled.span`
+color: var(--global-secondary-black, #202124);
+font-family: 'Urbanist';
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 150%;
+`
+const MenuIcon = styled.img`
+width: 1.5rem;
+height: 1.5rem;
+`
+const MenuLine = styled.div`
+height: 0.0625rem;
+flex-shrink: 0;
+align-self: stretch;
+background: #D9D9D9;
+`
+const MenuBlueTexte = styled.span`
+color: var(--cra-main-metallic-seaweed, #0E738A);
+font-family: 'Urbanist';
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+`
 
 const Dashboard = () =>{
 
@@ -525,6 +598,10 @@ const Dashboard = () =>{
                                     <HistoriqueTexte>Formule Pro</HistoriqueTexte>
                                     <HistoriqueGreyTexte>236.16€</HistoriqueGreyTexte>
                                 </HistoriqueTexteBlock>
+                                <BlueImageContainer>
+                                <Image src={Eye}></Image>
+                                <Image src={Download}></Image>
+                                </BlueImageContainer>
                             </Historique>
                             <Historique>
                                 <HistoriqueTexteBlock>
@@ -532,6 +609,10 @@ const Dashboard = () =>{
                                     <HistoriqueTexte>Formule Pro</HistoriqueTexte>
                                     <HistoriqueGreyTexte>236.16€</HistoriqueGreyTexte>
                                 </HistoriqueTexteBlock>
+                                <BlueImageContainer>
+                                <Image src={Eye}></Image>
+                                <Image src={Download}></Image>
+                                </BlueImageContainer>
                             </Historique>
                             <Historique>
                                 <HistoriqueTexteBlock>
@@ -539,10 +620,47 @@ const Dashboard = () =>{
                                     <HistoriqueTexte>Formule Pro</HistoriqueTexte>
                                     <HistoriqueGreyTexte>236.16€</HistoriqueGreyTexte>
                                 </HistoriqueTexteBlock>
+                                <BlueImageContainer>
+                                <Image src={Eye}></Image>
+                                <Image src={Download}></Image>
+                                </BlueImageContainer>
                             </Historique>
                         </HistoriqueBlock>
                     </AccountBlock>
                 </Block>
+                <MenuBlock>
+                    <Menu>
+                        <MenuDiv2>
+                            <MenuIcon src={Profil}></MenuIcon>
+                            <MenuText>Informations personnelles</MenuText>
+                        </MenuDiv2>
+                        <MenuDiv>
+                            <MenuIcon src={Lock}></MenuIcon>
+                            <MenuText>Accés</MenuText>
+                        </MenuDiv>
+                        <MenuDiv>
+                            <MenuIcon src={Abonnement}></MenuIcon>
+                            <MenuText>Mon abonnement</MenuText>
+                        </MenuDiv>
+                        <MenuDiv>
+                            <MenuIcon src={Card}></MenuIcon>
+                            <MenuText>Paiement & Facturation</MenuText>
+                        </MenuDiv>
+                        <MenuDiv>
+                            <MenuIcon src={Histo}></MenuIcon>
+                            <MenuText>Historique de facturation</MenuText>
+                        </MenuDiv>
+                        <MenuDiv>
+                            <MenuIcon src={BlackBug}></MenuIcon>
+                            <MenuText>Support technique</MenuText>
+                        </MenuDiv>
+                    </Menu>
+                    <MenuLine></MenuLine>
+                    <MenuDiv>
+                        <MenuIcon src={Link}></MenuIcon>
+                        <MenuBlueTexte>Accéder à l'application</MenuBlueTexte>
+                    </MenuDiv>
+                </MenuBlock>
             </BlockContainer>
             <FooterNewAccount></FooterNewAccount>
         </Container>

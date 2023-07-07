@@ -10,10 +10,6 @@ min-height: 100vh;
 background-image : url(${Background});
 background-repeat: repeat;
 `
-const HeaderWrapper = styled.div`
-`
-const FooterWrapper = styled.div`
-`
 const Title = styled.h1`
 color: var(--cra-main-lighter-shade-1, #5EA2B1);
 text-align: center;
@@ -125,9 +121,7 @@ const NewAccount1 = () => {
 
     return(
         <Container>
-            <HeaderWrapper>
                 <HeaderNewAccount></HeaderNewAccount>
-            </HeaderWrapper>
             <Title>Créer un compte</Title>
             <Block>
                 <BlueTexte onClick={handleReturn}>Retour</BlueTexte>
@@ -138,9 +132,7 @@ const NewAccount1 = () => {
                 <Button onClick={handleButtonClick}>Je veux tout</Button>
                 <Button onClick={handleButtonClick}>Je veux les event</Button>
                 </ButtonBlock>
-            <FooterWrapper>
                 <FooterNewAccount></FooterNewAccount>
-            </FooterWrapper>
         </Container>
     );
 }

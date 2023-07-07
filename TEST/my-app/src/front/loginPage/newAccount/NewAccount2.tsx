@@ -4,6 +4,7 @@ import HeaderNewAccount from "../HeaderNewAccount";
 import FooterNewAccount from "../../mainPage/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Arrow from '../../image/bottom-arrow.png';
 
 
 const Container = styled.div `
@@ -93,10 +94,7 @@ font-weight: 600;
 line-height: 1rem;
 text-transform: uppercase;
 `
-interface InputProps {
-    isFocused : boolean;
-}
-const InputName = styled.input<InputProps>`
+const InputName = styled.input`
 display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
@@ -131,9 +129,15 @@ height: 4.25rem;
 const StatutMenu = styled.div`
 display: flex;
 height: 3rem;
-width: 12.5rem;
+width: 9.5rem;
 align-items: center;
+justify-content: space-between;
 background-color: white;
+`
+const ArrowImg = styled.img`
+width: 1.5rem;
+height: 1.5rem;
+cursor: pointer;
 `
 const ThirdInput = styled.div`
 display: flex;
@@ -305,26 +309,30 @@ const NewAccount2 = () => {
                 <InputBlock>
                     <FirstInput>
                         <Texte>NOM</Texte>
-                        <InputName placeholder='Nom' 
+                        <InputName 
+                        placeholder='Nom' 
                         onClick={handleFirstName} 
-                        onFocus={() => setIsFocused(true)}
-                        onBlur={() => setIsFocused(false)}
+                        onFocus={() => getInputBorderStyle}
+                        onBlur={() => getInputBorderStyle}
                         isFocused={isFocused}></InputName>
                     </FirstInput>
                     <SecondInput>
                         <Texte>Prénom</Texte>
-                        <InputName placeholder='Prénom' 
+                        <InputName 
+                        placeholder='Prénom' 
                         onClick={handleLastName}
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}></InputName>
                     </SecondInput>
                     <StatutBlock>
                         <Texte>QUEL EST VOTRE STATUT</Texte>
-                        <StatutMenu>Particulier</StatutMenu>
+                        <StatutMenu>Particulier<ArrowImg src={Arrow}></ArrowImg></StatutMenu>
+                        
                     </StatutBlock>
                     <ThirdInput>
                         <Texte>ADRESSE EMAIL</Texte>
-                        <InputEmail placeholder="Email" 
+                        <InputEmail 
+                        placeholder="Email" 
                         onClick={handleEmail}
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}></InputEmail>
@@ -333,7 +341,8 @@ const NewAccount2 = () => {
                         <Texte>Numéro de téléphone</Texte>
                         <TelBlock>
                         <YellowBlock>+33</YellowBlock>
-                        <InputTelephone placeholder="1 23 45 67 89" 
+                        <InputTelephone 
+                        placeholder="1 23 45 67 89" 
                         onClick={handleNumber}
                         ></InputTelephone>
                         </TelBlock>

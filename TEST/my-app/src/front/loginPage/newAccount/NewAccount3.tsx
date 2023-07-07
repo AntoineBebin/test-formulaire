@@ -92,6 +92,13 @@ font-weight: 600;
 line-height: 1rem;
 text-transform: uppercase;
 `
+const Alignement = styled.div`
+display: flex;
+flex-direction: row;
+border: solid 1px black;
+width: 23.8125rem;
+height: 3rem;
+`
 const InputName = styled.input`
 width: 20.8125rem;
 height: 3rem;
@@ -102,6 +109,7 @@ flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 border: none;
 outline: none;
+border : solid yellow 1px;
 `
 const SiretBlock = styled.div`
 display: flex;
@@ -249,6 +257,10 @@ cursor: pointer;
 const SuppButtonContainer = styled.div`
 width: 3rem;
 height: 3rem;
+border: solid red 1px;
+display: flex;
+justify-content: center;
+align-items: center;
 `
 const SuppButton = styled.button`
 display: flex;
@@ -299,12 +311,14 @@ const NewAccount3 = () => {
                 <FirstInputBlock>
                     <InputNameBlock>
                         <Texte>Nom de l'entreprise</Texte>
+                        <Alignement>
                         <InputName placeholder = "Nom de l'entreprise" 
                                     value={entreprise} 
                                     onChange={handleClickEntreprise}></InputName>
                         <SuppButtonContainer><SuppButton 
                                     src={BouttonSupp} 
-                                    onClick={handleClickEntreprise}></SuppButton></SuppButtonContainer>                      
+                                    onClick={handleClickEntreprise}></SuppButton></SuppButtonContainer>
+                                    </Alignement>                   
                     </InputNameBlock>
                     <SiretBlock>
                         <Texte>Numéro de SIRET</Texte>

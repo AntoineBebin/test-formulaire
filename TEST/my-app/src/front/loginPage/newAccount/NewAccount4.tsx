@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Background from '../../image/Background_Pattern.svg';
 import HeaderNewAccount from "../HeaderNewAccount";
 import FooterNewAccount from "../../mainPage/Footer";
+import FilterBar from './FilterBar';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -168,17 +169,6 @@ font-family: 'Urbanist';
 font-style: normal;
 font-weight: 400;
 line-height: 1.5rem;
-`
-const FilterBar = styled.div`
-display: flex;
-width: 53rem;
-height: 1.25rem;
-padding: 0.5rem 5rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 0.5rem;
-margin-left : 65px;
-border : solid black 1px;
 `
 const CardBlock = styled.div`
 display: flex;
