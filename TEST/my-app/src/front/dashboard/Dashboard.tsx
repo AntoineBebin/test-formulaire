@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Background from '../image/Background_Pattern.svg';
 import FooterNewAccount from "../loginPage/newAccount/FooterNewAccount";
 import LoginHeader from "../loginPage/LoginHeader";
+//import image
 import Profil from '../../front/image/information-perso.png';
 import Pen from '../../front/image/stylo.png';
 import Lock from '../../front/image/lock.png';
@@ -18,6 +19,13 @@ import Eye from '../../front/image/eye.png';
 import Download from '../../front/image/download.png';
 import BlackBug from '../../front/image/black-bug.png';
 import Link from '../../front/image/link.png'
+//
+import { useState } from "react";
+import ModalPersonnalInfo from "./ModalPersonnalInfo";
+import ModalAcces from "./ModalAcces";
+import ModalAbonnement from "./ModalAbonnement";
+import ModalFacture from "./ModalFacture";
+
 
 
 const Container = styled.div `
@@ -485,6 +493,25 @@ line-height: 150%;
 
 const Dashboard = () =>{
 
+    const [modal, setModal] = useState(false);
+    const [accesModal, setAccesModal] = useState(false);
+    const [abonnementModal, setAbonnementModal] = useState(false);
+    const [factureModal, setFactureModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+    const toggleAccesModal = () => {
+        setAccesModal(!accesModal)
+    };
+    const toggleAbonnementModal = () => {
+        setAbonnementModal(!abonnementModal);
+    };
+    const toggleFactureModal = () => {
+        setFactureModal(!factureModal)
+    };
+    
+
     return(
         <Container>
             <LoginHeader></LoginHeader>
@@ -498,7 +525,8 @@ const Dashboard = () =>{
                                 <Image src={Profil}></Image>
                                 </ImageContainer>
                             <Texte>INFORMATIONS PERSONNELLES</Texte>
-                            <BlueTexte>MODIFIER MES INFORMATIONS<BlueImage src={Pen}></BlueImage></BlueTexte>
+                            {modal && <ModalPersonnalInfo></ModalPersonnalInfo>}
+                            <BlueTexte>MODIFIER MES INFORMATIONS<BlueImage src={Pen} onClick={toggleModal}></BlueImage></BlueTexte>
                             </DivTexte>
                             <BlockPerso>
                                 <GreyTexte>Nom de l'entreprise: <Texte>AMAPII</Texte></GreyTexte>
@@ -514,7 +542,8 @@ const Dashboard = () =>{
                             <AccesBlock>
                                 <Div2Texte>
                                     <Texte><Image src={Lock}></Image>ACCES</Texte>
-                                    <BlueTexte>CHANGER D'EMAIL OU MOT DE PASSE<BlueImage src={Pen}></BlueImage></BlueTexte>
+                                    {accesModal && <ModalAcces></ModalAcces>}
+                                    <BlueTexte>CHANGER D'EMAIL OU MOT DE PASSE<BlueImage src={Pen} onClick={toggleAccesModal}></BlueImage></BlueTexte>
                                 </Div2Texte>
                                 <AccesInfo>
                                     <GreyTexte>Adresse email: <Texte>j**********e@a****i.com</Texte></GreyTexte>
@@ -555,7 +584,8 @@ const Dashboard = () =>{
                         <AbonnementBlock>
                             <DivTexte>
                                 <Texte><Image src={Abonnement}></Image>MON ABONNEMENT</Texte>
-                                <BlueTexte>CHANGER DE FORMULE<BlueImage src={Pen}></BlueImage></BlueTexte>
+                                {abonnementModal && <ModalAbonnement></ModalAbonnement>}
+                                <BlueTexte>CHANGER DE FORMULE<BlueImage src={Pen} onClick={toggleAbonnementModal}></BlueImage></BlueTexte>
                             </DivTexte>
                             <AbonnementTexteBlock>
                                 <FormuleBlock>
@@ -571,7 +601,8 @@ const Dashboard = () =>{
                         <FacturationBlock>
                                 <DivTexte>
                                     <Texte><Image src={Card}></Image>PAIEMENT & FACTURATION</Texte>
-                                    <BlueTexte>MODIFIER LA FACTURATION ET LE PAIEMENT<BlueImage src={Pen}></BlueImage></BlueTexte>
+                                    {factureModal && <ModalFacture></ModalFacture>}
+                                    <BlueTexte>MODIFIER LA FACTURATION ET LE PAIEMENT<BlueImage src={Pen} onClick={toggleFactureModal}></BlueImage></BlueTexte>
                                 </DivTexte>
                             <InfoFacturationBlock>
                                 <FirstBlock>

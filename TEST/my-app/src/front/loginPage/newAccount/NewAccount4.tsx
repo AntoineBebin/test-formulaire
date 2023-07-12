@@ -356,11 +356,29 @@ height: 3rem;
 text-transform: uppercase;
 cursor: pointer;
 `
+const BluePriceTexte = styled.span`
+color: var(--cra-main-metallic-seaweed, #0E738A);
+font-family: 'Urbanist';
+font-size: 2.5rem;
+font-style: normal;
+font-weight: 700;
+line-height: 100%;
+`
+const ProgressBlock = styled.div`
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 1.5rem;
+align-self: stretch;
+width: 52.5rem;
+height: 4.5rem;
+`
 
 const NewAccount4 = () => {
 
     const [buttonSelected, setButtonSelected] = useState<number | null>(null);
     const [showDevisBlock, setShowDevisBlock] = useState(false);
+    const [positionX, setPositionX] = useState<number>(0);
 
     const blueButtons = [
         {id: 1, label : "Mois"},
@@ -388,6 +406,10 @@ const NewAccount4 = () => {
         }
     };
 
+    const handlePositionXChange = (newPositionX: number) => {
+        setPositionX(newPositionX);
+    }
+
     const navigate = useNavigate();
 
     const handleNext = () => {
@@ -404,6 +426,7 @@ const NewAccount4 = () => {
                         <BoldText>Une offre adaptée à vos besoins</BoldText>
                         <Texte>Des formules pour tous : choisissez selon vos besoins l’offre qui vous correspond le plus, le curseur ci-dessous vous permet d’estimer le coût selon la taille de votre entreprise.</Texte>
                     </TextBlock>
+                    <ProgressBlock>
                     <ButtonBlock>
                         <ButtonText>
                             <Text>Économisez <BlueTexte>5%</BlueTexte> avec le plan annuel</Text>
@@ -417,11 +440,12 @@ const NewAccount4 = () => {
                             ))}     
                         </ButtonDiv>
                     </ButtonBlock>
-                    <OffreBlock>
                     <FilterBlock>
-                        <FilterTexte>Entreprise de <BlueTexte>15</BlueTexte>salariés</FilterTexte>
-                        <FilterBar></FilterBar>
+                        <FilterTexte>Entreprise de <BlueTexte>{positionX}</BlueTexte>salariés</FilterTexte>
+                        <FilterBar positionX={positionX} onPositionXChange={handlePositionXChange}></FilterBar>
                     </FilterBlock>
+                    </ProgressBlock>
+                    <OffreBlock>
                     <CardBlock>
                     <OffreCard>
                         <CardTexte>
@@ -439,7 +463,7 @@ const NewAccount4 = () => {
                     <OffreCard>
                         <CardTexte>
                             <Pro>Pro</Pro>
-                            <Bold>196.80€*<LittleText>Par mois</LittleText></Bold>             
+                            <BluePriceTexte>196.80€*<LittleText>Par mois</LittleText></BluePriceTexte>             
                         </CardTexte>
                         <Fonctionnalite>
                             <FonctionnaliteTexte>Toutes les fonctions <SpecialTexte>DÉCOUVERTE</SpecialTexte>, plus :</FonctionnaliteTexte>

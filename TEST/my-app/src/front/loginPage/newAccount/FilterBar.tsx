@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { useState } from 'react';
 
+interface MovableBlockProps  {
+    left : number;
+}
+
 const MovableBlockDiv = styled.div`
 display: flex;
 height: 2rem;
@@ -18,7 +22,7 @@ background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 34.5rem;
 height: 0.25rem;
 `
-const MovableBlock = styled.div<{left: number}>`
+const MovableBlock = styled.div<MovableBlockProps>`
 width: 2rem;
 height: 2rem;
 flex-shrink: 0;
@@ -26,49 +30,50 @@ border-radius: 0.5rem;
 background: var(--cra-main-metallic-seaweed, #0E738A);
 position: relative;
 cursor: move;
-left : 0px;
+display: flex;
+justify-content: center;
+align-items: center;
 `
+const MovableBlockText = styled.span`
+color : white;
+`
+interface FilterBarProps {
+    positionX: number;
+    onPositionXChange : (newX: number) => void;
+}
 
-const FilterBar = () => {
+const FilterBar = ({ positionX, onPositionXChange}: FilterBarProps) => {
 
-    const [positionX, setPositionX] = useState<number>(0);
+    
 
     const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
         const initialMouseX = event.clientX;
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
     
-
-    const handleMouseMove = (event: MouseEvent) => {
-        const filterLineWidth = 34.5 * 16;
-        const blockWidth = 2* 16;
-
-        let newX = event.clientX - initialMouseX;
-        newX = Math.max(0, Math.min(newX, filterLineWidth - blockWidth));
-        setPositionX(newX);
-    };
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup',() => {
-        document.removeEventListener('mousemove', handleMouseMove);
-    });
-    filtrerBar(positionX);
-};
-
-    const filtrerBar = (positionX: number) => {
-        const filterLineWidth = 34.5 * 16;
-        const plageMin = 0;
-        const plageMax = 100;
-        const nombreSalariesFiltres = Math.round((positionX / (filterLineWidth -32)) * (plageMax - plageMin) + plageMin);
-
-        console.log(nombreSalariesFiltres);
-    }
+        function handleMouseMove(event: MouseEvent) {
+          const filterLineWidth = 34.5 * 16;
+          const blockWidth = 2 * 16;
+    
+          let newX = event.clientX - initialMouseX;
+          newX = Math.max(0, Math.min(newX, filterLineWidth - blockWidth));
+          onPositionXChange(newX);
+        }
+    
+        function handleMouseUp() {
+          document.removeEventListener('mousemove', handleMouseMove);
+          document.removeEventListener('mouseup', handleMouseUp);
+        }
+      };
 
 
     return(
         <MovableBlockDiv>
             <FilterLine>
                 <MovableBlock
-                left={positionX}
-                onMouseDown={handleMouseDown}
-                ></MovableBlock>
+                style={{ left : `${positionX}px`}}
+                onMouseDown={handleMouseDown}                
+                ><MovableBlockText>{positionX}</MovableBlockText></MovableBlock>
             </FilterLine>
         </MovableBlockDiv>
     )

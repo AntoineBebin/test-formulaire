@@ -5,6 +5,7 @@ import FooterNewAccount from "../../mainPage/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Arrow from '../../image/bottom-arrow.png';
+import Dropdown from 'react-dropdown-select';
 
 
 const Container = styled.div `
@@ -255,7 +256,17 @@ width : 100%;
 height : 24px;
 font-family : 'Urbanist';
 font-weight : 400;
-font-size : 20px;`
+font-size : 20px;
+`
+const DropDownMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+`
 
 const NewAccount2 = () => {
 
@@ -266,12 +277,12 @@ const NewAccount2 = () => {
     const [number, setNumber] = useState("");
     const [error, setError] = useState("");
     const [isFocused, setIsFocused] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const getInputBorderStyle = (isFocused: boolean) : string => {
         return isFocused ? '1px solid #FFD966' : 'none';
     };
 
-    // Navigation
     const navigate = useNavigate();
 
     const handleReturn = () => {
@@ -297,7 +308,19 @@ const NewAccount2 = () => {
     };
     const handleNumber = (e:React.ChangeEvent<HTMLInputElement>) => {
         setNumber(e.target.value);
-    }
+    };
+
+    const handleArrowClick = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const statut = [{
+        label:"SARL"
+    },
+    {
+        label: "Entreprise"
+    },
+]
 
     return(
         <Container>
@@ -326,8 +349,17 @@ const NewAccount2 = () => {
                     </SecondInput>
                     <StatutBlock>
                         <Texte>QUEL EST VOTRE STATUT</Texte>
-                        <StatutMenu>Particulier<ArrowImg src={Arrow}></ArrowImg></StatutMenu>
-                        
+                        <StatutMenu onClick={handleArrowClick}>
+                            Particulier
+                        <ArrowImg src={Arrow}></ArrowImg>
+                        </StatutMenu>
+                        {isMenuOpen && (
+                            <DropDownMenu>
+                                {statut.map((option, index) => (
+                                    <div key={index}>{option.label}</div>
+                                ))}
+                            </DropDownMenu>
+                        )}
                     </StatutBlock>
                     <ThirdInput>
                         <Texte>ADRESSE EMAIL</Texte>

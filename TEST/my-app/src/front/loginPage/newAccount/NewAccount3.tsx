@@ -12,6 +12,9 @@ min-height: 100vh;
 background-image : url(${Background});
 background-repeat: repeat;
 `
+const FooterWrapper = styled.div`
+margin-top: 230px;
+`
 const Title = styled.h1`
 color: var(--cra-main-lighter-shade-1, #5EA2B1);
 text-align: center;
@@ -20,13 +23,12 @@ font-family: 'Ibarra Real Nova';
 font-style: normal;
 font-weight: 400;
 line-height: 100%;
-margin-top: 250px;
+margin-top: 100px;
 `
 const Block = styled.div`
 display: flex;
-position: relative;
-top : -115px;
-left : 550px;
+margin-top: -115px;
+margin-left: 550px;
 width: 58.5rem;
 height: 31.5rem;
 padding: 3.5rem 2.5rem 1.5rem 2.5rem;
@@ -322,12 +324,15 @@ const NewAccount3 = () => {
                     </InputNameBlock>
                     <SiretBlock>
                         <Texte>Numéro de SIRET</Texte>
+                        <Alignement>
                         <SiretInput placeholder = "123456789101112"
                                     value={siret}
                                     onChange={handleClickSiret}></SiretInput>
                         <SuppButtonContainer><SuppButton 
                                     src={BouttonSupp}
-                                    onClick={handleClickSiret}></SuppButton></SuppButtonContainer>                    </SiretBlock>
+                                    onClick={handleClickSiret}></SuppButton></SuppButtonContainer>
+                                    </Alignement>                  
+                        </SiretBlock>
                     <ImmatriculationBlock>
                         <Texte>Immatriculation RCS</Texte>
                         <ImmatriculationInput placeholder = "RCS"></ImmatriculationInput>
@@ -336,20 +341,26 @@ const NewAccount3 = () => {
                 <SecondInputBlock>
                         <AdresseBlock>
                             <Texte>Adresse du siège social</Texte>
+                            <Alignement>
                             <AdresseInput placeholder = "18 rue du Bicentenaire" 
                                             value={adresse} 
                                             onChange={handleClickAdresse}></AdresseInput>
                             <SuppButtonContainer><SuppButton 
                                             src={BouttonSupp}
-                                            onClick={handleClickAdresse}></SuppButton></SuppButtonContainer>                        </AdresseBlock>
+                                            onClick={handleClickAdresse}></SuppButton></SuppButtonContainer>
+                                            </Alignement>                        
+                            </AdresseBlock>
                         <CityInputBlock>
                             <Texte>Ville</Texte>
+                            <Alignement>
                             <CityInput placeholder = "Massy (91000)"
                                         value={city}
                                         onChange={handleClickCity}></CityInput>
                             <SuppButtonContainer><SuppButton 
                                         src={BouttonSupp}
-                                        onClick={handleClickCity}></SuppButton></SuppButtonContainer>                        </CityInputBlock>
+                                        onClick={handleClickCity}></SuppButton></SuppButtonContainer>
+                                        </Alignement>                        
+                                        </CityInputBlock>
                         <CountryBlock>
                             <Texte>Pays</Texte>
                             <SelectedCountry>France</SelectedCountry>
@@ -360,7 +371,9 @@ const NewAccount3 = () => {
                             <NextButton onClick={handleNext}>Suivant</NextButton>
                 </ButtonBlock>
             </Block>
+            <FooterWrapper>
             <FooterNewAccount></FooterNewAccount>
+            </FooterWrapper>
         </Container>
     );
 }
