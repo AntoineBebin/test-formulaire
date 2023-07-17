@@ -33,6 +33,10 @@ box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 margin-top: -200px;
 `
+const Alignement = styled.div`
+display: flex;
+flex-direction: row;
+`
 const Texte = styled.span`
 color: var(--global-secondary-black, #202124);
 font-family: 'Urbanist';
@@ -41,6 +45,7 @@ font-style: normal;
 font-weight: 600;
 line-height: 1rem;
 text-transform: uppercase;
+margin-left: -2rem;
 `
 const EmailBlock = styled.div`
 display: flex;
@@ -58,8 +63,9 @@ align-items: center;
 flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 28.5rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
+margin-left: -2rem;
 `
 const IconContainer = styled.img`
 display: flex;
@@ -86,8 +92,9 @@ align-items: center;
 flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 28.5rem;
-height: 3rem;
+height: 1.5rem;
 border : none;
+margin-left: -2rem;
 `
 const ButtonBlock = styled.div`
 display: flex;
@@ -171,13 +178,17 @@ const ModalAcces = () => {
             <Block>
                 <EmailBlock>
                     <Texte>Adresse email</Texte>
+                    <Alignement>
                     <EmailInput placeholder = "Email"></EmailInput>
                     <IconContainer src={Edit}></IconContainer>
+                    </Alignement>
                 </EmailBlock>
                 <PasswordBlock>
                     <Texte>Mot de passe</Texte>
+                    <Alignement>
                     <PasswordInput placeholder = "Mot de passe"></PasswordInput>
                     <IconContainer src={Edit}></IconContainer>
+                    </Alignement>
                 </PasswordBlock>
                 <ButtonBlock>
                     <GreyButtonTexte onClick={closeModal}>Annuler</GreyButtonTexte>

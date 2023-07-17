@@ -16,6 +16,7 @@ import NewAccount4 from './front/loginPage/newAccount/NewAccount4';
 import NewAccount5 from './front/loginPage/newAccount/NewAccount5';
 import NewAccount6 from './front/loginPage/newAccount/NewAccount6';
 import NewAccount7 from './front/loginPage/newAccount/NewAccount7';
+import NewAccount8 from './front/loginPage/newAccount/NewAccount8';
 import Dashboard from './front/dashboard/Dashboard';
 import Event from './front/produits/Event/Event';
 
@@ -36,6 +37,7 @@ root.render(
         <Route path='/login/créer-un-compte5' element={<NewAccount5/>} />
         <Route path='/login/créer-un-compte6' element={<NewAccount6/>} />
         <Route path='/login/créer-un-compte7' element={<NewAccount7/>} />
+        <Route path='/login/créer-un-compte8' element={<NewAccount8/>} />
         <Route path='/qui-sommes-nous' element={<PagePrincipale/>} />
         <Route path='/produits' element={<EasyCra/>} />
         <Route path='/tarifs' element={<Tarif/>} />

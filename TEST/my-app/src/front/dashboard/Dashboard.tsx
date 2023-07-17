@@ -26,8 +26,6 @@ import ModalAcces from "./ModalAcces";
 import ModalAbonnement from "./ModalAbonnement";
 import ModalFacture from "./ModalFacture";
 
-
-
 const Container = styled.div `
 max-width: 100vw;
 min-height: 100vh;
@@ -441,6 +439,7 @@ left: 350px;
 border-radius: 0.25rem;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 box-shadow: 0px 8px 96px 0px rgba(32, 33, 36, 0.04);
+z-index: -1;
 `
 const Menu = styled.div`
 display: flex;

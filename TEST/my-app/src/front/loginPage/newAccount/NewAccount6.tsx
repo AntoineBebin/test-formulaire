@@ -40,6 +40,10 @@ background: var(--global-secondary-transparent-50, rgba(245, 245, 245, 0.50));
 box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 `
+const Alignement = styled.div`
+display: flex;
+flex-direction: row;
+`
 const BoldTextBlock = styled.div`
 display: flex;
 flex-direction: column;
@@ -105,7 +109,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
 width: 37.3125rem;
-height: 4.25rem;
+height: 1.5rem;
 overflow: hidden;
 color: var(--global-secondary-black, #202124);
 text-overflow: ellipsis;
@@ -131,7 +135,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 8.6875rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline: none;
 `
@@ -158,7 +162,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
 width: 8rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline: none;
 `
@@ -177,7 +181,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
 width: 8rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline: none;
 `
@@ -256,13 +260,7 @@ height: 3rem;
 text-transform: uppercase;
 cursor: pointer;
 `
-const SuppButtonContainer = styled.div`
-width: 3rem;
-height: 3rem;
-display: flex;
-align-items: flex-start;
-`
-const SuppButton = styled.button`
+const SuppButton = styled.img`
 display: flex;
 padding: 0.75rem;
 align-items: flex-start;
@@ -270,7 +268,6 @@ background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 1.5rem;
 height: 1.5rem;
 cursor: pointer;
-background-image: url(${BouttonSupp});
 border: none;
 `
 
@@ -300,6 +297,9 @@ const NewAccount6 = () => {
     const handleClickTva = (e : React.ChangeEvent<HTMLInputElement>) =>{
         setTva(e.target.value);
     };
+    const handleClearInput = (setState: React.Dispatch<React.SetStateAction<string>>) =>{
+        setState("");
+    };
 
 
     return(
@@ -313,41 +313,53 @@ const NewAccount6 = () => {
                     <FirstBlock>
                         <InputBlockName>
                             <Texte>Nom de l'entreprise</Texte>
+                            <Alignement>
                             <InputName placeholder = "Nom de l'entreprise"
                                         value={name}
                                         onChange={handleClickName}></InputName>
-                            <SuppButtonContainer><SuppButton
+                            <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickName}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setName)}>  
+                            </SuppButton>
+                            </Alignement>
                         </InputBlockName>
                         <TvaBlock>
                             <Texte>Numéro de tva</Texte>
+                            <Alignement>
                             <TvaInput placeholder = "FR 12345678910"
                                         value={tva}
                                         onChange={handleClickTva}></TvaInput>
-                                        <SuppButtonContainer><SuppButton
+                            <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickTva}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setTva)}>
+                            </SuppButton>
+                            </Alignement>
                         </TvaBlock>
                     </FirstBlock>
                     <SecondBlock>
                         <AdresseBlock>
                             <Texte>Adresse du siège social</Texte>
+                            <Alignement>
                             <AdresseInput placeholder = "18 rue egeegee"
                                             value={adresse}
                                             onChange={handleClickAdresse}></AdresseInput>
-                                            <SuppButtonContainer><SuppButton
+                            <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickAdresse}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setAdresse)}>
+                            </SuppButton>
+                            </Alignement>
                         </AdresseBlock>
                         <CityBlock>
                             <Texte>Ville</Texte>
+                            <Alignement>
                             <CityInput placeholder="Paris"
                                         value={city}
                                         onChange={handleClickCity}></CityInput>
-                                        <SuppButtonContainer><SuppButton
+                            <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickCity}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setCity)}>
+                            </SuppButton>
+                            </Alignement>
                         </CityBlock>
                         <CountryBlock>
                             <Texte>Pays</Texte>

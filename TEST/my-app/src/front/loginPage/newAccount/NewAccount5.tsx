@@ -150,7 +150,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 1.5rem;
 width: 17.5625rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline : none;
 `
@@ -169,7 +169,7 @@ align-items: flex-start;
 gap: 0.25rem;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 10.0625rem;
-height: 3rem;
+height: 1.5rem;
 color: var(--global-secondary-black, #202124);
 font-size: 1rem;
 font-family: 'Urbanist';
@@ -193,7 +193,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 5.6875rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline : none;
 `
@@ -211,7 +211,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 3.6875rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline : none;
 `
@@ -256,11 +256,7 @@ height: 3rem;
 text-transform: uppercase;
 cursor: pointer;
 `
-const SuppButtonContainer = styled.div`
-width: 3rem;
-height: 3rem;
-`
-const SuppButton = styled.button`
+const SuppButton = styled.img`
 display: flex;
 padding: 0.75rem;
 align-items: flex-start;
@@ -268,8 +264,11 @@ background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 1.5rem;
 height: 1.5rem;
 cursor: pointer;
-background-image: url(${BouttonSupp});
 border: none;
+`
+const Alignement = styled.div`
+display: flex;
+flex-direction: row;
 `
 
 const NewAccount5 = () => {
@@ -298,6 +297,9 @@ const NewAccount5 = () => {
     const handleClickCvv = (e : React.ChangeEvent<HTMLInputElement>) =>{
         setCvv(e.target.value);
     };
+    const handleClearInput = (setState: React.Dispatch<React.SetStateAction<string>>) =>{
+        setState("");
+    };
 
     return(
         <Container>
@@ -317,39 +319,51 @@ const NewAccount5 = () => {
                     <SecondBlock>
                         <NameBlock>
                             <Texte>Titulaire de la carte</Texte>
+                            <Alignement>
                             <InputName placeholder = "Nom du titulaire"
                                         value={name}
                                         onChange={handleClickName}></InputName>
-                            <SuppButtonContainer><SuppButton
+                            <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickName}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setName)}>
+                            </SuppButton>
+                            </Alignement>
                         </NameBlock>
                         <CardBlock>
                             <Texte>Numéro de carte</Texte>
+                            <Alignement>
                             <CardInput placeholder="Numéro de carte"
                                         value={numero}
                                         onChange={handleClickNumero}></CardInput>
-                                        <SuppButtonContainer><SuppButton
+                                        <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickNumero}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setNumero)}>
+                            </SuppButton>
+                            </Alignement>
                         </CardBlock>
                         <DateBlock>
                             <Texte>Date d'expiration</Texte>
+                            <Alignement>
                             <DateInput placeholder = "mm/yy"
                                         value={date}
                                         onChange={handleClickDate}></DateInput>
-                                        <SuppButtonContainer><SuppButton
+                                        <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickDate}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setDate)}>
+                            </SuppButton>
+                            </Alignement>
                         </DateBlock>
                         <Cvv>
                             <Texte>CVV</Texte>
+                            <Alignement>
                             <CvvInput placeholder = "420"
                                         value={cvv}
                                         onChange={handleClickCvv}></CvvInput>
-                                        <SuppButtonContainer><SuppButton
+                                        <SuppButton
                                         src={BouttonSupp}
-                                        onClick={handleClickCvv}></SuppButton></SuppButtonContainer>
+                                        onClick={() => handleClearInput(setCvv)}>
+                            </SuppButton>
+                            </Alignement>
                         </Cvv>
                     </SecondBlock>
                 </InputBlock>

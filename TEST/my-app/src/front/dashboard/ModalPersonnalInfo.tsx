@@ -134,7 +134,7 @@ height: 4.25rem;
 const YellowBlockTelephone = styled.div`
 display: flex;
 width: 1rem;
-height: 3rem;
+height: 1.5rem;
 padding: 0.75rem 1rem;
 justify-content: center;
 align-items: center;
@@ -148,7 +148,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 8.6875rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 `
 const ThirdInputBlock = styled.div`
@@ -175,7 +175,7 @@ align-items: center;
 flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 22.8125rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 `
 const SuppButton = styled.img`
@@ -201,7 +201,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 8.5rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 `
 const ImmatriculationBlock = styled.div`
@@ -249,7 +249,7 @@ align-items: center;
 flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 17rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 `
 const CityBlock = styled.div`
@@ -268,7 +268,7 @@ align-items: center;
 flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 17rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 `
 const CountryBlock = styled.div`
@@ -295,19 +295,14 @@ gap: 1.5rem;
 width: 21.8125rem;
 height: 3rem;
 `
-const CancelButton = styled.button `
+const GreyButtonTexte = styled.span`
 color: var(--global-secondary-black, #202124);
-background: rgba(245, 245, 245, 0.70);
-border: none;
 font-family: 'Urbanist';
 font-size: 0.875rem;
 font-style: normal;
 font-weight: 600;
 line-height: 1.5rem;
 text-transform: uppercase;
-width: 3.8125rem;
-height: 3rem;
-border-radius: 0.5rem;
 cursor: pointer;
 `
 const RegisterButton = styled.button`
@@ -392,20 +387,26 @@ const ModalPersonnalInfo = () => {
                     </EmailBlock>
                     <TelephoneBlock>
                         <Texte>Tél. du représentant légal</Texte>
+                        <Alignement>
                         <YellowBlockTelephone>+33</YellowBlockTelephone>
                         <TelephoneInput placeholder="123456789"></TelephoneInput>
+                        </Alignement>
                     </TelephoneBlock>
                 </SecondInputBlock>
                 <ThirdInputBlock>
                     <EntrepriseBlock>
                         <Texte>Nom de l'entreprise</Texte>
+                        <Alignement>
                         <EntrepriseInput placeholder="Nom de l'entreprise"></EntrepriseInput>
                         <SuppButton src={SuppBtn}></SuppButton>
+                        </Alignement>
                     </EntrepriseBlock>
                     <SiretBlock>
                         <Texte>Numéro de SIRET</Texte>
+                        <Alignement>
                         <SiretInput placeholder="123456789101112"></SiretInput>
                         <SuppButton src={SuppBtn}></SuppButton>
+                        </Alignement>
                     </SiretBlock>
                     <ImmatriculationBlock>
                         <Texte>Immatriculation RCS</Texte>
@@ -415,13 +416,17 @@ const ModalPersonnalInfo = () => {
                 <FourthInputBlock>
                     <AdresseBlock>
                         <Texte>Adresse du siège social</Texte>
+                        <Alignement>
                         <AdresseInput placeholder="Adresse"></AdresseInput>
                         <SuppButton src={SuppBtn}></SuppButton>
+                        </Alignement>
                     </AdresseBlock>
                     <CityBlock>
                         <Texte>Ville</Texte>
+                        <Alignement>
                         <CityInput placeholder="Ville"></CityInput>
                         <SuppButton src={SuppBtn}></SuppButton>
+                        </Alignement>
                     </CityBlock>
                     <CountryBlock>
                         <Texte>Pays</Texte>
@@ -429,7 +434,7 @@ const ModalPersonnalInfo = () => {
                     </CountryBlock>
                 </FourthInputBlock>
                 <ButtonBlock>
-                    <CancelButton onClick={closeModal}>Annuler</CancelButton>
+                    <GreyButtonTexte onClick={closeModal}>Annuler</GreyButtonTexte>
                     <RegisterButton>Enregistrer mes informations</RegisterButton>
                 </ButtonBlock>
             </ModalBlock>

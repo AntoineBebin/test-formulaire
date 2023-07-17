@@ -97,13 +97,10 @@ text-transform: uppercase;
 const Alignement = styled.div`
 display: flex;
 flex-direction: row;
-border: solid 1px black;
-width: 23.8125rem;
-height: 3rem;
 `
 const InputName = styled.input`
 width: 20.8125rem;
-height: 3rem;
+height: 1.5rem;
 display: flex;
 padding: 0.75rem 1rem;
 align-items: center;
@@ -111,7 +108,6 @@ flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 border: none;
 outline: none;
-border : solid yellow 1px;
 `
 const SiretBlock = styled.div`
 display: flex;
@@ -127,7 +123,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 8.5rem;
-height: 3rem;
+height: 1.5rem;
 border : none;
 outline : none;
 `
@@ -145,7 +141,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 15.1875rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline: none;
 `
@@ -172,7 +168,7 @@ padding: 0.75rem 1rem;
 align-items: center;
 flex: 1 0 0;
 width: 16rem;
-height: 3rem;
+height: 1.5rem;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 border: none;
 outline: none;
@@ -193,7 +189,7 @@ align-items: center;
 flex: 1 0 0;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 16rem;
-height: 3rem;
+height: 1.5rem;
 border: none;
 outline: none;
 `
@@ -256,15 +252,7 @@ height: 3rem;
 text-transform: uppercase;
 cursor: pointer;
 `
-const SuppButtonContainer = styled.div`
-width: 3rem;
-height: 3rem;
-border: solid red 1px;
-display: flex;
-justify-content: center;
-align-items: center;
-`
-const SuppButton = styled.button`
+const SuppButton = styled.img<{active : boolean}>`
 display: flex;
 padding: 0.75rem;
 align-items: flex-start;
@@ -272,7 +260,6 @@ background: var(--global-secondary-white-highlight, #FCFCFC);
 width: 1.5rem;
 height: 1.5rem;
 cursor: pointer;
-background-image: url(${BouttonSupp});
 border: none;
 `
 
@@ -289,6 +276,7 @@ const NewAccount3 = () => {
     const [siret, setSiret] = useState("");
     const [adresse, setAdresse] =useState("");
     const [city, setCity] = useState("");
+    const [isSuppBtnActive, setIsSuppBtnActive] = useState(false);
 
     const handleClickEntreprise = (e : React.ChangeEvent<HTMLInputElement>) =>{
         setEntreprise(e.target.value);
@@ -302,6 +290,9 @@ const NewAccount3 = () => {
     const handleClickCity = (e : React.ChangeEvent<HTMLInputElement>) =>{
         setCity(e.target.value);
     };
+    const handleClearInput = (setState: React.Dispatch<React.SetStateAction<string>>) =>{
+        setState("");
+    }
 
     return(
         <Container>
@@ -317,10 +308,11 @@ const NewAccount3 = () => {
                         <InputName placeholder = "Nom de l'entreprise" 
                                     value={entreprise} 
                                     onChange={handleClickEntreprise}></InputName>
-                        <SuppButtonContainer><SuppButton 
+                        <SuppButton 
                                     src={BouttonSupp} 
-                                    onClick={handleClickEntreprise}></SuppButton></SuppButtonContainer>
-                                    </Alignement>                   
+                                    onClick={() => handleClearInput(setEntreprise)}>
+                        </SuppButton>
+                        </Alignement>                   
                     </InputNameBlock>
                     <SiretBlock>
                         <Texte>Numéro de SIRET</Texte>
@@ -328,10 +320,11 @@ const NewAccount3 = () => {
                         <SiretInput placeholder = "123456789101112"
                                     value={siret}
                                     onChange={handleClickSiret}></SiretInput>
-                        <SuppButtonContainer><SuppButton 
+                        <SuppButton 
                                     src={BouttonSupp}
-                                    onClick={handleClickSiret}></SuppButton></SuppButtonContainer>
-                                    </Alignement>                  
+                                    onClick={() => handleClearInput(setSiret)}>
+                        </SuppButton>
+                        </Alignement>                  
                         </SiretBlock>
                     <ImmatriculationBlock>
                         <Texte>Immatriculation RCS</Texte>
@@ -345,10 +338,11 @@ const NewAccount3 = () => {
                             <AdresseInput placeholder = "18 rue du Bicentenaire" 
                                             value={adresse} 
                                             onChange={handleClickAdresse}></AdresseInput>
-                            <SuppButtonContainer><SuppButton 
+                            <SuppButton 
                                             src={BouttonSupp}
-                                            onClick={handleClickAdresse}></SuppButton></SuppButtonContainer>
-                                            </Alignement>                        
+                                            onClick={() => handleClearInput(setAdresse)}>
+                            </SuppButton>
+                            </Alignement>                        
                             </AdresseBlock>
                         <CityInputBlock>
                             <Texte>Ville</Texte>
@@ -356,10 +350,11 @@ const NewAccount3 = () => {
                             <CityInput placeholder = "Massy (91000)"
                                         value={city}
                                         onChange={handleClickCity}></CityInput>
-                            <SuppButtonContainer><SuppButton 
+                            <SuppButton 
                                         src={BouttonSupp}
-                                        onClick={handleClickCity}></SuppButton></SuppButtonContainer>
-                                        </Alignement>                        
+                                        onClick={() => handleClearInput(setCity)}>
+                            </SuppButton>
+                            </Alignement>                        
                                         </CityInputBlock>
                         <CountryBlock>
                             <Texte>Pays</Texte>

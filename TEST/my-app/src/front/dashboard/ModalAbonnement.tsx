@@ -33,18 +33,34 @@ box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
 z-index: 98;
 `
-interface FilterBarProps {
-    positionX: number;
-    onPositionXChange : (newX: number) => void;
-}
 const FilterBarWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
 gap: 1rem;
-align-self: stretch;
+align-self: center;
 width: 52.5rem;
 height: 3.75rem;
+border: solid black 1px;
+`
+const BarText = styled.span`
+color: var(--global-secondary-black, #202124);
+text-align: center;
+font-family: 'Urbanist';
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 400;
+line-height: 1.5rem;
+`
+const BlueBarText = styled.span`
+color: var(--cra-main-metallic-seaweed, #0E738A);
+text-align: center;
+font-family: 'Urbanist';
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.5rem;
 `
 const OffreBlock = styled.div`
 display: flex;
@@ -276,9 +292,14 @@ height: 2rem;
 const ModalAbonnement = () => {
 
     const [isOpen, setIsopen] = useState(true);
+    const [positionX, setPositionX] = useState(0);
 
     const closeModal = () => {
         setIsopen(false);
+    };
+
+    const handlePositionXChange = (newX: number) => {
+        setPositionX(newX);
     }
 
     return(
@@ -290,6 +311,10 @@ const ModalAbonnement = () => {
                 Mon abonnement
             </TitleBlock>
            <Block>
+            <FilterBarWrapper>
+                <BarText>Entreprise de <BlueBarText>{positionX}</BlueBarText> salariés</BarText>
+            <FilterBar positionX={positionX} onPositionXChange={handlePositionXChange}></FilterBar>
+            </FilterBarWrapper>
             <OffreBlock>
                 <Card>
                     <TexteBlock>
