@@ -31,7 +31,6 @@ border-radius: 0.5rem;
 background: var(--global-secondary-transparent-70, rgba(245, 245, 245, 0.70));
 box-shadow: 0px 8px 64px 0px rgba(0, 0, 0, 0.04);
 backdrop-filter: blur(8px);
-z-index: 98;
 `
 const FilterBarWrapper = styled.div`
 display: flex;
@@ -92,10 +91,10 @@ flex-direction: column;
 align-items: center;
 gap: 2rem;
 align-self: stretch;
-border-radius: 0.5rem;
+border-radius: 0.25rem;
+border: 2px solid var(--cra-main-metallic-seaweed, #0E738A);
 background: var(--global-secondary-white-highlight, #FCFCFC);
 box-shadow: 0px 8px 56px 0px rgba(32, 33, 36, 0.06);
-border: #0E738A ;
 `
 const BoldTexte = styled.span`
 display: flex;
@@ -227,12 +226,16 @@ font-weight: 600;
 line-height: 1.5rem;
 text-transform: uppercase;
 cursor: pointer;
+margin-left: 3rem;
+margin-top: 2rem;
 `
 const ButtonBlock = styled.div`
 display: flex;
+justify-content: flex-end;
 align-items: center;
 gap: 1.5rem;
-width: 21.8125rem;
+align-self: stretch;
+width: 55.5rem;
 height: 3rem;
 `
 const GreyButtonTexte = styled.span`

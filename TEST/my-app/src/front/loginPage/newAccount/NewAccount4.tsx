@@ -190,6 +190,19 @@ border-radius: 0.5rem;
 background: var(--global-secondary-white-highlight, #FCFCFC);
 box-shadow: 0px 8px 56px 0px rgba(32, 33, 36, 0.06);
 `
+const BlueCard = styled.div`
+display: flex;
+width: 16.5rem;
+padding: 1.5rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 2rem;
+align-self: stretch;
+height: 21.75rem;
+border-radius: 0.25rem;
+border: 2px solid var(--cra-main-metallic-seaweed, #0E738A);
+box-shadow: 0px 8px 56px 0px rgba(32, 33, 36, 0.06);
+`
 const CardTexte = styled.div`
 display: flex;
 flex-direction: column;
@@ -460,7 +473,7 @@ const NewAccount4 = () => {
                             <FonctionnaliteTexte>Fonctionnalité 1</FonctionnaliteTexte>
                         </Fonctionnalite>
                     </OffreCard>
-                    <OffreCard>
+                    <BlueCard>
                         <CardTexte>
                             <Pro>Pro</Pro>
                             <BluePriceTexte>196.80€*<LittleText>Par mois</LittleText></BluePriceTexte>             
@@ -472,7 +485,7 @@ const NewAccount4 = () => {
                             <FonctionnaliteTexte>Fonctionnalité 1</FonctionnaliteTexte>
                             <FonctionnaliteTexte>Fonctionnalité 1</FonctionnaliteTexte>
                         </Fonctionnalite>
-                    </OffreCard>
+                    </BlueCard>
                     <OffreCard>
                         <CardTexte>
                             <DevisPro>PRO+</DevisPro>

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Edit from '../../front/image/edit.png';
+import styled from "styled-components"; 
 import Lock from '../../front/image/lock.png';
+import Eye from '../../front/image/black-eye.png';
+import SuppBtn from '../../front/image/BtnSupp.png';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
 display: flex;
@@ -38,6 +38,15 @@ const Alignement = styled.div`
 display: flex;
 flex-direction: row;
 `
+const IconContainer = styled.img`
+display: flex;
+padding: 0.75rem;
+align-items: flex-start;
+background: var(--global-secondary-white-highlight, #FCFCFC);
+width: 1.5rem;
+height: 1.5rem;
+cursor: pointer;
+`
 const Texte = styled.span`
 color: var(--global-secondary-black, #202124);
 font-family: 'Urbanist';
@@ -67,15 +76,6 @@ width: 28.5rem;
 height: 1.5rem;
 border: none;
 margin-left: -2rem;
-`
-const IconContainer = styled.img`
-display: flex;
-padding: 0.75rem;
-align-items: flex-start;
-background: var(--global-secondary-white-highlight, #FCFCFC);
-width: 1.5rem;
-height: 1.5rem;
-cursor: pointer;
 `
 const PasswordBlock = styled.div`
 display: flex;
@@ -160,19 +160,13 @@ width: 2rem;
 height: 2rem;
 `
 
-const ModalAcces = () => {
-
-    const navigate = useNavigate();
+const ModalAcces2 = () => {
 
     const [isOpen, setIsopen] = useState(true);
 
     const closeModal = () => {
         setIsopen(false);
     };
-
-    const handleNavigate = () => {
-        navigate ('/dashboard/acces')
-    }
 
     return(
         <>
@@ -186,20 +180,20 @@ const ModalAcces = () => {
                 <EmailBlock>
                     <Texte>Adresse email</Texte>
                     <Alignement>
-                    <EmailInput placeholder = "Email"></EmailInput>
-                    <IconContainer src={Edit}></IconContainer>
+                        <EmailInput placeholder="adresse mail"></EmailInput>
+                        <IconContainer src={SuppBtn}></IconContainer>
                     </Alignement>
                 </EmailBlock>
                 <PasswordBlock>
-                    <Texte>Mot de passe</Texte>
+                    <Texte>Mot de passe actuel</Texte>
                     <Alignement>
-                    <PasswordInput placeholder = "Mot de passe"></PasswordInput>
-                    <IconContainer src={Edit}></IconContainer>
+                    <PasswordInput placeholder="mot de passe"></PasswordInput>
+                    <IconContainer src={Eye}></IconContainer>
                     </Alignement>
                 </PasswordBlock>
                 <ButtonBlock>
                     <GreyButtonTexte onClick={closeModal}>Annuler</GreyButtonTexte>
-                    <RegisterButton onClick={handleNavigate}>Enregistrer mes informations</RegisterButton>
+                    <RegisterButton>Enregistrer les modifications</RegisterButton>
                 </ButtonBlock>
             </Block>
         </Container>
@@ -208,4 +202,4 @@ const ModalAcces = () => {
     );
 };
 
-export default ModalAcces;
+export default ModalAcces2;

@@ -19,6 +19,8 @@ import NewAccount7 from './front/loginPage/newAccount/NewAccount7';
 import NewAccount8 from './front/loginPage/newAccount/NewAccount8';
 import Dashboard from './front/dashboard/Dashboard';
 import Event from './front/produits/Event/Event';
+import ModalAcces2 from './front/dashboard/ModalAcces2';
+import EasyCraPro from './front/produits/EasyCraPro/EasyCraPro';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -42,7 +44,9 @@ root.render(
         <Route path='/produits' element={<EasyCra/>} />
         <Route path='/tarifs' element={<Tarif/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/dashboard/acces' element={<ModalAcces2/>} />
         <Route path='/event' element={<Event/>} />
+        <Route path='/easycra-pro' element={<EasyCraPro/>} />
       </Routes>
     </Router>
   </React.StrictMode>

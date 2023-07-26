@@ -276,7 +276,6 @@ const NewAccount3 = () => {
     const [siret, setSiret] = useState("");
     const [adresse, setAdresse] =useState("");
     const [city, setCity] = useState("");
-    const [isSuppBtnActive, setIsSuppBtnActive] = useState(false);
 
     const handleClickEntreprise = (e : React.ChangeEvent<HTMLInputElement>) =>{
         setEntreprise(e.target.value);
