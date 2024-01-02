@@ -1,0 +1,3 @@
+@cdejavu/ui:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOU_KEY
+always-auth = true
